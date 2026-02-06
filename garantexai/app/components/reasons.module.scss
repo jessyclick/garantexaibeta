@@ -1,0 +1,136 @@
+.wrapper {
+  padding: 72px 20px;
+  background: radial-gradient(ellipse at center, rgba(20,16,15,0.75) 0%, rgba(8,6,6,0.95) 100%);
+  color: #fff;
+}
+
+.container {
+  max-width: 1305px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.kicker {
+  display: block;
+  color: rgba(255,255,255,0.08);
+  font-size: 48px;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 66px;
+  line-height: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0;
+  font-weight: 400;
+}
+
+.accent {
+  color: #ffb03b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 20px;
+  border-radius: 14px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.cardLeft {
+    border: 1px solid transparent;
+  border-radius: 12px; /* Теперь работает! */
+  background-image: 
+    linear-gradient(black, black), /* Цвет фона контента */
+    linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  box-shadow: 0px 0.68px 4.14px 0px #663B0340;
+  transform: translateY(-6px);
+}
+
+.cardRight {
+        border: 1px solid transparent;
+  border-radius: 12px; /* Теперь работает! */
+  background-image: 
+    linear-gradient(black, black), /* Цвет фона контента */
+    linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  box-shadow: 0px 0.68px 4.14px 0px #663B0340;
+  transform: translateY(-6px);
+}
+
+.cardCenter {
+  border: 1px solid transparent;
+  border-radius: 12px; /* Теперь работает! */
+  background-image: 
+    linear-gradient(black, black), /* Цвет фона контента */
+    linear-gradient(124.35deg, #44C4A1 3.69%, #002017 45.84%, #44C4A1 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  box-shadow: 0px 0.68px 23.6px 0px #44C4A14F;
+  transform: translateY(-6px);
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.cardLeft .icon, .cardRight .icon {
+  background: rgba(255,0,0,0.06);
+  color: #ff4d4d;
+}
+
+.cardCenter .icon {
+  background: rgba(35,220,170,0.08);
+  color: #1bd8a7;
+}
+
+.cardText {
+  color: white;
+  font-size: 19px;
+  font-family: 'Inter';
+  font-weight: 300;
+  line-height: 22px;
+  max-width: 280px;
+}
+
+.cardCenterText {
+  color: #44C4A1;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1;
+  max-width: 260px;
+}
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: 1fr; }
+  .title { font-size: 32px; }
+  .kicker { font-size: 32px; }
+}
+
