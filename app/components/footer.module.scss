@@ -1,0 +1,437 @@
+.footer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+  color: #fff;
+  padding: 60px 20px;
+  border-top: 1px solid rgba(255, 156, 28, 0.15);
+}
+
+.container {
+  max-width: 1305px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.titleWrapper img {
+  width: 20px;
+  height: 20px;
+}
+.columnTitle {
+color: #FFF;
+font-family: "Bebas Neue";
+font-size: 1.5625rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  letter-spacing: 1.2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.columnSubtitle {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.featureList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+font-family: Ubuntu;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 400;
+line-height: 1.34225rem; /* 153.4% */
+  }
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.icon {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.feautureDescription {
+    color: #FFF;
+    font-family: Ubuntu;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.34225rem; /* 153.4% */
+}
+
+.descriptionBox {
+    border: 1px solid transparent;
+  border-radius: 12px; /* Теперь работает! */
+  background-image: 
+    linear-gradient(black, black), /* Цвет фона контента */
+    linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 10px;
+
+  p {
+    font-size: 12px;
+    color: #ccc;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+    color: #FFF;
+font-family: Inter;
+font-size: 0.75rem;
+font-style: italic;
+font-weight: 400;
+line-height: 1.25rem; /* 166.667% */
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.telegramButton {
+  background: linear-gradient(135deg, #ff9c1c 0%, #ffc466 100%);
+  color: #000;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 156, 28, 0.4);
+  }
+}
+
+.buttonSubtext {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.servicesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    font-size: 13px;
+    color: #ccc;
+    padding-left: 20px;
+    position: relative;
+
+    &:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #ff9c1c;
+    }
+  }
+}
+
+.checkList {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    font-size: 13px;
+    color: #ccc;
+  }
+}
+
+.alwaysOpen {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 156, 28, 0.1);
+  border: 1px solid rgba(255, 156, 28, 0.3);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 10px;
+
+  .openIcon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ff9c1c;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 12px;
+    color: #aaa;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.logoBrand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff9c1c;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.logoDescription {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ff9c1c;
+  }
+
+  .contactIcon {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+}
+
+.consultButton {
+  background: linear-gradient(135deg, #ff9c1c 0%, #ffc466 100%);
+  color: #000;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 156, 28, 0.4);
+  }
+}
+
+.consultSubtext {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+// Legal Section
+.legalSection {
+  max-width: 1305px;
+  margin: 0 auto;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 156, 28, 0.2);
+  border-bottom: 1px solid rgba(255, 156, 28, 0.2);
+}
+
+.legalContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.legalBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ff9c1c;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+.linkBlock {
+  display: flex;
+  gap: 20px;
+
+  a {
+    font-size: 12px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff9c1c;
+    }
+  }
+}
+
+.copyright {
+  font-size: 11px;
+  color: #666;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+}
+
+// Tech Stack Section
+.techStackSection {
+  max-width: 1305px;
+  margin: 40px auto 0;
+  padding: 40px 0;
+  background: rgba(255, 156, 28, 0.05);
+  border: 1px solid rgba(255, 156, 28, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.techStackLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #00c9a7;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  span {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid rgba(255, 156, 28, 0.4);
+    color: #ccc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #ff9c1c;
+      color: #ff9c1c;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 15px;
+  }
+
+  .container {
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .techStackSection {
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .legalContent {
+    gap: 20px;
+  }
+}
+
