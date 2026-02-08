@@ -1,6 +1,5 @@
 .wrapper {
   padding: 64px 20px 84px;
-  background: radial-gradient(ellipse at center, rgba(20, 16, 15, 0.8) 0%, rgba(8, 6, 6, 0.95) 100%);
   color: #fff;
 }
 
@@ -146,4 +145,37 @@ line-height: 1.80725rem; /* 88.571% */
   .cardDescription {
     font-size: 0.9rem;
   }
+}
+
+.numberBadge {
+  border: 1px solid transparent;
+	border-radius: 4px;
+	width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF9C1C;
+  font-size: 24px;
+  font-family: 'Bebas Neue', sans-serif;
+	/* Layer 1: The inner dark gradient */
+	/* Layer 2: The orange border gradient */
+	background-image:
+		linear-gradient(#0F0C09, #0F0C09),
+		linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+
+	/* Clip the first gradient to the content, and the second to the border area */
+	background-clip: padding-box, border-box;
+
+	/* Ensure the background extends to the edge of the border */
+	background-origin: border-box;
+}
+.no-wrap {
+  text-wrap-mode: nowrap;
+}
+.maxwidthNone {
+  max-width: none;
+}
+.marginNone {
+  margin: 0;
 }

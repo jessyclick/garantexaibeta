@@ -1,5 +1,5 @@
 
-import styles from "./automation.module.scss";
+import styles from "./styles/automation.module.scss";
 
 export default function AutomationSection() {
   return (

@@ -2,39 +2,32 @@ import Image from "next/image";
 import styles from "./styles/hero.module.scss";
 import CTAButton from "./CTAButton";
 
-export default function Hero() {
+export default function HeroAutomation() {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.left}>
           <h1 className={styles.title}>
-            ПРОДАЮЩИЙ КОНТЕНТ
+            Автоматизация
             <br />
-            <span className={styles.titleAccent}>ДЛЯ МАРКЕТПЛЕЙСОВ</span>
+            <span className={styles.titleAccent}>SEO-продвижения</span>
           </h1>
 
           <p className={styles.lead}>
-            Забудьте об аренде студий, поиске моделей и долгом монтаже. Мы
-            создаем контент, который повышает CTR и продажи, быстрее и дешевле
-            классического продакшена.
+            Превратите ваш сайт в машину по привлечению клиентов, которая работает 24/7 без расходов на рекламу
           </p>
 
           <div className={styles.features}>
             <div className={`${styles.featureBox} ${styles.featureBoxFirst}`}>
-              <span className={styles.check}>
-                <img src="/assets/feauture-icon.png" alt="" />
-              </span>
-              <span>Готовые видео и фото от 24 часов</span>
+              <span>Наша ИИ-система автоматически наполнит сайт сотнями SEO-статей, обеспечив вам органический рост</span>
             </div>
             <div className={`${styles.featureBox} ${styles.featureBoxSecond}`}>
-              <span className={styles.check}>
-                <img src="/assets/feauture-icon.png" alt="" />
-              </span>
-              <span>Экономия бюджета до 70% по сравнению с живой съемкой</span>
+              <span>Стабильный поток заявок из Яндекс и Google в 10 раз дешевле, чем услуги  классического SEO-агентства</span>
             </div>
           </div>
-
-          <CTAButton
+          
+          <div className="flex flex-row gap-4">
+            <CTAButton
             href="#"
             icon={
               <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,10 +35,21 @@ export default function Hero() {
               </svg>
             }
           >
-            Бесплатный демо-тест
+            Заказать услугу
           </CTAButton>
+          <CTAButton
+            href="#"
+            variant="outline"
+            icon={
+              <img src="/assets/icon_briefcase.png" alt="" />
+            }
+          >
+            Посмотреть кейсы
+          </CTAButton>
+          </div>
+          
         </div>
-
+            
         <div className={styles.right}>
           <div className={styles.device}>
             <Image

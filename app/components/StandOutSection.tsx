@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./standout.module.scss";
+import styles from "./styles/standout.module.scss";
 import CTAButton from "./CTAButton";
 
 export default function StandOutSection() {

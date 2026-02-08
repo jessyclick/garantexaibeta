@@ -1,0 +1,74 @@
+.wrapper {
+  padding: 72px 20px;
+  color: #fff;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.card {
+  display: flex;
+  column-gap: 32px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  color: #FF9C1C;
+  border-radius: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+    background-image: 
+    linear-gradient(163deg, #000 9.05%, #212121 52.54%, #000 88.01%),
+    linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box, border-box;
+}
+
+.cardTitle {
+  color: #FFF;
+font-family: "Bebas Neue";
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 112%; /* 33.6px */
+}
+
+.cardDescription {
+  color: #FFF;
+font-family: Inter;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 22.004px; /* 115.808% */
+  margin: 0;
+}

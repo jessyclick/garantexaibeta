@@ -11,6 +11,15 @@
   font-size: 22px;
   text-decoration: none;
   font-family: 'Ubuntu';
+
+  &.outline {
+    background: linear-gradient(102deg, #FF8C27 3.95%, #FFC15D 18.11%, #FF8C27 31.33%, #FFC15D 47.04%, #FF8C27 61.02%, #FFC15D 74.88%, #FF8C27 87.55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid #FF9C1C;
+    color: #FF9C1C;
+  }
 }
 
 .ctaIcon {
@@ -21,4 +30,9 @@
   height: 32px;
   background: rgba(0,0,0,0.06);
   border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .cta {
+    font-size: 14px;
+  }
 }

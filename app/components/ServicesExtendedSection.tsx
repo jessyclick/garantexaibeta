@@ -1,4 +1,4 @@
-import styles from "./servicesExtended.module.scss";
+import styles from "./styles/servicesExtended.module.scss";
 
 export default function ServicesExtendedSection() {
   const services = [

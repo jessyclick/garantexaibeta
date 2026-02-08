@@ -1,45 +1,35 @@
 import CTAButton from "./CTAButton";
-import styles from "./services.module.scss";
+import styles from "./styles/services.module.scss";
 
 export default function ServicesSectionThree() {
   return (
     <section className={styles.wrapper}>
       <div className={`${styles.container}`}>
         <div className={styles.left}>
-          <div className={styles.badge}>УСЛУГА 1:</div>
-          <h3 className={styles.heading}>ПРОДАЮЩЕЕ ВИДЕО ИЗ ФОТО</h3>
-          <p className={styles.sub}>Идеально для карточек товара WB, Ozon, Reels, Shorts.</p>
+          <div className={styles.badge}>УСЛУГА 3:</div>
+          <h3 className={styles.heading}>Видео-отзывы с AI-блогером</h3>
+          <p className={styles.sub}>Виртуальный инфлюенсер расскажет о вашем товаре лучше, чем реальный.</p>
 
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>КАК МЫ РАБОТАЕМ:</h4>
             <ol className={styles.steps}>
-                <div className={styles.lineDot}></div>
+                <div className={`${styles.lineDot} ${styles.lineDotLast}`}></div>
               <li>
                 <span className={styles.stepIndex}>1</span>
                 <div>
-                  <strong>Подготовка:</strong>
-                  <div className={styles.stepText}>Вы присылаете 3–5 фото (желательно в одном образе) + пожелания по музыке. Мы отбираем лучшие ракурсы.</div>
+                  <div className={styles.stepText}>Вы присылаете фото товара + тезисы (что сказать).</div>
                 </div>
               </li>
               <li>
                 <span className={styles.stepIndex}>2</span>
                 <div>
-                  <strong>AI-Анимация:</strong>
-                  <div className={styles.stepText}>Нейросети оживляют кадр (взгляд, блики, движение ткани, дым/пар).</div>
+                  <div className={styles.stepText}>Мы создаем аватара, пишем сценарий(~8 сек), генерируем озвучку и движения.</div>
                 </div>
               </li>
               <li>
                 <span className={styles.stepIndex}>3</span>
                 <div>
-                  <strong>Монтаж:</strong>
-                  <div className={styles.stepText}>Объединяем кадры, добавляем переходы, логотипы и CTA.</div>
-                </div>
-              </li>
-              <li>
-                <span className={styles.stepIndex}>4</span>
-                <div>
-                  <strong>Звук:</strong>
-                  <div className={styles.stepText}>Подбираем лицензионный трек под настроение бренда.</div>
+                  <div className={styles.stepText}>Блогер «держит» ваш товар и презентует его.</div>
                 </div>
               </li>
             </ol>
@@ -47,12 +37,11 @@ export default function ServicesSectionThree() {
 
           <div className={styles.pricingRow}>
             <div className={styles.pricingBox}>
-              <div className={styles.pricingTitle}>СТОИМОСТЬ</div>
-              <div className={`${styles.priceItem} ${styles.priceItemActive}`}><span>Тест-драйв: 1 демо-ролик (15 сек)</span><strong>1 500 ₽</strong></div>
-              <div className={styles.priceItem}><span>От 3 до 5 видео</span><strong>225 ₽ / сек</strong></div>
-              <div className={styles.priceItem}><span>От 5 до 15 видео</span><strong>200 ₽ / сек</strong></div>
-              <div className={styles.priceItem}><span>От 15 до 30 видео</span><strong>175 ₽ / сек</strong></div>
-              <div className={styles.priceItem}><span>30+ видео (Опт)</span><strong>150 ₽ / сек</strong></div>
+              <div className={styles.pricingTitle}>Стоимость роликов (~8 сек):</div>
+              <div className={styles.priceItem}><span>3–5 видео</span><strong> 2 250 ₽ / ролик</strong></div>
+              <div className={styles.priceItem}><span>5–15 видео</span><strong>2 000 ₽ / ролик</strong></div>
+              <div className={styles.priceItem}><span>15–30 видео</span><strong>1 750 ₽ / ролик</strong></div>
+              <div className={`${styles.priceItem} ${styles.priceItemActive}`}><span>30+ видео</span><strong>1 500 ₽ / ролик</strong></div>
             </div>
 
             <div className={styles.optionsBox}>

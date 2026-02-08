@@ -1,0 +1,122 @@
+.seoResults {
+  color: #fff;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1305px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.content {
+  z-index: 2;
+  min-width: 700px;
+}
+
+.title {
+  color: #FFF;
+    font-family: "Bebas Neue";
+    font-size: 66px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.highlight {
+  color: #FF9C1C;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.badge {
+  border: 1px solid transparent;
+	border-radius: 4px;
+	width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF9C1C;
+  font-size: 24px;
+  font-family: 'Bebas Neue', sans-serif;
+	/* Layer 1: The inner dark gradient */
+	/* Layer 2: The orange border gradient */
+	background-image:
+		linear-gradient(#0F0C09, #0F0C09),
+		linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+
+	/* Clip the first gradient to the content, and the second to the border area */
+	background-clip: padding-box, border-box;
+
+	/* Ensure the background extends to the edge of the border */
+	background-origin: border-box;
+}
+
+.textBlock {
+  flex: 1;
+}
+
+.itemTitle {
+  color: var(--White, #FFF);
+  font-family: "Bebas Neue";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.itemDescription {
+  color: #FFF;
+font-family: Inter;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 22.004px; /* 115.808% */
+}
+
+.illustration {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seoIcon {
+  width: 100%;
+  position: relative;
+  & img {
+    mix-blend-mode: lighten;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .illustration {
+    display: none;
+  }
+}

@@ -1,45 +1,38 @@
 import CTAButton from "./CTAButton";
-import styles from "./services.module.scss";
+import styles from "./styles/services.module.scss";
 
 export default function ServicesSectionTwo() {
   return (
     <section className={styles.wrapper}>
       <div className={`${styles.container} ${styles.containerTwo}`}>
         <div className={styles.left}>
-          <div className={styles.badge}>УСЛУГА 1:</div>
-          <h3 className={styles.heading}>ПРОДАЮЩЕЕ ВИДЕО ИЗ ФОТО</h3>
-          <p className={styles.sub}>Идеально для карточек товара WB, Ozon, Reels, Shorts.</p>
+          <div className={styles.badge}>УСЛУГА 2:</div>
+          <h3 className={styles.heading}>Виртуальная примерка</h3>
+          <p className={styles.sub}>Каталожная съемка без моделей, студий и визажистов.</p>
 
           <div className={styles.card}>
             <h4 className={styles.cardTitle}>КАК МЫ РАБОТАЕМ:</h4>
             <ol className={styles.steps}>
-                <div className={styles.lineDot}></div>
+              <div className={`${styles.lineDot} ${styles.lineDotTwo}`}></div>
               <li>
                 <span className={styles.stepIndex}>1</span>
                 <div>
-                  <strong>Подготовка:</strong>
-                  <div className={styles.stepText}>Вы присылаете 3–5 фото (желательно в одном образе) + пожелания по музыке. Мы отбираем лучшие ракурсы.</div>
+                  <strong>Исходники:</strong>
+                  <div className={styles.stepText}>Вы присылаете фото одежды (можно на вешалке/манекене) и, если есть, фото модели.</div>
                 </div>
               </li>
               <li>
                 <span className={styles.stepIndex}>2</span>
                 <div>
-                  <strong>AI-Анимация:</strong>
-                  <div className={styles.stepText}>Нейросети оживляют кадр (взгляд, блики, движение ткани, дым/пар).</div>
+                  <strong>Магия AI:</strong>
+                  <div className={styles.stepText}>Мы «надеваем» ваш товар на модель. Корректируем посадку, складки, тени и фактуру ткани. Результат неотличим от реального фото.</div>
                 </div>
               </li>
               <li>
                 <span className={styles.stepIndex}>3</span>
                 <div>
-                  <strong>Монтаж:</strong>
-                  <div className={styles.stepText}>Объединяем кадры, добавляем переходы, логотипы и CTA.</div>
-                </div>
-              </li>
-              <li>
-                <span className={styles.stepIndex}>4</span>
-                <div>
-                  <strong>Звук:</strong>
-                  <div className={styles.stepText}>Подбираем лицензионный трек под настроение бренда.</div>
+                  <strong>Нет модели? Не проблема!</strong>
+                  <div className={styles.stepText}>Мы сгенерируем уникальную виртуальную модель (любой пол, возраст, раса) специально под ваш бренд.</div>
                 </div>
               </li>
             </ol>
@@ -48,18 +41,33 @@ export default function ServicesSectionTwo() {
           <div className={styles.pricingRow}>
             <div className={styles.pricingBox}>
               <div className={styles.pricingTitle}>СТОИМОСТЬ</div>
-              <div className={`${styles.priceItem} ${styles.priceItemActive}`}><span>Тест-драйв: 1 демо-ролик (15 сек)</span><strong>1 500 ₽</strong></div>
-              <div className={styles.priceItem}><span>От 3 до 5 видео</span><strong>225 ₽ / сек</strong></div>
-              <div className={styles.priceItem}><span>От 5 до 15 видео</span><strong>200 ₽ / сек</strong></div>
-              <div className={styles.priceItem}><span>От 15 до 30 видео</span><strong>175 ₽ / сек</strong></div>
-              <div className={styles.priceItem}><span>30+ видео (Опт)</span><strong>150 ₽ / сек</strong></div>
+                <div className={`${styles.priceItem} ${styles.priceItemActive}`}>
+                  <div className="flex flex-col gap-2">
+                    <span className={styles.pricingItemTitle}>Тест-драйв: 1 демо-ролик (15 сек)</span>
+                    <div className={styles.stepText}>Подбор типажа (пол, возраст) + Фон + 3-5 ракурсов</div>
+                  </div>
+                  <strong>1 500 ₽</strong>
+                </div>
+                <div className={`${styles.priceItem} ${styles.priceItemActive} ${styles.priceItemActiveNext}`}>
+                  <div className="flex flex-col gap-2">
+                    <span className={styles.pricingItemTitle}>Надеть одежду на модель (Вашу или Нашу):</span>
+                  </div>
+                  <div className={styles.priceItem}><span>3–5 фото</span><strong>750 ₽ / шт</strong></div>
+                  <div className={styles.priceItem}><span>5–15 фото</span><strong>650 ₽ / шт</strong></div>
+                  <div className={styles.priceItem}><span>15–30 фото</span><strong>500 ₽ / шт</strong></div>
+                  <div className={styles.priceItem}><span>30+ фото</span><strong>375 ₽ / шт</strong></div>
+                </div>
             </div>
 
             <div className={styles.optionsBox}>
               <div className={styles.optionsTitle}>ДОПОЛНИТЕЛЬНЫЕ ОПЦИИ:</div>
-              <div className={styles.optionItem}><span>Закадровый голос (продающее описание)</span><strong>50 ₽ / сек</strong></div>
-              <div className={styles.optionItem}><span>Аккуратные субтитры</span><strong>25 ₽ / сек</strong></div>
-              <div className={styles.optionItem}><span>Наложить другую вещь/позу</span><strong>500 ₽ / шт</strong></div>
+              <div className={styles.optionItem}>
+                  <div className={styles.OptionTitleWrapper}>
+                    <img className={styles.OptionTitleIcon} src="/assets/icon_cam.png" alt="" />
+                    <span>Полноценный ролик (15 сек), где модель двигается в вашей одежде</span>
+                  </div>
+                  <strong>25 ₽ / сек</strong>
+              </div>
             </div>
           </div>
         </div>

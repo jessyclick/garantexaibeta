@@ -1,4 +1,4 @@
-import styles from "./reasons.module.scss";
+import styles from "./styles/reasons.module.scss";
 
 export default function ReasonsSection() {
   return (

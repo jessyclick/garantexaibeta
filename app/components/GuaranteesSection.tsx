@@ -1,4 +1,4 @@
-import styles from "./guarantees.module.scss";
+import styles from "./styles/guarantees.module.scss";
 
 export default function GuaranteesSection() {
   return (

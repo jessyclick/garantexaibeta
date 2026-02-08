@@ -1,5 +1,5 @@
 import CTAButton from "./CTAButton";
-import styles from "./services.module.scss";
+import styles from "./styles/services.module.scss";
 
 export default function ServicesSection() {
   return (
@@ -57,9 +57,28 @@ export default function ServicesSection() {
 
             <div className={styles.optionsBox}>
               <div className={styles.optionsTitle}>ДОПОЛНИТЕЛЬНЫЕ ОПЦИИ:</div>
-              <div className={styles.optionItem}><span>Закадровый голос (продающее описание)</span><strong>50 ₽ / сек</strong></div>
-              <div className={styles.optionItem}><span>Аккуратные субтитры</span><strong>25 ₽ / сек</strong></div>
-              <div className={styles.optionItem}><span>Наложить другую вещь/позу</span><strong>500 ₽ / шт</strong></div>
+              <div className={styles.optionItem}>
+                  <div className={styles.OptionTitleWrapper}>
+                    <img className={styles.OptionTitleIcon} src="/assets/icon_microphone.png" alt="" />
+                    <span>Закадровый голос (продающее описание)</span>
+                  </div>
+                  <strong>50 ₽ / сек</strong>
+              </div>
+              <div className={styles.optionItem}>
+                  <div className={styles.OptionTitleWrapper}>
+                    <img className={styles.OptionTitleIcon} src="/assets/icon_doc.png" alt="" />
+                    <span>Аккуратные субтитры</span>
+                  </div>
+                  <strong>25 ₽ / сек</strong>
+              </div>
+              <div className={styles.optionItem}>
+                  <div className={styles.OptionTitleWrapper}>
+                    <img className={styles.OptionTitleIcon} src="/assets/icon_clothe.png" alt="" />
+                    <span>Наложить другую вещь/позу</span>
+                  </div>
+                  <strong>500 ₽ / шт</strong>
+              </div>
+
             </div>
           </div>
         </div>

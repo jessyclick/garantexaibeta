@@ -1,0 +1,177 @@
+.resultsSection {
+  padding: 80px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.resultsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  :global(.header) {
+    margin-bottom: 48px;
+  }
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 0.2fr 0.4fr 0.4fr;
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.column {
+  border: 2px solid rgba(255, 176, 59, 0.3);
+  border-radius: 16px;
+  padding: 32px 24px;
+  background: rgba(255, 176, 59, 0.05);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 280px;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    min-height: auto;
+  }
+}
+
+.columnHeader {
+  text-transform: uppercase;
+ color: #FFF;
+font-family: "Bebas Neue";
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.beforeColumn {
+  border-color: rgba(255, 156, 28, 0.4);
+  background: rgba(255, 156, 28, 0.08);
+
+  &:hover {
+    border-color: rgba(255, 156, 28, 0.7);
+    background: rgba(255, 156, 28, 0.12);
+  }
+}
+
+.beforeHeader {
+  color: #ff9c1c;
+}
+
+.afterColumn {
+  border-color: rgba(100, 200, 200, 0.4);
+  background: rgba(100, 200, 200, 0.08);
+
+  &:hover {
+    border-color: rgba(100, 200, 200, 0.7);
+    background: rgba(100, 200, 200, 0.12);
+  }
+}
+
+.afterHeader {
+  color: #64c8c8;
+}
+
+.metricsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.metricItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.metricIcon {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(100, 100, 120, 0.2);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.metricLabel {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #b0b0c0;
+  text-transform: uppercase;
+}
+
+.compareMetric {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.compareIcon {
+  font-size: 36px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.beforeColumn .compareIcon {
+  background: rgba(255, 156, 28, 0.2);
+}
+
+.afterColumn .compareIcon {
+  background: rgba(100, 200, 200, 0.2);
+}
+
+.compareContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.compareValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.beforeColumn .compareValue {
+  color: #ff9c1c;
+}
+
+.afterColumn .compareValue {
+  color: #64c8c8;
+}
+
+.compareLabel {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #d0d0d8;
+}

@@ -1,6 +1,5 @@
 .wrapper {
   padding: 72px 20px;
-  background: radial-gradient(ellipse at center, rgba(20,16,15,0.75) 0%, rgba(8,6,6,0.95) 100%);
   color: #fff;
 }
 
@@ -16,14 +15,15 @@
 
 .kicker {
   display: block;
-  color: rgba(255,255,255,0.08);
-  font-size: 48px;
+  color: #343434;
+  font-size: 100px;
+  font-family: 'Kurut', sans-serif;
   margin-bottom: 6px;
 }
 
 .title {
   font-size: 66px;
-  line-height: 1;
+  line-height: 0.8;
   font-family: 'Bebas Neue', sans-serif;
   margin: 0;
   font-weight: 400;

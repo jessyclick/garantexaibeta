@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./header.module.scss";
+import styles from "./styles/header.module.scss";
 
 type Props = {
   href: string;
