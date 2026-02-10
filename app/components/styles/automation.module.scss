@@ -204,6 +204,7 @@
 .calloutIcon {
 	font-size: 24px;
 	flex-shrink: 0;
+	max-width: 24px;
 }
 
 .calloutText {
@@ -352,7 +353,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background: #ffb03b;
+	background: linear-gradient(117deg, #FF9C1C 7.84%, #FFCB78 28.49%, #FF9C1C 91.05%, #FFCB78 111.27%, #FF9C1C 129.74%);
 	color: #000;
 	font-weight: 800;
 }

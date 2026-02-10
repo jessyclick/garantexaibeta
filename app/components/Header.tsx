@@ -83,6 +83,11 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
+          <div className={styles.burgerWrapper}>
+            <div className={styles.burgerLine}></div>
+            <div className={styles.burgerLine}></div>
+            <div className={styles.burgerLine}></div>
+          </div>
           <Link href="#" className={styles.cta}>
             <span className={styles.ctaIcon} aria-hidden>
               <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -294,7 +294,7 @@
 	.card, .pricingBox, .optionsBox {
 		padding: 18px 22px;
 	}
-	.cardTitle {
+	.cardTitle, .pricingTitle, .optionsTitle {
 		font-size: 20px
 	}
 	.steps li strong {
@@ -303,9 +303,24 @@
 	.stepText {
 		font-size: 14px;
 	}
-
+	.stepIndex{
+		background: linear-gradient(117deg, #FF9C1C 7.84%, #FFCB78 28.49%, #FF9C1C 91.05%, #FFCB78 111.27%, #FF9C1C 129.74%);
+		border-radius: 100px;
+	}
 	.preview {
 		height: 260px;
+	}
+	.pricingBox {
+		flex: auto;
+	}
+	.priceItem {
+		font-size: 14px;
+	}
+	.optionItem strong {
+		text-wrap-mode: nowrap;
+	}
+	.priceItemActiveNextTwo .priceItem {
+		padding: .6rem 0rem;
 	}
 }
 

@@ -42,13 +42,13 @@ export default function ServicesSectionTwo() {
             <div className={styles.pricingBox}>
               <div className={styles.pricingTitle}>СТОИМОСТЬ</div>
                 <div className={`${styles.priceItem} ${styles.priceItemActive}`}>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 max-w-[220px] sm:max-w-none">
                     <span className={styles.pricingItemTitle}>Тест-драйв: 1 демо-ролик (15 сек)</span>
                     <div className={styles.stepText}>Подбор типажа (пол, возраст) + Фон + 3-5 ракурсов</div>
                   </div>
                   <strong>1 500 ₽</strong>
                 </div>
-                <div className={`${styles.priceItem} ${styles.priceItemActive} ${styles.priceItemActiveNext}`}>
+                <div className={`${styles.priceItem} ${styles.priceItemActive} ${styles.priceItemActiveNext } ${styles.priceItemActiveNextTwo}`}>
                   <div className="flex flex-col gap-2">
                     <span className={styles.pricingItemTitle}>Надеть одежду на модель (Вашу или Нашу):</span>
                   </div>

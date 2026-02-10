@@ -84,7 +84,7 @@ const SeoAutomation = () => {
                     }
                   >
                     Получить консультацию
-                  </CTAButton>
+            </CTAButton>
       </div>
     </section>
   );

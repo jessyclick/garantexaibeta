@@ -2,6 +2,9 @@ import Image from "next/image";
 import styles from "./styles/hero.module.scss";
 import CTAButton from "./CTAButton";
 
+// В вашей странице:
+
+
 export default function HeroAutomation() {
   return (
     <section className={styles.hero}>

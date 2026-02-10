@@ -15,12 +15,14 @@ export default function AutomationSection() {
 
         <div className={styles.right}>
           <h2>
-            АВТОМАТИЗАЦИЯ ДЛЯ<br />
-            <span>КРУПНЫХ МАГАЗИНОВ</span>
+            
+            <span>АВТОМАТИЗАЦИЯ ДЛЯ<br />КРУПНЫХ МАГАЗИНОВ</span>
           </h2>
 
           <div className={styles.calloutBox}>
-            <span className={styles.calloutIcon}>📋</span>
+            <span className={styles.calloutIcon}>
+              <img src="/assets/icon_docx.png" alt="" />
+            </span>
             <p className={styles.calloutText}>У вас сотни артикулов? Мы настроим конвейер.</p>
           </div>
 

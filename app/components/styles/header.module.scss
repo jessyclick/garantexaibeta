@@ -8,25 +8,6 @@
   width: 100vw;
 }
 
-.inner {
-  width: 100%;
-  max-width: 1304px;
-  background: #000000;
-  color: #f7f7f7;
-  border-radius: 40px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  box-shadow: 0px 4px 24.4px 0px #A05C0440;
-  border: 1px solid transparent;
-  border-radius: 12px; /* Теперь работает! */
-  background-image: 
-    linear-gradient(black, black), /* Цвет фона контента */
-    linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box, border-box;
-}
 
 .left {
   display: flex;
@@ -56,7 +37,7 @@
 
 .nav {
   display: flex;
-  gap: 14px;
+  gap: 2px;
   align-items: center;
   flex: 1 1 auto;
   justify-content: center;
@@ -126,9 +107,57 @@
   align-items: center;
   justify-content: center;
 }
-
+.burgerWrapper {
+  display: none;
+  border-radius: 100px;
+  background: linear-gradient(153deg, #281F18 0%, #3D3026 44.07%, #281F18 83.33%);
+}
+.burgerLine {
+  width: 16px;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 2px;
+}
 @media (max-width: 900px) {
   .nav { display: none; }
-  .inner { padding: 8px 12px; }
+  .inner { 
+    padding: 8px 12px; 
+    width: 100%;
+  }
+  .actions {
+    justify-content: flex-end;
+  }
+  .left, .cta { display: none;}
+  .burgerWrapper {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+        justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+.inner {
+  width: 100%;
+  max-width: 1304px;
+  background: #000000;
+  color: #f7f7f7;
+  border-radius: 40px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0px 4px 24.4px 0px #A05C0440;
+  border: 1px solid transparent;
+  border-radius: 12px; /* Теперь работает! */
+  background-image: 
+    linear-gradient(black, black), /* Цвет фона контента */
+    linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+}
 }
 
