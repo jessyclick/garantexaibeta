@@ -146,20 +146,20 @@ export default function Footer() {
       <div className={styles.techStackSection}>
         <div className={styles.techStackLabel}>НАШ ТЕХНИЧЕСКИЙ СТЕК:</div>
         <div className={styles.techStack}>
-          <span>[Automation]</span>
-          <span>[Make]</span>
-          <span>[N8N]</span>
-          <span>[VIBE CODING]</span>
-          <span>[Cursor]</span>
-          <span>[AI Studio]</span>
-          <span>[V0]</span>
-          <span>[Python]</span>
-          <span>📺[ВИДЕО]</span>
-          <span>[Sora 2]</span>
-          <span>[Veo 3]</span>
-          <span>[RunWay]</span>
-          <span>[Kling]</span>
-          <span>[Pika]</span>
++          <span>Automation</span>
++          <span>Make</span>
++          <span>N8N</span>
++          <span>VIBE CODING</span>
++          <span>Cursor</span>
++          <span>AI Studio</span>
++          <span>V0</span>
++          <span>Python</span>
++          <span>📺 ВИДЕО</span>
++          <span>Sora 2</span>
++          <span>Veo 3</span>
++          <span>RunWay</span>
++          <span>Kling</span>
++          <span>Pika</span>
         </div>
       </div>
     </footer>
