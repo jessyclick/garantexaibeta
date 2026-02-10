@@ -6,19 +6,19 @@ export default function ServicesExtendedSection() {
       id: 1,
       title: "ВЕДЕНИЕ СОЦСЕТЕЙ",
       description: "автоматизированный SMM и автопостинг.",
-      image: "/assets/services_1.png",
+      image: "/assets/soc-media.png",
     },
     {
       id: 2,
       title: "ВЕДЕНИЕ МЕДИА-ПЛАТФОРМ",
       description: "экспертные публикации на ключевых ресурсах.",
-      image: "/assets/services_2.png",
+      image: "/assets/soc-platform.png",
     },
     {
       id: 3,
       title: "НОВОСТИ НА АВТОПИЛОТЕ",
       description: "мониторинг, ремонт и публикация до 10 новостей в день.",
-      image: "/assets/services_3.png",
+      image: "/assets/news.png",
     },
   ];
 
