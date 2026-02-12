@@ -87,14 +87,15 @@ line-height: 101.025%; /* 2.0205rem */
 
 .cardText {
   color: rgba(255,255,255,0.9);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4;
   max-width: 300px;
 }
 
 .cardNote {
-  color: rgba(255,255,255,0.75);
-  font-size: 14px;
+  color: white;
+  font-size: 20px;
+  line-height: 1.2em;
   margin-top: 10px;
   max-width: 320px;
 }
@@ -104,4 +105,5 @@ line-height: 101.025%; /* 2.0205rem */
   .title { font-size: 32px; }
   .kicker { font-size: 32px; }
   .card { min-height: auto; }
+  .cardNote, .cardText {font-size: 14px;}
 }

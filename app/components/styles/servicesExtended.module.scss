@@ -135,12 +135,13 @@ line-height: 1.80725rem; /* 88.571% */
   }
 
   .imageWrapper {
-    height: 200px;
+    height: auto;
     margin-bottom: 16px;
   }
 
   .cardTitle {
-    font-size: 1.25rem;
+    font-size: 25px;
+    max-width: none;
   }
 
   .cardDescription {

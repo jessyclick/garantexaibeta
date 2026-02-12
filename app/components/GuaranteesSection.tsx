@@ -7,8 +7,9 @@ export default function GuaranteesSection() {
         <div className={styles.header}>
           <span className={styles.kicker}>#Условия</span>
           <h2>
-            ГАРАНТИИ И УСЛОВИЯ 
-            <span>РАБОТЫ</span>
+            
+            <span>ГАРАНТИИ И УСЛОВИЯ </span>
+              РАБОТЫ
           </h2>
           <p className={styles.subtitle}>Мы берем качество на себя:</p>
         </div>
@@ -21,7 +22,7 @@ export default function GuaranteesSection() {
               Для видео: 1 бесплатная правка на каждые 10 секунд хронометража.
             </p>
             <p className={styles.cardNote}>
-              Например: в ролике 30 сек можно бесплатно изменить 3 кадра.
+               <strong>Например:</strong> в ролике 30 сек можно бесплатно изменить 3 кадра.
             </p>
           </article>
 
@@ -40,8 +41,10 @@ export default function GuaranteesSection() {
             <h3 className={styles.cardTitle}>ЮРИДИЧЕСКАЯ ЧИСТОТА:</h3>
             <p className={styles.cardText}>Работаем по договору.</p>
             <p className={styles.cardNote}>
-              Используем музыку без нарушения авторских прав. Конфиденциальность
-              (NDA при необходимости).
+              Используем музыку без нарушения авторских прав. 
+            </p>
+            <p className={styles.cardNote}>
+              Конфиденциальность (NDA при необходимости).
             </p>
           </article>
         </div>
