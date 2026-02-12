@@ -52,8 +52,14 @@ body {
 .bg-overlay {
   background-image: url(/assets/bg-overlay.png);
   background-repeat: no-repeat;
-    object-fit: cover;
-    background-size: cover;
+  object-fit: cover;
+  background-size: cover;
+  @media (max-width: 768px) {
+    background-image: url(/assets/mobile-bg.jpg);
+    background-repeat: repeat-y;
+            background-position-y: top;
+        border-radius: 32px;
+  }
 }
 
 h2 {
@@ -88,4 +94,7 @@ h2 span {
     background-origin: border-box;
     background-clip: padding-box, border-box;
     border: 1px solid #0000;
+}
+section {
+  overflow: hidden;
 }

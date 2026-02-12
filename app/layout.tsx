@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {Ubuntu, Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 
 
 const ubuntu = Ubuntu({
@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <Footer />
+        
       </body>
     </html>
   );

@@ -8,6 +8,8 @@ import GuaranteesSection from "./components/GuaranteesSection";
 import StandOutSection from "./components/StandOutSection";
 import ServicesExtendedSection from "./components/ServicesExtendedSection";
 import { Reveal } from "./components/reveal";
+import Footer from "./components/Footer";
+
 
 export default function Home() {
   return (
@@ -45,6 +47,7 @@ export default function Home() {
   <Reveal>
     <ServicesExtendedSection />
   </Reveal>
+  <Footer />
 </div>
     </div>
   );

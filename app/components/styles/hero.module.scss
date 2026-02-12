@@ -5,6 +5,10 @@
       background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 900px) {
+      background-image: url(/assets/hero-mobile-bg.png);
+    }
 }
 
 .container {

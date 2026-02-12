@@ -44,7 +44,10 @@ export default function Footer() {
 
         {/* Center Column */}
         <div className={styles.column}>
-          <h3 className={styles.columnTitle}>⚡ УСЛУГИ И ПРОДУКТЫ</h3>
+          <div className={styles.titleWrapper}>
+            <img src="/assets/icon_grom.png" alt="" />
+            <h3 className={styles.columnTitle}>Услуги и продукты</h3>
+            </div>
 
           <ul className={styles.servicesList}>
             <li>ИИ-Аватар (цифровой дворник)</li>
@@ -61,7 +64,10 @@ export default function Footer() {
 
         <div className={styles.column}>
 
-          <h3 className={styles.columnTitle}>👥 ДЛЯ КОГО РАБОТАЕМ</h3>
+          <div className={styles.titleWrapper}>
+            <img src="/assets/icon_team.png" alt="" />
+            <h3 className={styles.columnTitle}>Для кого работаем</h3>
+            </div>
 
           <ul className={styles.checkList}>
             <li>✓ Малый и средний бизнес</li>
@@ -73,26 +79,25 @@ export default function Footer() {
           </ul>
 
           <div className={styles.alwaysOpen}>
-            <span className={styles.openIcon}>🔓</span>
-            <div>
+            <span className={styles.openIcon}>
+              <img src="/assets/icon_footer-star.png" alt="" />
+            </span>
+            
               <h4>Мы всегда открыты</h4>
               <p>Для всех, кто хочет стать продуктивней, посвятить себя действительно важным интеллектуальным задачам и свободить время, делегировав рутину алгоритмам.</p>
-            </div>
+            
           </div>
         </div>
 
         {/* Right Column */}
         <div className={styles.column}>
           <div className={styles.logo}>
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="30" cy="30" r="29" stroke="#FF9C1C" strokeWidth="2"/>
-              <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="#FF9C1C" fontSize="24" fontWeight="bold">🚀</text>
-            </svg>
-            <h2 className={styles.logoBrand}>GARANTEXAI</h2>
+            <img src="/assets/footer-logo.png" alt="" />
           </div>
 
           <p className={styles.logoDescription}>
-            🚀 AI-Агентство полного цикла для бизнеса<br/>
+            <strong>🚀 AI-Агентство полного цикла для бизнеса</strong>
+            <br/>
             Вы добиваете поддержник и верный друг в мире искусственного интеллекта.
           </p>
 
@@ -100,22 +105,35 @@ export default function Footer() {
 
           <div className={styles.contactBlock}>
             <a href="mailto:garantexai@gmail.com" className={styles.contactItem}>
-              <span className={styles.contactIcon}>✉️</span>
+              <span className={styles.contactIcon}>
+                <img src="/assets/icon_mail.png" alt="" />
+              </span>
               garantexai@gmail.com
             </a>
             <a href="https://twitter.com/Garantex_ai" className={styles.contactItem}>
-              <span className={styles.contactIcon}>🐦</span>
+              <span className={styles.contactIcon}>
+                <img src="/assets/icon_telegram.png" alt="" />
+              </span>
               @Garantex_ai
             </a>
             <div className={styles.contactItem}>
-              <span className={styles.contactIcon}>⏰</span>
+              <span className={styles.contactIcon}>
+                <img src="/assets/icon_time.png" alt="" />
+              </span>
               08:00 – 22:00 (МСК)
             </div>
+            <div className={styles.contactItem}>
+              <span className={styles.contactIcon}>
+                <img src="/assets/icon_calendar.png" alt="" />
+              </span>
+              БЕЗ ВЫХОДНЫХ (Понедельник — Воскресенье)
+            </div>
+            
           </div>
 
           <button className={styles.consultButton}>
-            ✨ Обсудить проект
-            <span className={styles.consultSubtext}>(бесплатная консультация)</span>
+            Обсудить проект
+            <span className={styles.consultSubtext}>(Бесплатная консультация)</span>
           </button>
         </div>
       </div>
@@ -146,6 +164,8 @@ export default function Footer() {
       <div className={styles.techStackSection}>
         <div className={styles.techStackLabel}>НАШ ТЕХНИЧЕСКИЙ СТЕК:</div>
         <div className={styles.techStack}>
+            <div className={styles.techStackLinear}></div>
+            <div className={`${styles.techStackLinear} ${styles.LinearRight}`}></div>
             <span>Automation</span>
             <span>Make</span>
             <span>N8N</span>

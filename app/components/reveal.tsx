@@ -9,7 +9,7 @@ export const Reveal = ({
 }: { 
   children: React.ReactNode, 
   delay?: number,
-  threshold?: number 
+  threshold?: number
 }) => {
   return (
     <motion.div
