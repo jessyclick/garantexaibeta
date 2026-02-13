@@ -1,0 +1,109 @@
+.section {
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+
+  
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  :global(.header) {
+    margin-bottom: 24px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0 0 60px 0;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+.platformsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.platformCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+
+
+  @media (max-width: 640px) {
+    padding: 24px 16px;
+  }
+}
+
+.iconWrapper {
+  width: auto;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.platformName {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  color: #fff;
+  transition: color 0.3s ease;
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+}
+
+.platformDescription {
+  font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 19px;
+line-height: 22px;
+letter-spacing: 0%;
+text-align: center;
+
+
+  @media (max-width: 640px) {
+    font-size: 13px;
+  }
+}

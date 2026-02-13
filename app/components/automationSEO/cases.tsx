@@ -67,7 +67,9 @@ export default function CaseSection({ data = defaultData }: Props) {
             <div className={styles.metricsColumn}>
               {data.before.map((metric, index) => (
                 <div key={index} className={styles.compareMetric}>
-                  <div className={styles.compareIcon}>📊</div>
+                  <div className={styles.compareIcon}>
+                    <img src="/assets/icon_ydislike.png" alt="" />
+                  </div>
                   <div className={styles.compareContent}>
                     <div className={styles.compareValue}>{metric.value}</div>
                     <div className={styles.compareLabel}>{metric.label}</div>
@@ -85,7 +87,9 @@ export default function CaseSection({ data = defaultData }: Props) {
             <div className={styles.metricsColumn}>
               {data.after.map((metric, index) => (
                 <div key={index} className={styles.compareMetric}>
-                  <div className={styles.compareIcon}>📊</div>
+                  <div className={styles.compareIcon}>
+                    <img src="/assets/icon_blike.png" alt="" />
+                  </div>
                   <div className={styles.compareContent}>
                     <div className={styles.compareValue}>{metric.value}</div>
                     <div className={styles.compareLabel}>{metric.label}</div>

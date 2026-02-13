@@ -139,24 +139,36 @@ export default function Footer() {
       </div>
 
       {/* Legal Section */}
+
       <div className={styles.legalSection}>
-        <div className={styles.legalContent}>
-          <div className={styles.legalBlock}>
-            <h4>ЮРИДИЧЕСКИЕ ДАННЫЕ</h4>
-            <p>ИНН: 7807328843770</p>
-            <p>ОГРН/ОГРИП: 3237847003023665</p>
+        <div className={styles.legalGrid}>
+          <div className={`${styles.legalBlock} ${styles.highlightLeft}`}>
+            <div className={styles.blockIcon}>
+              <img src="/assets/icon_add-footer.png" alt="" />
+            </div>
+            <div className={styles.blockContent}>
+              <h4 className={styles.blockTitle}>Сохранить проект в папку телеграмм</h4>
+              <p className={styles.blockSubtitle}>(Подписка на всю экосистему)</p>
+            </div>
           </div>
 
-          <div className={styles.linkBlock}>
-            <Link href="/privacy">Политика конфиденциальности</Link>
-            <Link href="/offer">Договор оферты</Link>
-            <Link href="/sitemap">Карта сайта</Link>
+          <div className={`${styles.legalBlock} ${styles.highlightCenter}`}>
+            <div className={styles.blockIcon}>
+              <img src="/assets/icon_green.png" alt="" />
+            </div>
+            <div className={styles.blockContent}>
+              <h4 className={styles.blockTitle}>Оказываем услуги официально по договору</h4>
+              <p className={styles.blockSubtitle}>Более 50 реализованных проектов.</p>
+            </div>
           </div>
-        </div>
 
-        <div className={styles.copyright}>
-          © 2023-2026 GarantexAI. ВСЕ ПРАВА ЗАЩИЩЕНЫ<br/>
-          Агентству ИИ, разработка ИИ-решений для бизнес процессов.
+          <div className={`${styles.legalBlock} ${styles.highlightRight}`}>
+            <div className={styles.legalDataTitle}>ЮРИДИЧЕСКИЕ ДАННЫЕ</div>
+            <div className={styles.legalNumbers}>
+              <div><strong>ИНН:</strong> 780732984377</div>
+              <div><strong>ОГРН/ОГРНИП:</strong> 323784700302365</div>
+            </div>
+          </div>
         </div>
       </div>
 

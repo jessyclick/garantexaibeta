@@ -1,0 +1,201 @@
+.seoAutomation {
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.subtitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffa500;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.description {
+  text-align: center;
+  color: #d4af37;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.plan {
+  border-radius: 16px;
+  padding: 30px;
+  position: relative;
+}
+
+
+.planTitle {
+  color: #38DDCC;
+  text-align: center;
+  font-family: kurut;
+  font-size: 50.88px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.plan.start .planTitle {
+  color: #2E2E2E;
+}
+
+.plan.business .planTitle {
+  color: #00ff99;
+}
+
+.plan.corp .planTitle {
+  color: #FF9C1C;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding: 12px;
+  color: #999999;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 12px;
+background: linear-gradient(90deg, rgba(52, 73, 73, 0.20) 0%, rgba(99, 144, 156, 0.20) 100%);
+}
+
+.featuresList li.checked {
+  color: #ffffff;
+  border-radius: 12px;
+background: linear-gradient(90deg, #344949 0%, #63909C 100%);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #666666;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featuresList li.checked .checkbox {
+  background-image: url(/assets/tariffs_check.png);
+  background-size: contain;
+  border: none;
+}
+
+.featuresList li.checked .checkbox::after {
+  content: '';
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.price {
+  color: #FFF;
+  text-align: center;
+  font-family: "Bebas Neue";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.volute {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.support {
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 30px;
+  margin-top: 24px;
+  max-width: 670px;
+}
+
+.consultationBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+  color: #000000;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.consultationBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 165, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .title,
+  .subtitle {
+    font-size: 32px;
+  }
+
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .seoAutomation {
+    padding: 40px 20px;
+  }
+}
+.forWho {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.004px;
+  span {
+    font-weight: 700;
+    
+  }
+}

@@ -1,0 +1,119 @@
+.section {
+  padding: 72px 20px;
+  
+  color: #fff;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.cardPreview {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(3,218,198,0.12), rgba(255,150,40,0.12));
+  flex-shrink: 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  background-blend-mode: overlay;
+}
+
+.cardBadge {
+        background: linear-gradient(101.53deg, #FF9C1C 3.95%, #FFCB78 18.11%, #FF9C1C 61.02%, #FFCB78 74.88%, #FF9C1C 87.55%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: Bebas Neue;
+font-style: Bold;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+margin-bottom: 18px;
+
+}
+
+.cardBody {
+  flex: 1 1 auto;
+  padding: 25px 40px;
+  background-image: linear-gradient(163deg, #0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+    border-radius: 20px;
+        height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cardTitle {
+  margin: 0 0 6px 0;
+  color: var(--White, #FFF);
+font-family: "Bebas Neue";
+font-size: 37px;
+font-style: normal;
+line-height: 38px; /* 102.703% */
+}
+
+.cardText {
+  margin: 0 0 32px 0;
+font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 19px;
+line-height: 22px;
+letter-spacing: 0%;
+
+}
+
+.underText {
+color: #FFF;
+text-align: center;
+font-family: Inter;
+font-size: 19px;
+font-style: normal;
+font-weight: 500;
+line-height: 22.004px; /* 115.808% */
+max-width: 550px;
+}
+.cta {
+  display: inline-block;
+  background: linear-gradient(180deg, #ffd39a, #ff9800);
+  color: #111;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(255, 140, 40, 0.12);
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardPreview {
+    width: 120px;
+    height: 90px;
+  }
+}

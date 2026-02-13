@@ -37,15 +37,17 @@
 }
 
 .column {
-  border: 2px solid rgba(255, 176, 59, 0.3);
-  border-radius: 16px;
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid #0000;
   padding: 32px 24px;
-  background: rgba(255, 176, 59, 0.05);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  min-height: 280px;
+  gap: 0px;
+  border-radius: 32px;
+  
   justify-content: space-between;
 
   @media (max-width: 1024px) {
@@ -64,12 +66,13 @@ line-height: normal;
 }
 
 .beforeColumn {
-  border-color: rgba(255, 156, 28, 0.4);
-  background: rgba(255, 156, 28, 0.08);
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid #0000;
 
   &:hover {
-    border-color: rgba(255, 156, 28, 0.7);
-    background: rgba(255, 156, 28, 0.12);
+
   }
 }
 
@@ -78,12 +81,12 @@ line-height: normal;
 }
 
 .afterColumn {
-  border-color: rgba(100, 200, 200, 0.4);
-  background: rgba(100, 200, 200, 0.08);
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid #0000;
 
   &:hover {
-    border-color: rgba(100, 200, 200, 0.7);
-    background: rgba(100, 200, 200, 0.12);
   }
 }
 
@@ -111,7 +114,6 @@ line-height: normal;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(100, 100, 120, 0.2);
   border-radius: 8px;
   flex-shrink: 0;
 }
@@ -126,14 +128,14 @@ line-height: normal;
 
 .compareMetric {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 }
 
 .compareIcon {
   font-size: 36px;
-  width: 56px;
-  height: 56px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,17 +144,19 @@ line-height: normal;
 }
 
 .beforeColumn .compareIcon {
-  background: rgba(255, 156, 28, 0.2);
+  
 }
 
 .afterColumn .compareIcon {
-  background: rgba(100, 200, 200, 0.2);
+  
 }
 
 .compareContent {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 4px;
+  justify-items: center;
+  align-items: center;
 }
 
 .compareValue {

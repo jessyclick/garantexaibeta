@@ -1,0 +1,244 @@
+.section {
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  :global(.header) {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  :global(.title) {
+    font-size: 56px;
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 2px solid rgba(255, 156, 28, 0.3);
+  border-radius: 20px;
+  background: rgba(255, 156, 28, 0.02);
+  padding: 32px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 12px;
+  }
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+
+  @media (max-width: 968px) {
+    font-size: 13px;
+  }
+}
+
+.tableRow {
+  border-bottom: 1px solid rgba(255, 156, 28, 0.2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:first-child {
+    .tableCell {
+      padding-top: 0;
+    }
+  }
+}
+
+.tableCell {
+  padding: 24px;
+  vertical-align: top;
+  border-right: 1px solid rgba(255, 156, 28, 0.15);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &.firstColumn {
+    font-weight: 600;
+    color: #fff;
+    min-width: 120px;
+    position: sticky;
+    left: 0;
+    background: rgba(10, 10, 10, 0.8);
+    z-index: 10;
+
+    @media (max-width: 968px) {
+      min-width: 100px;
+      padding: 16px;
+    }
+  }
+
+  &.headerRow {
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+
+  &.badge-orange {
+    @media (max-width: 968px) {
+      padding: 16px 12px;
+    }
+  }
+
+  &.badge-red {
+    &.firstColumn {
+      .metricTitle {
+        @media (max-width: 968px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &.badge-green {
+    &.firstColumn {
+      .metricTitle {
+        @media (max-width: 968px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 12px 8px;
+    font-size: 12px;
+
+    &.firstColumn {
+      min-width: 80px;
+    }
+  }
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.tariffTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+
+  @media (max-width: 968px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+    white-space: normal;
+  }
+}
+
+.badgeText {
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+
+  @media (max-width: 640px) {
+    font-size: 10px;
+  }
+}
+
+/* Цвета для заголовков */
+.badge-orange .tariffTitle {
+  background: linear-gradient(101.53deg, #ff9c1c 3.95%, #f9b953 25.99%, #ff9c1c 61.02%, #ffc466 74.88%, #ff9c1c 87.55%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-red .tariffTitle {
+  color: #ff4444;
+}
+
+.badge-green .tariffTitle {
+  color: #34d399;
+}
+
+.metricLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  justify-content: center;
+}
+
+.metricTitle {
+  font-family: Inter;
+font-weight: 400;
+
+font-size: 17px;
+
+line-height: 22px;
+
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
+}
+
+.metricValue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ccc;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
+}
+
+.icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  min-height: 20px;
+
+  .badge-green & {
+    color: #34d399;
+  }
+
+  .badge-red & {
+    color: #ff4444;
+  }
+}
+
+.text {
+    font-family: Inter;
+font-weight: 400;
+font-size: 17px;
+line-height: 22px;
+}

@@ -56,7 +56,7 @@ export default function HeroAutomation() {
         <div className={styles.right}>
           <div className={styles.device}>
             <Image
-              src="/assets/hero-element.png"
+              src="/assets/automation-hero.png"
               alt="Hero"
               width={800}
               height={520}

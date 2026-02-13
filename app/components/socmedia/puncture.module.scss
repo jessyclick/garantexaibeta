@@ -1,0 +1,153 @@
+.punctureSection {
+  padding: 80px 20px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  align-items: start;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.imageColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+
+  @media (max-width: 968px) {
+    min-height: 300px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 620px;
+
+  :global(.header) {
+    margin-bottom: 12px;
+  }
+}
+
+.mainFeature {
+  grid-column: 1 / -1;
+  
+}
+
+.mainHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mainIcon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.featureBox {
+  	border: 1px solid transparent;
+	border-radius: 24px;
+	padding:24px;
+
+	/* Layer 1: The inner dark gradient */
+	/* Layer 2: The orange border gradient */
+	background-image:
+		linear-gradient(#0F0C09, #0F0C09),
+		linear-gradient(124.35deg, #FE7905 3.69%, #2A0C00 45.84%, #A93301 98.89%);
+
+	/* Clip the first gradient to the content, and the second to the border area */
+	background-clip: padding-box, border-box;
+
+	/* Ensure the background extends to the edge of the border */
+	background-origin: border-box;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.secondaryFeatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.secondaryFeature {
+  
+
+  @media (max-width: 968px) {
+    min-height: auto;
+  }
+}
+
+.iconWrapper {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+}
+
+.featureTitle {
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  text-wrap-mode: nowrap;
+  letter-spacing: -0.02em;
+}
+
+.featureDescription {
+  font-size: 19px;
+  line-height: 1.6;
+  color: white;
+  margin: 0;
+  flex-grow: 1;
+  font-family: Inter, sans-serif;
+}
+
+.secondDesc {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

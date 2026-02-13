@@ -81,6 +81,9 @@
 .featureBoxFirst {
   max-width: 240px;
 }
+.featureBoxThird {
+  max-width: 340px;
+}
 .featureBoxSecond {
   max-width: 300px;
 }
@@ -142,3 +145,7 @@
   .features { justify-content: center; flex-direction: column; }
 }
 
+.Experthero .title {
+  font-size: 82px;
+  text-wrap-mode: nowrap;
+}

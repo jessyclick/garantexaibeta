@@ -1,0 +1,145 @@
+.faqSection {
+  padding: 100px 20px;
+  color: #fff;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.faqContent {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    gap: 12px;
+  }
+}
+
+.faqItem {
+  background-image: linear-gradient(black, black), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 1px solid #0000;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &.active {
+    border-color: #ff9900;
+    background-color: rgba(255, 153, 0, 0.05);
+  }
+
+  &:hover {
+    border-color: rgba(255, 153, 0, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 12px;
+  }
+}
+
+.faqQuestion {
+  width: 100%;
+  padding: 24px 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 18px 20px;
+  }
+}
+
+.questionText {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.4;
+  color: #fff;
+  transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.toggleIcon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(128deg, #FF9C1C 35.08%, #FFCB78 92.5%, #FF9C1C 111.8%);
+  color: #0a0a0a;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .faqItem.active & {
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.faqAnswer {
+  padding: 0 32px 24px 32px;
+  animation: slideDown 0.3s ease;
+  border-top: 1px solid rgba(255, 153, 0, 0.2);
+
+  @media (max-width: 768px) {
+    padding: 0 20px 18px 20px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    margin-top: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
