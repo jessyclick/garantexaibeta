@@ -18,6 +18,9 @@
   line-height: 0.7;
   font-family: 'Kurut', sans-serif;
   margin-bottom: 6px;
+  @media (max-width: 768px) {
+    font-size: 45px;
+  }
 }
 
 .title {
@@ -26,6 +29,9 @@
   font-family: 'Bebas Neue', sans-serif;
   margin: 0;
   font-weight: 400;
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 }
 
 .accent {

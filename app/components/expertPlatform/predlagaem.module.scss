@@ -27,7 +27,9 @@
   border-radius: 12px;
   position: relative;
   transition: all 0.3s ease;
-
+  @media (max-width: 768px) {
+    column-gap: 20px;
+  }
   &:hover {
     transform: translateY(-4px);
   }
@@ -50,6 +52,9 @@ font-size: 30px;
 font-style: normal;
 font-weight: 400;
 line-height: 112%; /* 33.6px */
+@media (max-width: 968px) {
+    font-size: 25px;
+  }
 }
 
 .cardDescription {
@@ -60,6 +65,9 @@ font-style: normal;
 font-weight: 400;
 line-height: 22.004px; /* 115.808% */
   margin: 0;
+  @media (max-width: 968px) {
+    font-size: 15px;
+  }
 }
 .underText {
   color: #FFF;
@@ -72,5 +80,8 @@ line-height: 22.004px; /* 115.808% */
   line-height: 22.004px; /* 100.016% */
   span {
     color: #FFBC52;
+  }
+  @media (max-width: 640px) {
+    font-size: 15px;
   }
 }

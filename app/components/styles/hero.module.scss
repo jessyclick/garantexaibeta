@@ -148,4 +148,8 @@
 .Experthero .title {
   font-size: 82px;
   text-wrap-mode: nowrap;
+  @media (max-width: 900px) {
+    font-size: 36px;
+    text-align: left;
+  }
 }

@@ -56,14 +56,24 @@ export default function WhyDropBlogsSection({ cards = defaultCards }: Props) {
         <div className={styles.cardsGrid}>
           {cards.map((card, index) => (
             <div key={index} className={styles.card}>
-              <div className={styles.iconWrapper}>
-                
+              <div className={`${styles.iconWrapper} ${styles.firstIcon}`}>
                 <img src="/assets/icon_dislike.png" alt="" />
               </div>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 hidden md:flex">
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDescription}>{card.description}</p>
               </div>
+              <div className="flex flex-col gap-4 md:hidden">
+                <h3 className={styles.cardTitle}>{card.title}</h3>
+                <div className="flex gap-1 ">
+                  <div className={styles.iconWrapper}>
+                <img src="/assets/icon_dislike.png" alt="" />
+              </div>
+              <p className={styles.cardDescription}>{card.description}</p>
+                </div>
+                
+              </div>
+
               <div className={styles.cardImageWrapper}>
                 <img src={card.img} alt={card.title} />
               </div>

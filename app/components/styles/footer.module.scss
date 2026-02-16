@@ -512,6 +512,10 @@ letter-spacing: -0.132px;
 
 .legalGrid {
   display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 .legalBlock {
   width: 300px;

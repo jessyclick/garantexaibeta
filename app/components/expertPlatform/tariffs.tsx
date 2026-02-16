@@ -11,6 +11,7 @@ type TariffColumn = {
   badge: string;
   badgeColor: "orange" | "red" | "green";
   metrics: string[];
+  icon: string; // Новое поле для иконки
 };
 
 type Props = {
@@ -19,20 +20,21 @@ type Props = {
 };
 
 const defaultMetrics: ComparisonMetric[] = [
-  { label: "Стоимость в месяц", icon: "✓" },
-  { label: "Вложения на старте", icon: "✓" },
-  { label: "Скорость", icon: "✓" },
-  { label: "Дистрибуция", icon: "✓" },
-  { label: "Риски", icon: "✓" },
+  { label: "Стоимость в месяц" },
+  { label: "Вложения на старте" },
+  { label: "Скорость" },
+  { label: "Дистрибуция" },
+  { label: "Риски" },
 ];
 
 const defaultTariffs: TariffColumn[] = [
   {
-    title: "ПАРАМЕТР",
+    title: "Параметр",
     badge: "",
     badgeColor: "orange",
+    icon: "/assets/feauture-icon.png", // Для первой колонки иконка обычно не нужна
     metrics: [
-      "Стоимость в месяц",
+      "Параметр",
       "Вложения на старте",
       "Скорость",
       "Дистрибуция",
@@ -43,6 +45,7 @@ const defaultTariffs: TariffColumn[] = [
     title: "СВОЯ РЕДАКЦИЯ",
     badge: "(2-3 чел)",
     badgeColor: "red",
+    icon: "/assets/icon_dislike.png", // Иконка для этого тарифа
     metrics: [
       "120 000 – 200 000 ₽",
       "Найм, обучение, налоги",
@@ -55,6 +58,7 @@ const defaultTariffs: TariffColumn[] = [
     title: "PR-АГЕНТСТВО",
     badge: "",
     badgeColor: "red",
+    icon: "/assets/icon_dislike.png",
     metrics: [
       "150 000 – 300 000 ₽",
       "Договоры, брифы",
@@ -67,6 +71,7 @@ const defaultTariffs: TariffColumn[] = [
     title: "AI-СИСТЕМА GARANTEX",
     badge: "",
     badgeColor: "green",
+    icon: "/assets/icon_glike.png", // Другая иконка для успеха
     metrics: [
       "0 ₽ (после внедрения)",
       "35 000 ₽ (разово)",
@@ -81,6 +86,9 @@ export default function TariffsSection({
   comparisonMetrics = defaultMetrics,
   tariffs = defaultTariffs,
 }: Props) {
+  // Отделяем реальные тарифы от колонки с заголовками для мобилок
+  const actualTariffs = tariffs.slice(1);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -90,10 +98,11 @@ export default function TariffsSection({
           titleAccent="КОТОРАЯ ГОВОРИТ САМА ЗА СЕБЯ"
         />
 
+        {/* ДЕСКТОР: Таблица (скрыта на мобильных через CSS) */}
         <div className={styles.tableWrapper}>
           <table className={styles.comparisonTable}>
             <tbody>
-              {tariffs[0].metrics.map((metric, rowIndex) => (
+              {tariffs[0].metrics.map((_, rowIndex) => (
                 <tr key={rowIndex} className={styles.tableRow}>
                   {tariffs.map((tariff, colIndex) => {
                     const isHeader = rowIndex === 0;
@@ -109,32 +118,33 @@ export default function TariffsSection({
                           ${styles[`badge-${tariff.badgeColor}`]}
                         `}
                       >
-                        {colIndex === 0 ? (
+                        {isFirstColumn ? (
                           <div className={styles.metricLabel}>
                             <span className={styles.metricTitle}>
-                              {metric}
+                              {tariff.metrics[rowIndex]}
                             </span>
                           </div>
                         ) : (
                           <>
-                            {rowIndex === 0 && (
+                            {isHeader ? (
                               <div className={styles.headerContent}>
                                 <h3 className={styles.tariffTitle}>
-                                  {tariff.title}
+                                  {tariff.title}{" "}
+                                  {tariff.badge && (
+                                    <span className={styles.badgeText}>
+                                      {tariff.badge}
+                                    </span>
+                                  )}
                                 </h3>
-                                {tariff.badge && (
-                                  <span className={styles.badgeText}>
-                                    {tariff.badge}
-                                  </span>
-                                )}
                               </div>
-                            )}
-                            {rowIndex > 0 && (
+                            ) : (
                               <div className={styles.metricValue}>
                                 <span className={styles.icon}>
-                                  <img src="/assets/icon_dislike.png" alt="" />
+                                  <img src={tariff.icon} alt="" />
                                 </span>
-                                <span className={styles.text}>{tariff.metrics[rowIndex]}</span>
+                                <span className={styles.text}>
+                                  {tariff.metrics[rowIndex]}
+                                </span>
                               </div>
                             )}
                           </>
@@ -146,6 +156,41 @@ export default function TariffsSection({
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* МОБИЛКА: Карточки (видны только на малых экранах) */}
+        <div className={styles.mobileCards}>
+          {tariffs.map((tariff, tIdx) => (
+            <div key={tIdx} className={`${styles.mobileCard} ${styles[`badge-${tariff.badgeColor}`]}`}>
+              <div className={styles.cardHeader}>
+                <h3 className={styles.tariffTitle}>
+                  {tariff.title}
+                  {tariff.badge && <span className={styles.badgeText}>{tariff.badge}</span>}
+                </h3>
+              </div>
+              <div className={styles.cardBody}>
+                {tariff.metrics.map((value, mIdx) => {
+                  // Пропускаем первый элемент (заголовок "Параметр")
+                  if (mIdx === 0) return null;
+
+                  // Берем название параметра из первой колонки основного массива
+                  const label = tariffs[0].metrics[mIdx];
+
+                  return (
+                    <div key={mIdx} className={styles.mobileRow}>
+                      
+                      <div className={styles.mobileValue}>
+                        <span className={styles.icon}>
+                          <img src={tariff.icon} alt="" />
+                        </span>
+                        <span className={styles.text}>{value}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

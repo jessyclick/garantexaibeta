@@ -1,0 +1,304 @@
+.section {
+  padding: 100px 20px;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+
+
+}
+
+.background {
+  position: absolute;
+  top: 50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(100, 150, 255, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorLeft {
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='60' text-anchor='middle' fill='%23ff9c1c'%3E✨%3C/text%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorRight {
+  position: absolute;
+  bottom: 10%;
+  right: 3%;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, transparent 45%, rgba(255, 156, 28, 0.1) 50%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media (max-width: 768px) {
+    gap: 40px;
+  }
+}
+
+.headerSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contentSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.leftColumn {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 43px;
+background: linear-gradient(90deg, #9B0300 0%, #750200 57.69%, #9B0300 100%);
+box-shadow: 0 4.134px 25.218px 0 rgba(102, 59, 3, 0.25);
+  color: #fff;
+  padding: 8px 22px 4px 22px;
+  border-radius: 20px;
+  color: #FFF;
+text-align: center;
+font-family: "Bebas Neue";
+font-size: 30px;
+font-style: normal;
+
+line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 auto 24px auto;
+  width: fit-content;
+
+  @media (max-width: 640px) {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+}
+
+.mainTitle {
+  font-size: 44px;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+  color: #fff;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
+}
+
+.accent {
+  background: linear-gradient(101.53deg, #ff9c1c 3.95%, #f9b953 25.99%, #ff9c1c 61.02%, #ffc466 74.88%, #ff9c1c 87.55%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.subtitle {
+  color: #FFF;
+text-align: center;
+font-family: Ubuntu;
+font-size: 20.402px;
+font-style: normal;
+font-weight: 400;
+line-height: 21.476px; /* 105.263% */
+  margin: 0;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 13px;
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.featureCard {
+  
+  border-radius: 16px;
+  padding: 28px 24px;
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 640px) {
+    padding: 20px 16px;
+  }
+}
+
+.cardIcon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  max-width: 48px;
+  display: block;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 640px) {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+}
+
+.cardTitle {
+  color: #FFF;
+font-family: "Bebas Neue";
+font-size: 35px;
+font-style: normal;
+line-height: normal;
+  margin: 0 0 12px 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1;
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+}
+
+.cardDescription {
+  color: #FFF;
+font-family: Ubuntu;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 22.004px; /* 115.808% */
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
+}
+
+.rightColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 156, 28, 0.2);
+
+  @media (max-width: 640px) {
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.calloutBox {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(0, 120, 100, 0.9);
+  border: 2px solid rgba(0, 200, 160, 0.5);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+
+  @media (max-width: 768px) {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 16px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 14px;
+  }
+}
+
+.calloutText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
+}

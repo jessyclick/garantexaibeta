@@ -30,7 +30,7 @@
   }
 }
 
-.platformsGrid {
+.platformsGrid, .platformGridLocal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
@@ -45,6 +45,48 @@
     grid-template-columns: 1fr;
     gap: 16px;
   }
+}
+
+.platformGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.platformGridTranslator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.platformTitle {
+    color: #FFF;
+font-family: "Bebas Neue";
+font-size: 22px;
+font-style: normal;
+line-height: normal;
 }
 
 .platformCard {
@@ -106,4 +148,7 @@ text-align: center;
   @media (max-width: 640px) {
     font-size: 13px;
   }
+}
+.platformGrid .iconWrapper {
+    height: 74px;
 }
