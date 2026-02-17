@@ -5,30 +5,30 @@ import { Reveal } from "./reveal";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
+    <section className="bg-[url('/assets/hero-bg.png')] bg-center bg-no-repeat bg-black bg-cover pt-30 pb-16">
+      <div className="max-w-[1300px] flex items-center gap-16 mx-auto">
         <Reveal> 
-          <div className={styles.left}>
-            <h1 className={styles.title}>
+          <div className="min-w-[700px]">
+            <h1 className="font-bebas text-bebas-98">
               ПРОДАЮЩИЙ КОНТЕНТ
               <br />
-              <span className={styles.titleAccent}>ДЛЯ МАРКЕТПЛЕЙСОВ</span>
+              <span className="textGradient">ДЛЯ МАРКЕТПЛЕЙСОВ</span>
             </h1>
 
-            <p className={styles.lead}>
+            <p className="font-inter text-custom-19 mb-8">
               Забудьте об аренде студий, поиске моделей и долгом монтаже. Мы
               создаем контент, который повышает CTR и продажи, быстрее и дешевле
               классического продакшена.
             </p>
 
-            <div className={styles.features}>
-              <div className={`${styles.featureBox} ${styles.featureBoxFirst}`}>
+            <div className="flex gap-4 mb-8">
+              <div className="text-custom-19 font-inter rounded-[24px] flex items-start gap-3 p-4 max-w-[240px] GradientBlack">
                 <span className={styles.check}>
                   <img src="/assets/feauture-icon.png" alt="" />
                 </span>
                 <span>Готовые видео и фото от 24 часов</span>
               </div>
-              <div className={`${styles.featureBox} ${styles.featureBoxSecond}`}>
+              <div className="text-custom-19 font-inter rounded-[24px] flex items-start gap-3 p-4 max-w-[280px] GradientBlack">
                 <span className={styles.check}>
                   <img src="/assets/feauture-icon.png" alt="" />
                 </span>
@@ -51,7 +51,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className={styles.right}>
+          <div className="relative -left-[120px] min-w-[720px]">
                 <div className={styles.device}>
                   <Image
                     src="/assets/hero-element.png"

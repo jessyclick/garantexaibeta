@@ -4,8 +4,8 @@ import { Reveal } from "./reveal";
 
 export default function ReasonsSection() {
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.container}>
+    <section className="py-30">
+      <div className="max-w-[1300px] mx-auto">
         <Reveal> 
         <div className={styles.header}>
           <span className={styles.kicker}>#Проблема</span>
@@ -18,32 +18,32 @@ export default function ReasonsSection() {
         </Reveal>
 
         
-          <RevealStagger stagger={0.3} className={styles.grid}> 
-          <article className={`${styles.card} ${styles.cardLeft}`}>
-            <div className={styles.icon}>
+          <RevealStagger stagger={0.3} className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"> 
+          <article className="text-center flex flex-col items-center gap-4 h-full GradientBlack p-6 rounded-[24px]">
+            <div className="w-10">
               <img src="/assets/icon_cloose.png" alt="" />
             </div>
-            <p className={styles.cardText}>
+            <p className="font-inter text-custom-19">
               Серый фон и скучная статика «убивают» конверсию. Покупатель хочет
               видеть динамику, эмоции и товар в жизни.
             </p>
           </article>
 
-          <article className={`${styles.card} ${styles.cardCenter}`}>
-            <div className={styles.icon}>
+          <article className="text-center flex flex-col items-center gap-4 h-full borderGradient GradientBlackGreen p-6 rounded-[24px]">
+            <div className="w-10">
               <img src="/assets/icon_like.png" alt="" />
             </div>
-            <p className={styles.cardCenterText}>
+            <p className="font-inter text-custom-19 font-bold text-[#44C4A1]">
               Сегодня Garantex AI делает это за минуты, используя только фото
               вашего товара.
             </p>
           </article>
 
-          <article className={`${styles.card} ${styles.cardRight}`}>
-            <div className={styles.icon}>
+          <article className="text-center flex flex-col items-center gap-4 h-full GradientBlack p-6 rounded-[24px]">
+            <div className="w-10">
               <img src="/assets/icon_cloose.png" alt="" />
             </div>
-            <p className={styles.cardText}>
+            <p className="font-inter text-custom-19">
               Раньше для этого требовались: студия, фотограф, модели, визажист.
             </p>
           </article>
