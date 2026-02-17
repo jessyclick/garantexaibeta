@@ -1,0 +1,138 @@
+
+.rekvizitContainer {
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+  border-radius: 24px;
+  max-width: 1300px;
+
+  color: #fff;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #18120d;
+  padding: 32px 32px 16px 32px;
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Bebas Neue";
+font-size: 55px;
+font-style: normal;
+line-height: normal;
+  background: linear-gradient(102deg, #FF9C1C 3.95%, #FFCB78 18.11%, #FF9C1C 61.02%, #FFCB78 74.88%, #FF9C1C 87.55%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+.toggleBtn {
+  background: linear-gradient(128deg, #FF9C1C 35.08%, #FFCB78 92.5%, #FF9C1C 111.8%);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggleBtn:hover {
+  background: #ffb84d;
+}
+.arrowDown, .arrowUp {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+.arrowDown {
+  transform: rotate(0deg);
+}
+.arrowUp {
+  transform: rotate(-180deg);
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 0 32px 32px 32px;
+  background: #18120d;
+  border-top: 2px solid #ff9900;
+  animation: fadeIn 0.3s;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.infoBlock {
+  flex: 1 1 320px;
+  min-width: 280px;
+  margin-top: 24px;
+}
+.infoBlock h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.infoBlock div {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 24px;
+}
+.downloadBtn {
+  
+background: linear-gradient(106deg, #FF9C1C 5.27%, #FFCB78 22.82%, #FF9C1C 75.97%, #FFCB78 93.14%, #FF9C1C 108.83%);
+  color: #18120d;
+  color: #0E0807;
+text-align: center;
+font-family: Ubuntu;
+font-size: 22.055px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 33.082px */
+letter-spacing: -0.243px;
+  border: none;
+  border-radius: 24px;
+  padding: 14px 32px;
+
+  text-decoration: none;
+  box-shadow: 0 2px 8px #ff990055;
+  transition: background 0.2s, color 0.2s;
+}
+.downloadBtn:hover {
+  background: linear-gradient(90deg, #ffb84d 0%, #ff9900 100%);
+  color: #fff;
+}
+
+.rekv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

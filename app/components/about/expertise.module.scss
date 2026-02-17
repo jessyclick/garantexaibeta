@@ -1,0 +1,104 @@
+.expertiseSection {
+  
+  border-radius: 24px;
+  padding: 40px 24px;
+  margin: 32px 0;
+  color: #fff;
+  box-shadow: 0 0 24px #000a;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.accent {
+  color: #ffb84d;
+  font-weight: 700;
+}
+
+.brand {
+  color: #ffb84d;
+  font-weight: 700;
+}
+
+.description {
+  text-align: center;
+  margin: 16px 0 32px 0;
+  color: #FFF;
+font-family: Ubuntu;
+font-size: 20.402px;
+font-style: normal;
+font-weight: 400;
+line-height: 21.476px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  justify-content: center;
+}
+
+.card {
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 0 12px #ffb84d22;
+  min-height: 260px;
+}
+
+.card h3 {
+    padding-top: 3px;
+  color: #FFF;
+font-family: "Bebas Neue";
+font-size: 35px;
+}
+
+.card p {
+  color: #FFF;
+font-family: Ubuntu;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: 22.004px; /* 115.808% */
+  margin: 32px 0 16px 0;
+}
+
+.card img {
+  filter: drop-shadow(0 0 8px #ffb84d88);
+}
+
+.button {
+  background: transparent;
+  color: #181818;
+
+border: 0.757px solid #FF8C27;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background 0.2s;
+  p {
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 18.437px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27.655px */
+    letter-spacing: -0.203px;
+    background: linear-gradient(102deg, #FF8C27 3.95%, #FFC15D 18.11%, #FF8C27 31.33%, #FFC15D 47.04%, #FF8C27 61.02%, #FFC15D 74.88%, #FF8C27 87.55%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin: 0;
+  }
+}
+

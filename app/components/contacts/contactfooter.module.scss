@@ -1,0 +1,119 @@
+.contactFooterSection {
+  background: #111;
+  border-radius: 80px 80px 0 0;
+  padding: 64px 24px 48px 24px;
+  position: relative;
+  text-align: center;
+  margin: 48px 0 0 0;
+  overflow: hidden;
+}
+
+.title {
+  color: #FFF;
+text-align: center;
+font-family: "Bebas Neue";
+font-size: 66px;
+font-style: normal;
+line-height: normal;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.accent {
+  background: linear-gradient(102deg, #FF9C1C 3.95%, #FFCB78 18.11%, #FF9C1C 61.02%, #FFCB78 74.88%, #FF9C1C 87.55%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #FFF;
+text-align: center;
+font-family: Ubuntu;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 21.476px; /* 97.618% */
+margin-bottom: 40px;
+}
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  min-width: 280px;
+  background: linear-gradient(90deg, #ffb23f 0%, #ff7b1c 100%);
+  color: #111;
+  font-size: 32px;
+  font-weight: 500;
+  border-radius: 48px;
+  padding: 18px 36px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 32px 0 rgba(255, 178, 63, 0.15);
+}
+
+.ctaBtnOutline {
+  min-width: 280px;
+  background: transparent;
+  color: #ffb23f;
+  font-size: 32px;
+  font-weight: 500;
+  border-radius: 48px;
+  padding: 18px 36px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 2px solid #ffb23f;
+  box-shadow: 0 4px 32px 0 rgba(255, 178, 63, 0.10);
+}
+
+.ctaBtn img,
+.ctaBtnOutline img {
+  width: 36px;
+  height: 36px;
+}
+
+/* Decorative elements (imitate 3D ring and spring) */
+.decor1 {
+  position: absolute;
+  left: 120px;
+  top: 120px;
+  width: 180px;
+  height: 180px;
+  background: url('/assets/icons/3d-ring.png') no-repeat center/contain;
+  z-index: 1;
+}
+
+.decor2 {
+  position: absolute;
+  right: 180px;
+  top: 40px;
+  width: 80px;
+  height: 80px;
+  background: url('/assets/icons/3d-spring.png') no-repeat center/contain;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 36px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+  .ctaBtn, .ctaBtnOutline {
+    font-size: 20px;
+    min-width: 180px;
+    padding: 12px 18px;
+  }
+  .decor1, .decor2 {
+    display: none;
+  }
+}

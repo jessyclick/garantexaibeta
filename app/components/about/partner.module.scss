@@ -1,0 +1,174 @@
+.partnerSection {
+  padding: 64px 0 80px 0;
+  color: #fff;
+}
+
+.accent {
+  color: #ffb02e;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+  border-radius: 18px;
+  padding: 32px 32px 32px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.cardNumber {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffb02e;
+  margin-right: 32px;
+  min-width: 60px;
+  text-align: center;
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardContent.cardContentFirst {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+}
+
+.cardContent h3 {
+  color: #FFF;
+  font-family: "Bebas Neue";
+  font-size: 35px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.cardContent p {
+  color: #FFF;
+font-family: Ubuntu;
+font-size: 20.402px;
+font-style: normal;
+font-weight: 400;
+line-height: 21.476px; /* 105.263% */
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin-top: 16px;
+  align-self: flex-end;
+}
+
+.competencies {
+  margin: 32px 0 0 0;
+}
+
+.competencies h4 {
+  color: #FFF;
+text-align: left;
+font-family: "Bebas Neue";
+font-size: 35px;
+font-style: normal;
+line-height: normal;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.competencyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.competencyCard {
+  background-image: linear-gradient(#0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+  border-radius: 14px;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 220px;
+}
+
+.competencyCard img {
+  min-width: 36px;
+  width: 36px;
+  
+  margin-bottom: 8px;
+}
+
+.competencyCard span {
+  color: #FFF;
+    font-family: "Bebas Neue";
+    font-size: 29px;
+}
+
+.competencyCard p {
+color: #FFF;
+font-family: Ubuntu;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 21.476px; /* 126.33% */
+  margin: 0;
+}
+
+.competencyCardCustom {
+    background-image: linear-gradient(163deg, #001613 9.43%, #00302B 52.39%, #001613 87.36%), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+        align-items: center;
+    justify-content: center;
+
+}
+
+@media (max-width: 900px) {
+  .cards {
+    gap: 24px;
+  }
+  .card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 12px;
+  }
+  .cardNumber {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+}

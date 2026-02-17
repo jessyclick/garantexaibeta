@@ -1,0 +1,222 @@
+.section {
+  padding: 100px 20px;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(255, 156, 28, 0.1) 0%, rgba(0, 200, 150, 0.1) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.imageColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagesStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 450px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.imageCard {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #d0d0d0 0%, #f0f0f0 100%);
+  border: 2px solid rgba(255, 156, 28, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 156, 28, 0.4);
+    box-shadow: 0 12px 40px rgba(255, 156, 28, 0.15);
+    transform: translateY(-4px);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    aspect-ratio: 16/12;
+    border-radius: 16px;
+  }
+}
+
+.projectsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 640px) {
+    gap: 12px;
+  }
+}
+
+.cardBadge {
+  display: inline-block;
+  border-radius: 29.087px;
+border: 1.119px solid #4DE7D3;
+background: linear-gradient(0deg, #4AECDC 0%, #00AC9B 100%), #0F0C09;
+box-shadow: 0 4.475px 27.297px 0 rgba(102, 59, 3, 0.25);
+  color: #000;
+  padding: 8px 18px 4px 18px;
+  border-radius: 20px;
+  color: #0E0E0E;
+font-family: "Bebas Neue";
+font-size: 20px;
+font-style: normal;
+
+line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+
+  @media (max-width: 640px) {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+}
+
+.projectTitle {
+  font-family: "Bebas Neue";
+font-size: 66px;
+font-style: normal;
+line-height: normal;
+background: linear-gradient(102deg, #FF9C1C 3.95%, #FFCB78 18.11%, #FF9C1C 61.02%, #FFCB78 74.88%, #FF9C1C 87.55%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
+}
+
+.projectSubtitle {
+  color: #FFF;
+font-family: "Bebas Neue";
+font-size: 35px;
+font-style: normal;
+line-height: normal;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+}
+
+.projectDescription {
+  color: #FFF;
+font-family: Ubuntu;
+font-size: 20.402px;
+font-style: normal;
+font-weight: 400;
+line-height: 21.476px; /* 105.263% */
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+.ctaButton {
+  align-self: flex-start;
+  padding: 16px 40px;
+  border-radius: 35.839px;
+background: linear-gradient(106deg, #FF9C1C 5.27%, #FFCB78 22.82%, #FF9C1C 75.97%, #FFCB78 93.14%, #FF9C1C 108.83%), linear-gradient(121deg, #FF8C27 6.26%, #FFC15D 40.84%, #FF8C27 73.12%, #FFC15D 111.47%, #FF8C27 145.6%, #FFC15D 179.46%, #FF8C27 210.38%), linear-gradient(116deg, #FF7418 10.65%, #FFAA49 58.19%, #FF7418 118.02%), linear-gradient(124deg, #E95723 25.53%, #F9BF37 87.77%), linear-gradient(118deg, #FE7905 7.26%, #F3A114 61.28%, #A93301 129.27%), linear-gradient(90deg, #FFDD8F 0%, #FFEFC9 44.71%, #FFDD8F 100%), rgba(255, 255, 255, 0.30);
+  color: #0E0807;
+text-align: center;
+font-family: Ubuntu;
+font-size: 22px;
+font-style: normal;
+font-weight: 500;
+line-height: 100%; /* 33.082px */
+letter-spacing: -0.243px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 156, 28, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px 32px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+}
