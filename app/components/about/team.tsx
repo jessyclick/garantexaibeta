@@ -17,12 +17,13 @@ const team = [
 
 const Team = () => (
   <section className={styles.teamSection}>
-    <header className={"headerWrapper-module-scss-module__Xom2TG__header"}>
-      <span className={"headerWrapper-module-scss-module__Xom2TG__kicker"}>#Люди за алгоритмами</span>
-      <h2 className={"headerWrapper-module-scss-module__Xom2TG__title"}>
-        Команда <span className={"headerWrapper-module-scss-module__Xom2TG__accent"}> Garantex AI </span>
-      </h2>
-    </header>
+    <HeaderWrapper
+                     href=""
+                     withBr={false}
+                     kicker="#Люди за алгоритмами"
+                     title="Команда"
+                     titleAccent="Garantex AI"
+                   />
     <p className={styles.subtitle}>
       За каждым успешным кейсом стоят конкретные люди, <span className={styles.highlight}>фанаты своего дела</span>:
     </p>

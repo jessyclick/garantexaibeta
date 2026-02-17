@@ -512,6 +512,7 @@ letter-spacing: -0.132px;
 
 .legalGrid {
   display: flex;
+  gap: 40px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
@@ -559,6 +560,12 @@ font-style: normal;
 font-weight: 700;
 line-height: 18px; /* 150% */
 }
+}
+.legalBlock.highlightRight {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
 }
 .blockIcon {
       min-width: 36px;
