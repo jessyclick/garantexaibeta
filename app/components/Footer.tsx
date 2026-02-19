@@ -62,21 +62,23 @@ export default function Footer() {
 
           <ul className="list-none m-0 p-0 flex flex-col gap-2">
             {[
-              "ИИ-Аватар (цифровой дворник)",
-              "Для маркетплейсов и e-commerce",
-              "Автоматизация SEO продвижения",
-              "Ведение соц. сетей",
-              "Ведение медиа-платформ",
-              "Автоматизация новостей",
-              "Перевод видео",
-              "Озвучка и клонирование голоса",
-              "3D-Персонажи для бизнеса",
+              { text: "ИИ-Аватар (цифровой дворник)", href: "/heroman" },
+              { text: "Для маркетплейсов и e-commerce", href: "/" },
+              { text: "Автоматизация SEO продвижения", href: "/automation" },
+              { text: "Ведение соц. сетей", href: "/socmedia" },
+              { text: "Ведение медиа-платформ", href: "/expert-platform" },
+              { text: "Автоматизация новостей", href: "/automation-news" },
+              { text: "Перевод видео", href: "/translator" },
+              { text: "Озвучка и клонирование голоса", href: "/clone-voice" },
+              { text: "3D-Персонажи для бизнеса", href: "/heroman" },
             ].map((item, idx) => (
               <li
                 key={idx}
                 className="font-['Ubuntu'] font-normal text-[14px] leading-[21.48px] text-white"
               >
-                {item}
+                <Link href={item.href} className="hover:text-[#ff9c1c] transition-colors duration-300">
+                  {item.text}
+                </Link>
               </li>
             ))}
           </ul>
