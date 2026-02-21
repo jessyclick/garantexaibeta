@@ -12,17 +12,21 @@
   font-display: swap;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 @theme {
   /* Настройка шрифта */
   --font-inter: "Inter", sans-serif;
   --font-bebas: "Bebas Neue", sans-serif;
 
   /* Настройка кастомного размера текста */
-  /* В v4 мы создаем утилиту через CSS-переменную */
   --text-custom-19: 19px;
   --text-custom-19--line-height: 1.2em;
 
-   --text-custom-15: 15px;
+  --text-custom-15: 15px;
   --text-custom-15--line-height: 1.2em;
 
   --text-bebas-35: 35px;
@@ -40,6 +44,9 @@
     #ffcb78 37.13%, 
     #ff9c1c 87.55%
   );
+
+  /* --- Добавление анимации Marquee --- */
+  --animate-marquee: marquee 25s linear infinite;
 }
 
 @font-face {

@@ -1,15 +1,9 @@
 import Image, { StaticImageData } from "next/image";
 import HeaderWrapper from "../headerWrapper";
-import styles from "./tariffsSection.module.scss";
-
-// Предположим, вы импортируете иконки локально
-// import AudioIcon from "@/public/icons/audio.svg";
-// import VideoIcon from "@/public/icons/video.svg";
-// import BotIcon from "@/public/icons/bot.svg";
 
 type PricingTier = {
   label: string;
-  icon: string | StaticImageData; // Теперь принимает путь или импортированный объект
+  icon: string | StaticImageData;
   description: string;
   class: string;
   pricing: {
@@ -30,7 +24,7 @@ type Props = {
 const defaultTariffs: PricingTier[] = [
   {
     label: "ПЕРЕВОД АУДИО",
-    icon: "/assets/icon_pp1.png", // Путь к картинке в папке public
+    icon: "/assets/icon_pp1.png",
     description: "Идеально для подкастов, дикторских дорожек, лекций.",
     class: "firstGradient",
     pricing: [
@@ -82,75 +76,110 @@ const defaultTariffs: PricingTier[] = [
 
 export default function TariffsSection({ tariffs = defaultTariffs }: Props) {
   return (
-    <section className={styles.section}>
-      <div className={styles.background} />
+    <section className="py-[100px] px-5 relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute top-1/2 -right-[10%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(100,150,255,0.08)_0%,transparent_70%)] rounded-full pointer-events-none z-0"></div>
 
-      <div className={styles.container}>
-        <HeaderWrapper
-          kicker="#тарифы"
-          title="ТАРИФЫ И УСЛУГИ"
-          titleAccent="GARANTEX AI"
-        />
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="mb-[60px]">
+          <HeaderWrapper
+            kicker="#тарифы"
+            title="ТАРИФЫ И УСЛУГИ"
+            titleAccent="GARANTEX AI"
+          />
+        </div>
 
-        <div className={styles.cardsGrid}>
-          {tariffs.map((tariff, index) => (
-            <div
-              key={index}
-              className={`${styles.card} ${
-                index === 1 ? styles.cardHighlighted : ""
-              } ${tariff.class}`}
-            >
-              <div className={styles.cardHeader}>
-                {/* Рендерим иконку как изображение */}
-                <div className={styles.iconWrapper}>
-                  <Image 
-                    src={tariff.icon} 
-                    alt={tariff.label} 
-                    width={40} 
-                    height={40} 
-                    className={styles.icon}
-                  />
-                </div>
-                <h3 className={styles.cardTitle}>{tariff.label}</h3>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {tariffs.map((tariff, index) => {
+            const isHighlighted = index === 1;
 
-              <p className={styles.cardDescription}>{tariff.description}</p>
-
-              <div className={styles.pricingList}>
-                {tariff.pricing.map((tier, tierIndex) => (
-                  <div key={tierIndex} className={styles.pricingRow}>
-                    <span className={styles.duration}>{tier.duration}</span>
-                    <div className={styles.priceWrapper}>
-                      <span className={tier.mainPrice ? styles.mainPrice : styles.price}>
-                        {tier.mainPrice ? 'ОТ ' : ''}
-                        {tier.price.toLocaleString("ru-RU")} {tier.unit}
-                      </span>
-                      {tariff.mainLabel && (
-                        <span className={styles.label}>{tariff.mainLabel}</span>
-                      )}
-                    </div>
+            return (
+              <div
+                key={index}
+                className={`rounded-[16px] p-6 sm:p-8 backdrop-blur-[10px] transition-all duration-300 relative flex flex-col h-full hover:-translate-y-1 ${
+                  isHighlighted
+                    ? "shadow-[0_0_30px_rgba(255,156,28,0.15)] hover:shadow-[0_12px_40px_rgba(255,156,28,0.25)]"
+                    : "hover:shadow-[0_12px_40px_rgba(255,156,28,0.1)]"
+                } ${tariff.class}`}
+              >
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="flex items-center justify-center text-[28px] sm:text-[32px] min-w-[40px] sm:min-w-[48px]">
+                    <Image
+                      src={tariff.icon}
+                      alt={tariff.label}
+                      width={40}
+                      height={40}
+                    />
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-white font-['Bebas_Neue',_sans-serif] text-[16px] sm:text-[35px] font-normal leading-[1.3] uppercase tracking-[0.5px] m-0">
+                    {tariff.label}
+                  </h3>
+                </div>
 
-              <div className={styles.featuresDivider} />
+                <p className="text-white font-['Inter',_sans-serif] text-[13px] sm:text-[17px] font-normal m-0 mb-5 sm:mb-6">
+                  {tariff.description}
+                </p>
 
-              <div className={styles.featuresSection}>
-                <h4 className={styles.featuresTitle}>ЧТО ВХОДИТ:</h4>
-                <ul className={styles.featuresList}>
-                  {tariff.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className={styles.featureItem}>
-                      {feature}
-                    </li>
+                <div className="flex flex-col gap-4 mb-6">
+                  {tariff.pricing.map((tier, tierIndex) => (
+                    <div
+                      key={tierIndex}
+                      className="flex justify-between items-center py-3 border-b border-[rgba(255,156,28,0.1)] last:border-b-0"
+                    >
+                      <span className="text-white font-['Inter',_sans-serif] text-[12px] sm:text-[15px] font-normal">
+                        {tier.duration}
+                      </span>
+                      <div className="flex flex-col items-end gap-[2px]">
+                        <span
+                          className={
+                            tier.mainPrice
+                              ? "text-[16px] sm:text-[18px] font-bold bg-[linear-gradient(101.53deg,#ff9c1c_3.95%,#f9b953_25.99%,#ff9c1c_61.02%,#ffc466_74.88%,#ff9c1c_87.55%)] bg-clip-text text-transparent [-webkit-background-clip:text]"
+                              : "text-white font-['Inter',_sans-serif] text-[14px] sm:text-[15px] font-bold"
+                          }
+                        >
+                          {tier.mainPrice ? "ОТ " : ""}
+                          {tier.price.toLocaleString("ru-RU")} {tier.unit}
+                        </span>
+                        {tariff.mainLabel && (
+                          <span className="text-[10px] sm:text-[11px] text-[#666] lowercase">
+                            {tariff.mainLabel}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   ))}
-                </ul>
-              </div>
+                </div>
 
-              <button className={styles.selectButton}>
-                {tariff.buttonLabel}
-              </button>
-            </div>
-          ))}
+                <div className="h-[1px] bg-[rgba(255,156,28,0.15)] my-6"></div>
+
+                <div className="flex-1 mb-6">
+                  <h4 className="text-[12px] font-semibold m-0 mb-4 text-[#ff9c1c] uppercase tracking-[0.5px]">
+                    ЧТО ВХОДИТ:
+                  </h4>
+                  <ul className="list-none m-0 p-0 flex flex-col gap-3">
+                    {tariff.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="text-white font-['Inter',_sans-serif] text-[12px] sm:text-[17px] font-normal pl-[20px] sm:pl-[24px] relative before:content-[''] before:bg-[url('/assets/feauture-icon.png')] before:bg-contain before:bg-no-repeat before:bg-center before:w-[20px] before:h-[20px] before:absolute before:left-0 before:text-[#ff9c1c] before:font-bold before:text-[14px]"
+                      >
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <button
+                  className={`w-full py-[12px] sm:py-[14px] px-[24px] sm:px-[32px] rounded-lg text-[12px] sm:text-[14px] uppercase tracking-[0.5px] cursor-pointer transition-all duration-300 active:scale-[0.98] ${
+                    isHighlighted
+                      ? "bg-[linear-gradient(135deg,#ff9c1c_0%,#f9b953_100%)] text-black font-semibold border-none hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(255,156,28,0.3)]"
+                      : "bg-transparent border-2 border-[rgba(255,156,28,0.4)] text-[#ff9c1c] font-semibold hover:border-[rgba(255,156,28,0.7)] hover:bg-[rgba(255,156,28,0.05)]"
+                  }`}
+                >
+                  {tariff.buttonLabel}
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

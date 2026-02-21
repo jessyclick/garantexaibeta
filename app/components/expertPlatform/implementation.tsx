@@ -1,6 +1,5 @@
 import HeaderWrapper from "../headerWrapper";
 import CTAButton from "../CTAButton";
-import styles from "./implementation.module.scss";
 
 type ImplementationFeature = {
   label: string;
@@ -38,8 +37,7 @@ const defaultAdditionalOptions: AdditionalOption[] = [
   },
   {
     title: "Публикация под ключ:",
-    description:
-      "Индивидуальный расчет (мы ведим ваш блог полностью).",
+    description: "Индивидуальный расчет (мы ведем ваш блог полностью).",
   },
 ];
 
@@ -50,46 +48,60 @@ export default function ImplementationSection({
   monthlyPrice = 10000,
 }: Props) {
   return (
-    <section className={styles.section}>
-      <div className={styles.background} />
+    <section className="py-[100px] px-5 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 -right-[10%] w-[400px] h-[400px] rounded-full pointer-events-none z-0"></div>
 
-      <div className={styles.container}>
-        <HeaderWrapper
-          kicker="#Внедрение системы"
-          title="НАЧНИТЕ МЕДИА-ЭКСПАНСИЮ"
-          titleAccent="ПО ЦЕНЕ ОДНОЙ СТАТЬИ"
-        />
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="mb-[40px]">
+          <HeaderWrapper
+            kicker="#Внедрение системы"
+            title="НАЧНИТЕ МЕДИА-ЭКСПАНСИЮ"
+            titleAccent="ПО ЦЕНЕ ОДНОЙ СТАТЬИ"
+          />
+        </div>
 
-        <div className={styles.innerBox}>
-          <div className={styles.decorLine}>
-                <img src="/assets/element-png.png" alt="" />
-            </div>
+        <div className="relative p-0 rounded-[12px] md:rounded-[20px] border border-transparent bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(180deg,#001613_9.43%,#00302B_52.39%,#001613_87.36%),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)]">
+          <div className="absolute -left-[80px] -top-[40px] bottom-0 w-[127px] z-10 hidden xl:block">
+            <img src="/assets/element-png.png" alt="" />
+          </div>
 
-          <div className={styles.contentWrapper}>
-            <div className={styles.mainHeader}>
-            <p className={styles.mainKicker}>#Внедрение системы</p>
-              <h3 className={styles.mainTitle}>
+          <div className="p-[24px_16px] sm:p-[32px_24px] md:p-[48px] relative z-20">
+            <div className="flex flex-col items-center justify-center pb-[32px]">
+              <p className="text-[#38DDCC] text-center font-['kurut'] text-[50.88px] font-normal leading-normal tracking-[1.526px] m-0">
+                #Внедрение системы
+              </p>
+              <h3 className="text-white text-center font-['Bebas_Neue',_sans-serif] text-[18px] sm:text-[22px] md:text-[45px] font-normal leading-[1.3] m-0">
                 ВАШ ПЕРСОНАЛЬНЫЙ AI-АГЕНТ ПОД КЛЮЧ
               </h3>
             </div>
 
-            <div className={styles.gridContent}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px] lg:gap-[48px]">
               {/* Левая колонка */}
-              <div className={styles.leftColumn}>
-                <h4 className={styles.columnTitle}>Что входит:</h4>
+              <div className="flex flex-col">
+                <h4 className="text-[#FFBF6B] font-['Inter',_sans-serif] text-[14px] sm:text-[19px] font-bold leading-[22.004px] tracking-[0.5px] uppercase m-0 mb-[16px] sm:mb-[24px]">
+                  Что входит:
+                </h4>
 
-                <ul className={styles.featuresList}>
+                <ul className="list-none m-0 mb-[32px] p-0 flex flex-col gap-[16px]">
                   {features.map((feature, index) => (
-                    <li key={index} className={styles.featureItem}>
+                    <li
+                      key={index}
+                      className="text-white font-['Inter',_sans-serif] text-[14px] sm:text-[19px] font-normal leading-none pl-[20px] sm:pl-[24px] relative before:content-['•'] before:absolute before:left-0 before:top-0 before:text-[#FFBF6B] before:font-bold before:text-[18px]"
+                    >
                       {feature.label}
                     </li>
                   ))}
                 </ul>
 
-                <div className={styles.priceSection}>
-                  <div className={styles.price}>
-                    <span className={styles.priceValue}>35 000 ₽</span>
-                    <span className={styles.priceLabel}>(разово)</span>
+                <div className="flex flex-col items-start gap-[20px] pt-[24px] border-t border-[rgba(255,156,28,0.2)]">
+                  <div className="flex items-baseline gap-[12px]">
+                    <span className="text-white font-['Bebas_Neue',_sans-serif] text-[24px] sm:text-[28px] md:text-[52px] font-normal leading-normal">
+                      {price.toLocaleString("ru-RU")} ₽
+                    </span>
+                    <span className="text-white font-['Bebas_Neue',_sans-serif] text-[12px] sm:text-[30px] font-normal leading-normal">
+                      (разово)
+                    </span>
                   </div>
 
                   <CTAButton
@@ -115,27 +127,29 @@ export default function ImplementationSection({
               </div>
 
               {/* Правая колонка */}
-              <div className={styles.rightColumn}>
-                
-
-                <ul className={styles.optionsList}>
-                    <h4 className={styles.columnTitle}>Дополнительные опции:</h4>
+              <div className="flex flex-col items-start gap-[16px]">
+                <ul className="list-none w-full m-0 p-[30px_40px] flex flex-col gap-[24px] rounded-[28px] bg-[#011614]">
+                  <h4 className="text-[#FFBF6B] font-['Inter',_sans-serif] text-[14px] sm:text-[19px] font-bold leading-[22.004px] tracking-[0.5px] uppercase m-0">
+                    Дополнительные опции:
+                  </h4>
                   {additionalOptions.map((option, index) => (
-                    <li key={index} className={styles.optionItem}>
-                      <div className={styles.optionTitle}>{option.title}</div>
-                      <div className={styles.optionDescription}>
+                    <li
+                      key={index}
+                      className="pl-[24px] sm:pl-[24px] p-[12px] sm:p-0 rounded-[8px] transition-all duration-300 relative hover:bg-[rgba(255,156,28,0.08)] before:content-['•'] before:absolute before:left-0 before:top-0 before:text-[#FFBF6B] before:font-bold before:text-[18px]"
+                    >
+                      <div className="text-white font-['Inter',_sans-serif] text-[13px] sm:text-[19px] font-bold leading-[25px] mb-[8px] capitalize">
+                        {option.title}
+                      </div>
+                      <div className="text-white font-['Inter',_sans-serif] text-[13px] sm:text-[19px] font-normal leading-[25px]">
                         {option.description}
                       </div>
                     </li>
                   ))}
-                  <div className={styles.supportNote}>
-                  ЕЖЕМЕС. ПОДДЕРЖКА ОТ {monthlyPrice.toLocaleString("ru-RU")}
-                  ₽ (ПО ЖЕЛАНИЮ)
-                </div>
+                  <div className="mt-[24px] sm:mt-[32px] pt-0 sm:pt-[16px] text-white text-center sm:text-left font-['Bebas_Neue',_sans-serif] text-[11px] sm:text-[20px] font-normal leading-normal tracking-[0.6px]">
+                    ЕЖЕМЕС. ПОДДЕРЖКА ОТ {monthlyPrice.toLocaleString("ru-RU")} ₽
+                    (ПО ЖЕЛАНИЮ)
+                  </div>
                 </ul>
-                
-
-                
               </div>
             </div>
           </div>

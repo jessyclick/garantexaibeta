@@ -9,6 +9,7 @@ import StandOutSection from "./components/StandOutSection";
 import ServicesExtendedSection from "./components/ServicesExtendedSection";
 import { Reveal } from "./components/reveal";
 import Footer from "./components/Footer";
+import AvatarFeature from "./components/avatar/test";
 
 
 export default function Home() {
@@ -24,6 +25,8 @@ export default function Home() {
     <ServicesSection />
   </Reveal>
   
+
+  
   <Reveal>
     <ServicesSectionTwo />
   </Reveal>
@@ -36,6 +39,8 @@ export default function Home() {
     <GuaranteesSection />
   </Reveal>
   
+
+
   <Reveal>
     <AutomationSection />
   </Reveal>

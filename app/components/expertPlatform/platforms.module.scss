@@ -1,154 +1,81 @@
-.section {
-  padding: 100px 20px;
-  position: relative;
-  overflow: hidden;
+import HeaderWrapper from "../headerWrapper";
 
-  
-}
+type PlatformCard = {
+  name: string;
+  icon?: string;
+  description: string;
+};
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+type Props = {
+  platforms?: PlatformCard[];
+};
 
-  :global(.header) {
-    margin-bottom: 24px;
-  }
-}
+const defaultPlatforms: PlatformCard[] = [
+  {
+    name: "Бизнес",
+    icon: "/assets/vq-1.png",
+    description: "IVR, автоответчики, звонки роботов.",
+  },
+  {
+    name: "Маркетинг",
+    icon: "/assets/vq-2.png",
+    description: "реклама, презентации, ролики для маркетплейсов.",
+  },
+  {
+    name: "Образование",
+    icon: "/assets/vq-3.png",
+    description: "курсы, лекции, аудиокниги.",
+  },
+  {
+    name: "Контент",
+    icon: "/assets/vq-4.png",
+    description: "YouTube, Shorts, Reels, подкасты.",
+  },
+  {
+    name: "Локализация",
+    icon: "/assets/vq-5.png",
+    description: "дубляж и переводы на десятки языков.",
+  },
+];
 
-.subtitle {
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #ccc;
-  margin: 0 0 60px 0;
+export default function PlatformsSection({ platforms = defaultPlatforms }: Props) {
+  return (
+    <section className="relative overflow-hidden px-5 py-[100px]">
+      {/* [&_.header]:mb-6 заменяет :global(.header) { margin-bottom: 24px; } */}
+      <div className="relative z-10 mx-auto max-w-[1400px] [&_.header]:mb-6">
+        <HeaderWrapper
+          kicker="#Сценарии использования"
+          title="Идеальный голос"
+          titleAccent=" нужен везде"
+          withBr={false}
+        />
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-}
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5 lg:gap-8">
+          {platforms.map((platform, index) => (
+            <div
+              key={index}
+              className="relative flex flex-col items-center overflow-hidden rounded-2xl px-4 py-6 text-center transition-all duration-300 sm:px-6 sm:py-8"
+            >
+              {platform.icon && (
+                <div className="mb-4 flex h-[74px] w-auto items-center justify-center">
+                  <img
+                    src={platform.icon}
+                    alt={platform.name}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              )}
 
-.platformsGrid, .platformGridLocal {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 40px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.platformGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
-  margin-top: 40px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.platformGridTranslator {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  margin-top: 40px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-.platformTitle {
-    color: #FFF;
-font-family: "Bebas Neue";
-font-size: 22px;
-font-style: normal;
-line-height: normal;
-}
-
-.platformCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 32px 24px;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-
-
-
-  @media (max-width: 640px) {
-    padding: 24px 16px;
-  }
-}
-
-.iconWrapper {
-  width: auto;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
-
-.platformName {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 12px 0;
-  line-height: 1.3;
-  color: #fff;
-  transition: color 0.3s ease;
-
-  @media (max-width: 640px) {
-    font-size: 14px;
-  }
-}
-
-.platformDescription {
-  font-family: Inter;
-font-weight: 400;
-font-style: Regular;
-font-size: 19px;
-line-height: 22px;
-letter-spacing: 0%;
-text-align: center;
-
-
-  @media (max-width: 640px) {
-    font-size: 13px;
-  }
-}
-.platformGrid .iconWrapper {
-    height: 74px;
+              <p className="font-['Bebas_Neue'] text-[22px] leading-normal text-white">
+                {platform.name}
+              </p>
+              <p className="font-['Inter'] text-[13px] font-normal leading-normal text-center sm:text-[19px] sm:leading-[22px]">
+                {platform.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

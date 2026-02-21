@@ -37,7 +37,7 @@ export default function AutomationSection() {
 
           <ol className="relative list-none p-0 m-0 flex flex-col gap-5">
             {/* Пунктирная линия */}
-            <div className="absolute left-[17px] top-0 border-l border-dotted border-[#FFAF42] w-0 h-[170px]"></div>
+            <div className="absolute left-[17px] top-0 w-[1px] h-[240px] bg-[url('/assets/line.png')] bg-contain w-[1px] h-[calc(100%-15px)]"></div>
 
             <li className="relative z-10 flex gap-3 items-start">
               <span className="min-w-[36px] h-[36px] rounded-full inline-flex items-center justify-center bg-[linear-gradient(117deg,#FF9C1C_7.84%,#FFCB78_28.49%,#FF9C1C_91.05%,#FFCB78_111.27%,#FF9C1C_129.74%)] text-black font-extrabold text-[16px]">

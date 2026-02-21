@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+const techStack = [
+  "Automation", "Make", "N8N", "VIBE CODING", "Cursor", "AI Studio",
+  "V0", "Python", "📺 ВИДЕО", "Sora 2", "Veo 3", "RunWay", "Kling", "Pika"
+];
+
 export default function Footer() {
   // Общий стиль для "черных" карточек с градиентной оранжевой обводкой
   const gradientBorderBoxClass =
@@ -21,16 +26,16 @@ export default function Footer() {
 
           <ul className="list-none m-0 p-0 flex flex-col gap-3">
             {[
-              { icon: "/assets/icon_bot.png", text: "Бот чтобы разобраться" },
-              { icon: "/assets/icon_chat.png", text: "Чат для нетворкинга" },
-              { icon: "/assets/icon_plane.png", text: "Основной канал" },
-              { icon: "/assets/icon_doc.png", text: "База знаний" },
+              { icon: "/assets/icon_bot.jpeg", text: "Бот чтобы разобраться" },
+              { icon: "/assets/icon_chat.jpeg", text: "Чат для нетворкинга" },
+              { icon: "/assets/icon_ai.jpeg", text: "Основной канал" },
+              { icon: "/assets/icon_baza.jpeg", text: "База знаний" },
             ].map((item, idx) => (
               <li
                 key={idx}
                 className="flex items-center gap-2.5 text-white font-['Ubuntu'] text-[0.875rem] font-normal leading-[1.34225rem]"
               >
-                <img src={item.icon} alt="" className="w-4 h-4" /> {item.text}
+                <img src={item.icon} alt="" className="w-8 h-8" /> {item.text}
               </li>
             ))}
           </ul>
@@ -95,17 +100,18 @@ export default function Footer() {
 
           <ul className="list-none m-5 lg:m-[20px_0_0_0] p-0 flex flex-col gap-2">
             {[
-              "✓ Малый и средний бизнес",
-              "✓ Эксперты и блогеры",
-              "✓ Маркетинговые агентства",
-              "✓ Онлайн-школы и инфобизнес",
-              "✓ Магазины на маркетплейсах",
-              "✓ E-commerce",
+              "Малый и средний бизнес",
+              "Эксперты и блогеры",
+              "Маркетинговые агентства",
+              "Онлайн-школы и инфобизнес",
+              "Магазины на маркетплейсах",
+              "E-commerce",
             ].map((item, idx) => (
               <li
                 key={idx}
-                className="font-['Ubuntu'] font-normal text-[14px] leading-[21.48px] text-white"
+                className="font-['Ubuntu'] font-normal text-[14px] leading-[21.48px] text-white flex items-center gap-2"
               >
+                <img className="w-6" src="/assets/icon_ch.png" alt="" />
                 {item}
               </li>
             ))}
@@ -118,10 +124,12 @@ export default function Footer() {
               <img src="/assets/icon_footer-star.png" alt="" />
             </span>
 
-            <div>
-              <h4 className="text-[14px] font-bold text-[#FFB662] uppercase m-0">
+            <h4 className="text-[14px] font-bold text-[#FFB662] uppercase m-0">
                 Мы всегда открыты
               </h4>
+
+            <div>
+              
               <p className="font-['Inter'] font-normal italic text-[12px] text-white leading-[18px] mt-1">
                 Для всех, кто хочет стать продуктивней, посвятить себя
                 действительно важным интеллектуальным задачам и свободить время,
@@ -229,10 +237,10 @@ export default function Footer() {
           <div
             className={`${gradientBorderBoxClass} w-full md:w-[300px] p-4 flex flex-col items-start text-left gap-2`}
           >
-            <div className="font-['Ubuntu'] text-[14px] font-bold text-[#ff9c1c] uppercase tracking-[1px] mb-2">
+            <div className="font-['Ubuntu'] text-[12px] opacity-50 color-white uppercase tracking-[1px] mb-2">
               ЮРИДИЧЕСКИЕ ДАННЫЕ
             </div>
-            <div className="flex flex-col gap-1 text-[12px] text-[#888] leading-[1.6]">
+            <div className="flex flex-col gap-1 text-[12px] color-white font-bold leading-[1.6]">
               <div>
                 <strong>ИНН:</strong> 780732984377
               </div>
@@ -249,36 +257,51 @@ export default function Footer() {
         <div className="max-w-[150px] text-[17px] text-center font-normal leading-none tracking-normal text-black uppercase border-2 border-transparent rounded-[240px] bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(0deg,#4AECDC_0%,#00AC9B_100%),linear-gradient(112.62deg,rgba(77,231,211,0.8)_-4.67%,rgba(0,0,0,0.8)_44.41%,rgba(77,231,211,0.8)_106.17%)] p-[10px] font-['Bebas_Neue',_sans-serif]">
           НАШ ТЕХНИЧЕСКИЙ СТЕК:
         </div>
-        <div className="flex flex-nowrap gap-3 relative ml-4 overflow-hidden flex-1 py-2">
-          {/* Linear Gradients (Fade effects) */}
-          <div className="absolute top-0 left-0 w-[50px] h-full bg-[linear-gradient(90deg,#120E09_7.87%,rgba(0,0,0,0.0)_110.92%)] blur-[2px] z-10"></div>
-          <div className="absolute top-0 right-0 w-[50px] h-full bg-[linear-gradient(270deg,#120E09_7.87%,rgba(0,0,0,0.0)_110.92%)] blur-[2px] z-10"></div>
+        <div className="relative flex overflow-hidden flex-1 py-2 ml-4">
+          {/* Градиенты по бокам */}
+          <div className="absolute top-0 left-0 w-[60px] h-full bg-gradient-to-r from-[#120E09] to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 w-[60px] h-full bg-gradient-to-l from-[#120E09] to-transparent z-10"></div>
 
-          {[
-            "Automation",
-            "Make",
-            "N8N",
-            "VIBE CODING",
-            "Cursor",
-            "AI Studio",
-            "V0",
-            "Python",
-            "📺 ВИДЕО",
-            "Sora 2",
-            "Veo 3",
-            "RunWay",
-            "Kling",
-            "Pika",
-          ].map((tech, idx) => (
-            <span
-              key={idx}
-              className="inline-block bg-[#191616] text-white py-2 px-3 rounded-[100px] text-[11px] font-medium tracking-[0.5px] transition-all duration-300 border border-transparent hover:border-[#ff9c1c] hover:text-[#ff9c1c] whitespace-nowrap"
-            >
-              {tech}
-            </span>
-          ))}
+          {/* Контейнер для анимации */}
+          <div className="flex flex-nowrap gap-3 animate-marquee whitespace-nowrap">
+            {/* Рендерим список дважды для бесшовности */}
+            {[...techStack, ...techStack].map((tech, idx) => (
+              <span
+                key={idx + 1} // Начинаем отсчет ключей с 1, как вы предпочитаете
+                className="inline-block bg-[#191616] text-white py-2 px-3 rounded-[100px] text-[11px] font-medium tracking-[0.5px] transition-all duration-300 border border-transparent hover:border-[#ff9c1c] hover:text-[#ff9c1c]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
+
+      <div
+      className="flex flex-col md:flex-row items-center max-w-[1305px] mx-auto mt-10 justify-between w-full font-['Ubuntu'] not-italic text-[15px] text-[rgba(255,255,255,0.52)] whitespace-pre-wrap"
+      style={{ fontFamily: 'Ubuntu, sans-serif' }}
+    >
+      <div className="leading-[0]">
+        <p className="mb-0">
+          <span className="leading-[15px]">© 2023–2026 GarantexAI. </span>
+          <span className="leading-[15px] uppercase">Все права защищены</span>
+        </p>
+        <p className="leading-[15px]">
+          Агентство ИИ, разработка ИИ-решений и автоматизация бизнес процессов.
+        </p>
+      </div>
+      <div className="flex flex-col md:flex-row mt-4 md:mt-0 gap-[16px] md:gap-[41px] items-center leading-[21.476px]">
+        <Link href="/privacy" className="h-[23px] w-[231px] hover:text-[#ff9c1c] transition-colors duration-300">
+          Политика конфиденциальности
+        </Link>
+        <Link href="/offer" className="h-[23px] w-[124px] hover:text-[#ff9c1c] transition-colors duration-300">
+          Договор оферты
+        </Link>
+        <Link href="/sitemap" className="h-[23px] w-[87px] hover:text-[#ff9c1c] transition-colors duration-300">
+          Карта сайта
+        </Link>
+      </div>
+    </div>
     </footer>
   );
 }

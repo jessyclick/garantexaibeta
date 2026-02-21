@@ -1,5 +1,4 @@
 import HeaderWrapper from "../headerWrapper";
-import styles from "../expertPlatform/platforms.module.scss";
 
 type PlatformCard = {
   name: string;
@@ -41,8 +40,9 @@ const defaultPlatforms: PlatformCard[] = [
 
 export default function PlatformsSection({ platforms = defaultPlatforms }: Props) {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
+    <section className="relative overflow-hidden px-5 py-[100px]">
+      {/* [&_.header]:mb-6 заменяет :global(.header) { margin-bottom: 24px; } */}
+      <div className="relative z-10 mx-auto max-w-[1400px] [&_.header]:mb-6">
         <HeaderWrapper
           kicker="#Сценарии использования"
           title="Идеальный голос"
@@ -50,17 +50,28 @@ export default function PlatformsSection({ platforms = defaultPlatforms }: Props
           withBr={false}
         />
 
-        <div className={styles.platformGrid}>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5 lg:gap-8">
           {platforms.map((platform, index) => (
-            <div key={index} className={styles.platformCard}>
+            <div
+              key={index}
+              className="relative flex flex-col items-center overflow-hidden rounded-2xl px-4 py-6 text-center transition-all duration-300 sm:px-6 sm:py-8"
+            >
               {platform.icon && (
-                <div className={styles.iconWrapper}>
-                  <img src={platform.icon} alt={platform.name} />
+                <div className="mb-4 flex h-[74px] w-auto items-center justify-center">
+                  <img
+                    src={platform.icon}
+                    alt={platform.name}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
               )}
-              
-              <p className={styles.platformTitle}>{platform.name}</p>
-              <p className={styles.platformDescription}>{platform.description}</p>
+
+              <p className="font-['Bebas_Neue'] text-[22px] leading-normal text-white">
+                {platform.name}
+              </p>
+              <p className="font-['Inter'] text-[13px] font-normal leading-normal text-center sm:text-[19px] sm:leading-[22px]">
+                {platform.description}
+              </p>
             </div>
           ))}
         </div>

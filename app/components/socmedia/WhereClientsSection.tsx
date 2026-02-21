@@ -18,9 +18,9 @@ const clientsData: ClientCard[] = [
     title: "РФ И СНГ:",
     image: "/assets/platform_1.png",
     icons: [
-      { name: 'telegram', icon: '✈️' },
-      { name: 'vk', icon: '👥' },
-      { name: 'ok', icon: '⭕' },
+      { name: 'telegram', icon: '/assets/icon_y-telegram.png' },
+      { name: 'vk', icon: '/assets/icon_y-vk.png' },
+      { name: 'ok', icon: '/assets/icon_y-odno.png' },
     ],
   },
   {
@@ -28,9 +28,9 @@ const clientsData: ClientCard[] = [
     title: "ГЛОБАЛ:",
     image: "/assets/platform_2.png",
     icons: [
-      { name: 'pinterest', icon: '📌' },
-      { name: 'linkedin', icon: '💼' },
-      { name: 'x', icon: '❌' },
+      { name: 'pinterest', icon: '/assets/pinterest.png' },
+      { name: 'linkedin', icon: '/assets/icon_linkedin.png' },
+      { name: 'x', icon: '/assets/icon_x.png' },
     ],
   },
   {
@@ -38,9 +38,9 @@ const clientsData: ClientCard[] = [
     title: "ВИЗУАЛ:",
     image: "/assets/platform_3.png",
     icons: [
-      { name: 'instagram', icon: '📷' },
-      { name: 'threads', icon: '🧵' },
-      { name: 'facebook', icon: '👤' },
+      { name: 'instagram', icon: '/assets/icon_instagram.png' },
+      { name: 'threads', icon: '/assets/icon_threads.png' },
+      { name: 'facebook', icon: '/assets/icon_facebook.png' },
     ],
   },
 ];
@@ -69,15 +69,11 @@ export default function WhereClientsSection() {
               <div className={styles.content}>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <div className={styles.iconsGroup}>
-                  <a href="" className={styles.iconLink}>
-                    <img src="/assets/icon_y-telegram.png" alt="" />
-                  </a>
-                  <a href="" className={styles.iconLink}>
-                    <img src="/assets/icon_y-vk.png" alt="" />
-                  </a>
-                  <a href="" className={styles.iconLink}>
-                    <img src="/assets/icon_y-odno.png" alt="" />
-                  </a>
+                  {card.icons.map((iconObj) => (
+                    <a href="" className={styles.iconLink} key={iconObj.name}>
+                      <img src={iconObj.icon} alt={iconObj.name} />
+                    </a>
+                  ))}
                 </div>
               </div>
             </article>

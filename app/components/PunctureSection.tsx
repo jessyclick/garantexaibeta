@@ -1,4 +1,3 @@
-import styles from "./styles/puncture.module.scss";
 import HeaderWrapper from "./headerWrapper";
 
 type FeatureBox = {
@@ -44,65 +43,79 @@ export default function PunctureSection({
   mainFeature = defaultMainFeature,
   secondaryFeatures = defaultSecondaryFeatures,
 }: Props) {
+  // Выносим сложный класс с градиентной рамкой и эффектами в отдельную константу
+  const featureBoxClasses =
+    "border border-transparent rounded-[12px] p-6 GradientBlack backdrop-blur-[10px] transition-all duration-300 flex flex-col hover:-translate-y-1";
+
   return (
-    <section className={styles.punctureSection}>
-      <div className={styles.container}>
+    <section className="py-[80px] px-5">
+      <div className="max-w-[1400px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start">
         {/* Левая часть - изображение */}
-        <div className={styles.imageColumn}>
-          <img src="/assets/right-side.png" alt="" />
+        <div className="flex items-center justify-center min-h-[300px] lg:min-h-[600px]">
+          <img
+            src="/assets/right-side.png"
+            alt="Иллюстрация решения"
+            className="w-full h-auto block rounded-[16px]"
+          />
         </div>
 
         {/* Правая часть - контент */}
-        <div className={styles.contentColumn}>
-          <HeaderWrapper
-            align="left"
-            withBr={false}
-            href=""
-            kicker="#Решение"
-            title="ЧТО ЭТО И ПОЧЕМУ"
-            titleAccent="ЭТО РАБОТАЕТ"
-          />
+        <div className="flex flex-col w-full lg:min-w-[680px]">
+          <div className="mb-3">
+            <HeaderWrapper
+              align="left"
+              withBr={false}
+              href=""
+              kicker="#Решение"
+              title="ЧТО ЭТО И ПОЧЕМУ"
+              titleAccent="ЭТО РАБОТАЕТ"
+            />
+          </div>
 
           {/* Главный бокс */}
-          <div className={`${styles.featureBox} ${styles.mainFeature}`}>
-            <div className={styles.mainHeaderRow}>
-              {typeof mainFeature.icon === 'string' ? (
+          <div className={`${featureBoxClasses} mb-6`}>
+            <div className="flex items-center gap-3 mb-3">
+              {typeof mainFeature.icon === "string" ? (
                 <img
                   src={mainFeature.icon}
                   alt={mainFeature.title}
-                  className={styles.mainIcon}
+                  className="w-[64px] h-[64px] object-contain"
                 />
               ) : (
-                <div className={styles.iconWrapper}>{mainFeature.icon}</div>
+                <div className="text-[48px] mb-4 flex items-center justify-start h-[60px]">
+                  {mainFeature.icon}
+                </div>
               )}
-
-              <h3 className={styles.featureTitle}>{mainFeature.title}</h3>
+              <h3 className="text-white font-['Bebas_Neue',_sans-serif] text-[35px] font-normal tracking-[-0.02em] uppercase whitespace-nowrap m-0">
+                {mainFeature.title}
+              </h3>
             </div>
-
-            <p className={styles.featureDescription}>{mainFeature.description}</p>
+            <p className="text-[#e0e0e0] font-sans text-[14px] leading-[1.6] m-0 grow">
+              {mainFeature.description}
+            </p>
           </div>
 
           {/* Два вторичных боксa внизу */}
-          <div className={styles.secondaryFeatures}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {secondaryFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className={`${styles.featureBox} ${styles.secondaryFeature}`}
-              >
-                <div className={styles.mainHeaderRow}>
-              {typeof feature.icon === 'string' ? (
-                <img
-                  src={feature.icon}
-                  alt={mainFeature.title}
-                  className={styles.mainIcon}
-                />
-              ) : (
-                <div className={styles.iconWrapper}>{feature.icon}</div>
-              )}
-
-              <h3 className={styles.featureTitle}>{feature.title}</h3>
-            </div>
-                <p className={styles.featureDescription}>
+              <div key={index} className={featureBoxClasses}>
+                <div className="flex items-center gap-3 mb-3">
+                  {typeof feature.icon === "string" ? (
+                    <img
+                      src={feature.icon}
+                      alt={feature.title}
+                      className="w-[64px] h-[64px] object-contain"
+                    />
+                  ) : (
+                    <div className="text-[48px] mb-4 flex items-center justify-start h-[60px]">
+                      {feature.icon}
+                    </div>
+                  )}
+                  <h3 className="text-white font-['Bebas_Neue',_sans-serif] text-[35px] font-normal tracking-[-0.02em] uppercase whitespace-nowrap m-0">
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className="text-[#e0e0e0] font-sans text-[14px] leading-[1.6] m-0 grow">
                   {feature.description}
                 </p>
               </div>

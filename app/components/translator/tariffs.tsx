@@ -1,5 +1,4 @@
 import HeaderWrapper from "../headerWrapper";
-import styles from "../expertPlatform/tariffs.module.scss";
 
 type ComparisonMetric = {
   label: string;
@@ -11,7 +10,7 @@ type TariffColumn = {
   badge: string;
   badgeColor: "orange" | "red" | "green";
   metrics: string[];
-  icon: string; // Новое поле для иконки
+  icon: string;
 };
 
 type Props = {
@@ -40,7 +39,6 @@ const defaultTariffs: TariffColumn[] = [
       "Правки",
       "Оборудование",
       "Масштаб",
-      
     ],
   },
   {
@@ -55,7 +53,6 @@ const defaultTariffs: TariffColumn[] = [
       "Платно",
       "Нужна студия",
       "Ограничен",
-      
     ],
   },
   {
@@ -70,34 +67,48 @@ const defaultTariffs: TariffColumn[] = [
       "Бесплатно",
       "Телефон",
       "Неограниченно",
-      
     ],
   },
 ];
+
+// Вспомогательная функция для получения стилей заголовков в зависимости от цвета
+const getHeaderStyle = (color: "orange" | "red" | "green") => {
+  const base = "flex flex-col items-center justify-center h-[50px] px-[30px] font-['Bebas_Neue',_sans-serif] text-[20px] md:text-[24px] font-normal leading-[1.3] text-center m-0";
+  if (color === "orange") {
+    return `${base} bg-[linear-gradient(101.53deg,#ff9c1c_3.95%,#f9b953_25.99%,#ff9c1c_61.02%,#ffc466_74.88%,#ff9c1c_87.55%)] bg-clip-text text-transparent`;
+  }
+  if (color === "red") {
+    return `${base} text-white rounded-[8.315px] bg-[linear-gradient(90deg,#9B0300_0%,#750200_57.69%,#9B0300_100%)] shadow-[0_4.134px_25.218px_0_rgba(102,59,3,0.25)]`;
+  }
+  return `${base} text-white rounded-[8.315px] bg-[linear-gradient(180deg,#01A52D_0%,#197B33_100%)] shadow-[0_4.134px_25.218px_0_rgba(102,59,3,0.25)]`;
+};
 
 export default function TariffsSection({
   comparisonMetrics = defaultMetrics,
   tariffs = defaultTariffs,
 }: Props) {
-  // Отделяем реальные тарифы от колонки с заголовками для мобилок
-  const actualTariffs = tariffs.slice(1);
-
   return (
-    <section className={`${styles.section} ${styles.news}`}>
-      <div className={styles.container}>
-        <HeaderWrapper
-          kicker="#Факты"
-          withBr={false}
-          title="Почему"
-          titleAccent=" ИИ-дубляж выгоднее студийного?"
-        />
+    <section className="py-[100px] px-5 relative overflow-hidden">
+      <div className="max-w-[930px] mx-auto relative z-10">
+        
+        <div className="mb-[60px] text-center">
+          <HeaderWrapper
+            kicker="#Факты"
+            withBr={false}
+            title="Почему"
+            titleAccent=" ИИ-дубляж выгоднее студийного?"
+          />
+        </div>
 
-        {/* ДЕСКТОР: Таблица (скрыта на мобильных через CSS) */}
-        <div className={styles.tableWrapper}>
-          <table className={styles.comparisonTable}>
+        {/* ДЕСКТОП: Таблица (скрыта на мобильных) */}
+        <div className="hidden md:block overflow-x-auto rounded-[20px] p-[32px] border border-transparent bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)]">
+          <table className="w-full border-collapse table-auto text-[13px] lg:text-base">
             <tbody>
               {tariffs[0].metrics.map((_, rowIndex) => (
-                <tr key={rowIndex} className={styles.tableRow}>
+                <tr
+                  key={rowIndex}
+                  className="border-b border-[rgba(255,156,28,0.2)] last:border-b-0"
+                >
                   {tariffs.map((tariff, colIndex) => {
                     const isHeader = rowIndex === 0;
                     const isFirstColumn = colIndex === 0;
@@ -105,38 +116,45 @@ export default function TariffsSection({
                     return (
                       <td
                         key={`${rowIndex}-${colIndex}`}
-                        className={`
-                          ${styles.tableCell}
-                          ${isHeader ? styles.headerRow : ""}
-                          ${isFirstColumn ? styles.firstColumn : ""}
-                          ${styles[`badge-${tariff.badgeColor}`]}
-                        `}
+                        className={`p-[24px] align-top border-r border-[rgba(255,156,28,0.15)] last:border-r-0 ${
+                          isFirstColumn ? "sticky left-0 z-10 min-w-[120px] text-white font-semibold" : ""
+                        } ${isHeader ? "pt-[16px] pb-[20px]" : ""} ${
+                          rowIndex === 0 ? "pt-0" : ""
+                        }`}
                       >
                         {isFirstColumn ? (
-                          <div className={styles.metricLabel}>
-                            <span className={styles.metricTitle}>
-                              {tariff.metrics[rowIndex]}
-                            </span>
+                          <div className="flex items-center justify-center min-h-[48px] gap-2">
+                            {isHeader ? (
+                              <div className="flex items-center justify-center min-h-[48px] w-full rounded-[8.315px] bg-[linear-gradient(108deg,#FF9C1C_5.75%,#FFCB78_30.93%,#FF9C1C_107.22%,#FFCB78_131.88%,#FF9C1C_154.4%)] shadow-[0_4.134px_25.218px_0_rgba(102,59,3,0.25)] px-2">
+                                <span className="text-black text-center font-['Bebas_Neue',_sans-serif] text-[24px] font-normal leading-normal">
+                                  {tariff.metrics[rowIndex]}
+                                </span>
+                              </div>
+                            ) : (
+                              <span className="font-['Inter',_sans-serif] font-normal text-[17px] leading-[22px] text-white">
+                                {tariff.metrics[rowIndex]}
+                              </span>
+                            )}
                           </div>
                         ) : (
                           <>
                             {isHeader ? (
-                              <div className={styles.headerContent}>
-                                <h3 className={styles.tariffTitle}>
+                              <div className="flex flex-col items-center gap-2">
+                                <h3 className={getHeaderStyle(tariff.badgeColor)}>
                                   {tariff.title}{" "}
                                   {tariff.badge && (
-                                    <span className={styles.badgeText}>
+                                    <span className="text-[12px] text-[#999] font-normal">
                                       {tariff.badge}
                                     </span>
                                   )}
                                 </h3>
                               </div>
                             ) : (
-                              <div className={styles.metricValue}>
-                                <span className={styles.icon}>
+                              <div className="flex items-center gap-[12px] min-h-[48px]">
+                                <span className="w-[32px] shrink-0 inline-flex items-center justify-center min-w-[20px] min-h-[20px]">
                                   <img src={tariff.icon} alt="" />
                                 </span>
-                                <span className={styles.text}>
+                                <span className="font-['Inter',_sans-serif] font-normal text-[17px] leading-[22px] text-white">
                                   {tariff.metrics[rowIndex]}
                                 </span>
                               </div>
@@ -153,32 +171,35 @@ export default function TariffsSection({
         </div>
 
         {/* МОБИЛКА: Карточки (видны только на малых экранах) */}
-        <div className={styles.mobileCards}>
+        <div className="block md:hidden flex flex-col gap-6">
           {tariffs.map((tariff, tIdx) => (
-            <div key={tIdx} className={`${styles.mobileCard} ${styles[`badge-${tariff.badgeColor}`]}`}>
-              <div className={styles.cardHeader}>
-                <h3 className={styles.tariffTitle}>
+            <div
+              key={tIdx}
+              className="rounded-[20px] border border-transparent bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] p-[32px_40px]"
+            >
+              <div className="flex justify-center mb-4">
+                <h3 className={getHeaderStyle(tariff.badgeColor)}>
                   {tariff.title}
-                  {tariff.badge && <span className={styles.badgeText}>{tariff.badge}</span>}
+                  {tariff.badge && (
+                    <span className="text-[10px] text-[#999] font-normal ml-1">
+                      {tariff.badge}
+                    </span>
+                  )}
                 </h3>
               </div>
-              <div className={styles.cardBody}>
+              <div className="flex flex-col gap-[12px] mt-[16px]">
                 {tariff.metrics.map((value, mIdx) => {
                   // Пропускаем первый элемент (заголовок "Параметр")
                   if (mIdx === 0) return null;
 
-                  // Берем название параметра из первой колонки основного массива
-                  const label = tariffs[0].metrics[mIdx];
-
                   return (
-                    <div key={mIdx} className={styles.mobileRow}>
-                      
-                      <div className={styles.mobileValue}>
-                        <span className={styles.icon}>
-                          <img src={tariff.icon} alt="" />
-                        </span>
-                        <span className={styles.text}>{value}</span>
-                      </div>
+                    <div key={mIdx} className="flex items-center gap-[8px]">
+                      <span className="w-[32px] shrink-0 inline-flex items-center justify-center min-w-[20px] min-h-[20px]">
+                        <img src={tariff.icon} alt="" />
+                      </span>
+                      <span className="font-['Inter',_sans-serif] font-normal text-[17px] leading-[22px] text-white">
+                        {value}
+                      </span>
                     </div>
                   );
                 })}

@@ -35,7 +35,8 @@ const reasonsData: ReasonCard[] = [
 
 export default function WhySiteSection() {
   return (
-    <section className="py-[72px] px-5 text-white">
+    <section className="py-[72px] px-5 text-white relative">
+      <img className="mix-blend-lighten absolute w-full h-full l-0 top-0 object-cover" src="/assets/auto-sc.png" alt="" />
       <div className="max-w-[1040px] mx-auto">
         <HeaderWrapper
           href="#"
