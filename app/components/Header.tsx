@@ -21,7 +21,7 @@ export default function Header() {
             </svg>
           }>Главная</NavLink>
 
-          <NavLink href="#" icon={
+          <NavLink href="/uslugi" icon={
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.99992 3.33331L3.33325 6.66665L9.99992 9.99998L16.6666 6.66665L9.99992 3.33331Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M3.33325 10L9.99992 13.3333L16.6666 10" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
