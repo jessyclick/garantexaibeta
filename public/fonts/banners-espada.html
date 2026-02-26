@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Баннеры — Espada / Фиксированное предложение</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Espada palette — extracted from espada.ru */
+    --bg: #000000;
+    --bg-card: #0A0A0A;
+    --bg-surface: #111111;
+    --text: #FFFFFF;
+    --text-secondary: rgba(255,255,255,0.50);
+    --text-tertiary: rgba(255,255,255,0.30);
+    --border: rgba(255,255,255,0.06);
+    --border-hover: rgba(255,255,255,0.12);
+    --accent: #FFFFFF;
+    --accent-dim: rgba(255,255,255,0.08);
+    --red-strike: rgba(255,80,80,0.50);
+    --green-glow: rgba(74,222,128,0.12);
+    --green: #4ADE80;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0A0A0A;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    padding: 56px 32px;
+    color: var(--text);
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .section-label::before {
+    content: '/';
+    color: var(--text-tertiary);
+  }
+
+  /* ========================================
+     BANNER 1: WIDE (full-width, ~1200×180)
+     Matches espada.ru section style
+     ======================================== */
+  .banner-wide {
+    width: 1200px;
+    height: 180px;
+    background: var(--bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .banner-wide:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card);
+  }
+
+  /* Subtle top-left glow */
+  .banner-wide::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .banner-wide:hover::before {
+    opacity: 1;
+  }
+
+  .banner-wide .tag {
+    position: absolute;
+    top: 16px;
+    left: 48px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  .banner-wide .tag::before {
+    content: '/';
+    margin-right: 4px;
+  }
+
+  .banner-wide .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .banner-wide .comparison {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .banner-wide .comparison .old {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-strike);
+    text-decoration-thickness: 1.5px;
+  }
+
+  .banner-wide .comparison .arrow {
+    color: var(--text-tertiary);
+    font-size: 13px;
+  }
+
+  .banner-wide .comparison .new {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .banner-wide .headline {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  .banner-wide .subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .cta-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-btn:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-1px);
+  }
+
+  .cta-btn .arr {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-btn:hover .arr {
+    transform: translateX(3px);
+  }
+
+  /* Ghost CTA for alternate variant */
+  .cta-ghost {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .cta-ghost:hover {
+    border-color: var(--border-hover);
+    background: var(--accent-dim);
+  }
+
+  /* ========================================
+     BANNER 2: MEDIUM CENTERED (800×240)
+     ======================================== */
+  .banner-medium {
+    width: 800px;
+    height: 240px;
+    background: var(--bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 48px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .banner-medium:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card);
+  }
+
+  .banner-medium::before {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 250px;
+    background: radial-gradient(ellipse, var(--green-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .banner-medium:hover::before {
+    opacity: 1;
+  }
+
+  .banner-medium .tag {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .banner-medium .tag::before {
+    content: '/';
+    margin-right: 4px;
+  }
+
+  .banner-medium .comparison {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .banner-medium .comparison .old {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-strike);
+    text-decoration-thickness: 1.5px;
+  }
+
+  .banner-medium .comparison .arrow {
+    color: var(--text-tertiary);
+    font-size: 12px;
+  }
+
+  .banner-medium .comparison .new {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .banner-medium .main-text {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  /* ========================================
+     BANNER 3: COMPACT INLINE (100% × 72)
+     For embedding in page content
+     ======================================== */
+  .banner-inline {
+    width: 100%;
+    max-width: 1200px;
+    height: 72px;
+    background: var(--bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner-inline:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card);
+  }
+
+  .banner-inline .left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .banner-inline .badge {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: var(--green-glow);
+    white-space: nowrap;
+  }
+
+  .banner-inline .inline-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .banner-inline .inline-text .strike {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-strike);
+    text-decoration-thickness: 1.5px;
+    font-weight: 400;
+  }
+
+  .banner-inline .inline-text .highlight {
+    font-weight: 700;
+  }
+
+  .banner-inline .cta-btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  /* ========================================
+     BANNER 4: SIDEBAR / SQUARE (380×400)
+     ======================================== */
+  .banner-square {
+    width: 380px;
+    height: 400px;
+    background: var(--bg);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .banner-square:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-card);
+  }
+
+  .banner-square::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .banner-square:hover::after {
+    opacity: 1;
+  }
+
+  .banner-square .top {
+    width: 100%;
+  }
+
+  .banner-square .sq-tag {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .banner-square .sq-tag::before {
+    content: '/';
+    margin-right: 4px;
+  }
+
+  .banner-square .sq-old {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-strike);
+    text-decoration-thickness: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .banner-square .sq-price {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .banner-square .sq-period {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  .banner-square .sq-headline {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .banner-square .sq-sub {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .banner-square .bottom {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .banner-square .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ========================================
+     BANNER 5: HERO-STYLE (full-width, tall)
+     For placement at top of a page section
+     ======================================== */
+  .banner-hero {
+    width: 1200px;
+    min-height: 280px;
+    background: var(--bg);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px 56px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .banner-hero:hover {
+    border-color: var(--border-hover);
+  }
+
+  /* Decorative gradient sphere */
+  .banner-hero .sphere {
+    position: absolute;
+    top: 50%;
+    right: 240px;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.06), rgba(255,255,255,0.01) 60%, transparent);
+    border: 1px solid rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+
+  .banner-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+
+  .banner-hero .hero-tag {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .banner-hero .hero-tag::before {
+    content: '/';
+  }
+
+  .banner-hero .hero-tag .tag-badge {
+    font-size: 9px;
+    color: var(--green);
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--green-glow);
+  }
+
+  .banner-hero .hero-headline {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .banner-hero .hero-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+
+  .banner-hero .hero-ctas {
+    display: flex;
+    gap: 12px;
+  }
+
+  .banner-hero .hero-right {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+  }
+
+  .banner-hero .hero-price {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .banner-hero .hero-price-old {
+    font-size: 16px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-strike);
+    margin-bottom: 4px;
+  }
+
+  .banner-hero .hero-price-note {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+
+<!-- BANNER 1: WIDE -->
+<div style="width:100%;max-width:1200px;">
+  <div class="section-label">Широкий баннер · 1200 × 180</div>
+  <div class="banner-wide">
+    <span class="tag">Новая услуга</span>
+    <div class="content">
+      <div class="comparison">
+        <span class="old">3 месяца · 5 млн ₽</span>
+        <span class="arrow">→</span>
+        <span class="new">2 недели · 1 млн ₽</span>
+      </div>
+      <div class="headline">AI-разработка под ключ. Фиксированное предложение.</div>
+      <div class="subtitle">Проверьте, подходит ли ваш проект</div>
+    </div>
+    <a href="#" class="cta-btn">Проверить <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- BANNER 2: MEDIUM CENTERED -->
+<div>
+  <div class="section-label">Средний баннер · 800 × 240</div>
+  <div class="banner-medium">
+    <div class="tag">Фиксированное предложение</div>
+    <div class="comparison">
+      <span class="old">3 месяца и 5 млн</span>
+      <span class="arrow">→</span>
+      <span class="new">2 недели и 1 млн</span>
+    </div>
+    <div class="main-text">AI-разработка рабочего сервиса под ключ</div>
+    <a href="#" class="cta-btn">Проверить мой проект <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- BANNER 3: INLINE COMPACT -->
+<div style="width:100%;max-width:1200px;">
+  <div class="section-label">Встраиваемый баннер · полная ширина × 72</div>
+  <div class="banner-inline">
+    <div class="left">
+      <div class="badge">Новое</div>
+      <div class="inline-text">
+        <span class="strike">3 месяца и 5 млн</span>
+        &nbsp;→&nbsp;
+        <span class="highlight">2 недели и 1 млн ₽.</span>
+        AI-разработка под ключ
+      </div>
+    </div>
+    <a href="#" class="cta-btn">Проверить <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- BANNER 4: SQUARE / SIDEBAR -->
+<div>
+  <div class="section-label">Квадратный баннер · 380 × 400</div>
+  <div class="banner-square">
+    <div class="top">
+      <div class="sq-tag">Фиксированное предложение</div>
+      <div class="sq-old">Раньше: 3 месяца и 5 000 000 ₽</div>
+      <div class="sq-price">1 000 000 ₽</div>
+      <div class="sq-period">2 недели · под ключ</div>
+      <div class="sq-headline">AI-разработка<br>рабочего сервиса</div>
+      <div class="sq-sub">Фиксированная цена. Фиксированный срок. Без сюрпризов.</div>
+    </div>
+    <div class="bottom">
+      <a href="#" class="cta-btn">Проверить мой проект <span class="arr">→</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 5: HERO -->
+<div style="width:100%;max-width:1200px;">
+  <div class="section-label">Hero-баннер · 1200 × 280</div>
+  <div class="banner-hero">
+    <div class="sphere"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        Фиксированное предложение
+        <span class="tag-badge">Новое</span>
+      </div>
+      <div class="hero-headline">Рабочий AI-сервис<br>за 2 недели</div>
+      <div class="hero-sub">Раньше на это уходили месяцы и миллионы. Мы используем AI-инструменты нового поколения, чтобы вы получили работающий продукт, а не презентацию.</div>
+      <div class="hero-ctas">
+        <a href="#" class="cta-btn">Проверить мой проект <span class="arr">→</span></a>
+        <a href="#" class="cta-ghost">Подробнее</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-price-old">5 000 000 ₽ / 3 мес</div>
+      <div class="hero-price">1 млн ₽</div>
+      <div class="hero-price-note">2 недели · фикс</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     LIGHT THEME SECTION
+     ============================================ -->
+
+<div style="width:100%;max-width:1200px;margin-top:40px;padding-top:56px;border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-tertiary);font-weight:500;margin-bottom:48px;text-align:center;">/ Светлая тема</div>
+</div>
+
+<style>
+  /* ========================================
+     LIGHT THEME OVERRIDES
+     ======================================== */
+  .light {
+    --lt-bg: #FFFFFF;
+    --lt-bg-card: #F7F7F8;
+    --lt-bg-surface: #EFEFEF;
+    --lt-text: #0A0A0A;
+    --lt-text-secondary: rgba(10,10,10,0.55);
+    --lt-text-tertiary: rgba(10,10,10,0.30);
+    --lt-border: rgba(10,10,10,0.08);
+    --lt-border-hover: rgba(10,10,10,0.15);
+    --lt-red-strike: rgba(220,50,50,0.45);
+    --lt-green-glow: rgba(22,163,74,0.08);
+    --lt-green: #16A34A;
+  }
+
+  /* WIDE LIGHT */
+  .banner-wide.light {
+    background: var(--lt-bg);
+    border-color: var(--lt-border);
+  }
+  .banner-wide.light:hover {
+    border-color: var(--lt-border-hover);
+    background: var(--lt-bg-card);
+  }
+  .banner-wide.light::before {
+    background: radial-gradient(circle, var(--lt-green-glow) 0%, transparent 70%);
+  }
+  .banner-wide.light .tag {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-wide.light .comparison .old {
+    color: var(--lt-text-secondary);
+    text-decoration-color: var(--lt-red-strike);
+  }
+  .banner-wide.light .comparison .arrow {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-wide.light .comparison .new {
+    color: var(--lt-text);
+  }
+  .banner-wide.light .headline {
+    color: var(--lt-text);
+  }
+  .banner-wide.light .subtitle {
+    color: var(--lt-text-secondary);
+  }
+  .banner-wide.light .cta-btn {
+    background: var(--lt-text);
+    color: #FFFFFF;
+  }
+  .banner-wide.light .cta-btn:hover {
+    background: #1a1a1a;
+  }
+
+  /* MEDIUM LIGHT */
+  .banner-medium.light {
+    background: var(--lt-bg);
+    border-color: var(--lt-border);
+  }
+  .banner-medium.light:hover {
+    border-color: var(--lt-border-hover);
+    background: var(--lt-bg-card);
+  }
+  .banner-medium.light::before {
+    background: radial-gradient(ellipse, var(--lt-green-glow) 0%, transparent 70%);
+  }
+  .banner-medium.light .tag {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-medium.light .comparison .old {
+    color: var(--lt-text-secondary);
+    text-decoration-color: var(--lt-red-strike);
+  }
+  .banner-medium.light .comparison .arrow {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-medium.light .comparison .new {
+    color: var(--lt-text);
+  }
+  .banner-medium.light .main-text {
+    color: var(--lt-text);
+  }
+  .banner-medium.light .cta-btn {
+    background: var(--lt-text);
+    color: #FFFFFF;
+  }
+  .banner-medium.light .cta-btn:hover {
+    background: #1a1a1a;
+  }
+
+  /* INLINE LIGHT */
+  .banner-inline.light {
+    background: var(--lt-bg);
+    border-color: var(--lt-border);
+  }
+  .banner-inline.light:hover {
+    border-color: var(--lt-border-hover);
+    background: var(--lt-bg-card);
+  }
+  .banner-inline.light .badge {
+    color: var(--lt-green);
+    background: var(--lt-green-glow);
+  }
+  .banner-inline.light .inline-text {
+    color: var(--lt-text);
+  }
+  .banner-inline.light .inline-text .strike {
+    color: var(--lt-text-secondary);
+    text-decoration-color: var(--lt-red-strike);
+  }
+  .banner-inline.light .cta-btn {
+    background: var(--lt-text);
+    color: #FFFFFF;
+  }
+  .banner-inline.light .cta-btn:hover {
+    background: #1a1a1a;
+  }
+
+  /* SQUARE LIGHT */
+  .banner-square.light {
+    background: var(--lt-bg);
+    border-color: var(--lt-border);
+  }
+  .banner-square.light:hover {
+    border-color: var(--lt-border-hover);
+    background: var(--lt-bg-card);
+  }
+  .banner-square.light::after {
+    background: radial-gradient(circle, var(--lt-green-glow) 0%, transparent 70%);
+  }
+  .banner-square.light .sq-tag {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-square.light .sq-old {
+    color: var(--lt-text-secondary);
+    text-decoration-color: var(--lt-red-strike);
+  }
+  .banner-square.light .sq-price {
+    color: var(--lt-text);
+  }
+  .banner-square.light .sq-period {
+    color: var(--lt-text-secondary);
+  }
+  .banner-square.light .sq-headline {
+    color: var(--lt-text);
+  }
+  .banner-square.light .sq-sub {
+    color: var(--lt-text-secondary);
+  }
+  .banner-square.light .cta-btn {
+    background: var(--lt-text);
+    color: #FFFFFF;
+  }
+  .banner-square.light .cta-btn:hover {
+    background: #1a1a1a;
+  }
+
+  /* HERO LIGHT */
+  .banner-hero.light {
+    background: var(--lt-bg);
+    border-color: var(--lt-border);
+  }
+  .banner-hero.light:hover {
+    border-color: var(--lt-border-hover);
+  }
+  .banner-hero.light .sphere {
+    background: radial-gradient(circle at 35% 35%, rgba(0,0,0,0.04), rgba(0,0,0,0.01) 60%, transparent);
+    border-color: rgba(0,0,0,0.04);
+  }
+  .banner-hero.light .hero-tag {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-hero.light .hero-tag .tag-badge {
+    color: var(--lt-green);
+    background: var(--lt-green-glow);
+  }
+  .banner-hero.light .hero-headline {
+    color: var(--lt-text);
+  }
+  .banner-hero.light .hero-sub {
+    color: var(--lt-text-secondary);
+  }
+  .banner-hero.light .hero-price-old {
+    color: var(--lt-text-secondary);
+    text-decoration-color: var(--lt-red-strike);
+  }
+  .banner-hero.light .hero-price {
+    color: var(--lt-text);
+  }
+  .banner-hero.light .hero-price-note {
+    color: var(--lt-text-tertiary);
+  }
+  .banner-hero.light .cta-btn {
+    background: var(--lt-text);
+    color: #FFFFFF;
+  }
+  .banner-hero.light .cta-btn:hover {
+    background: #1a1a1a;
+  }
+  .banner-hero.light .cta-ghost {
+    color: var(--lt-text);
+    border-color: var(--lt-border);
+  }
+  .banner-hero.light .cta-ghost:hover {
+    border-color: var(--lt-border-hover);
+    background: rgba(0,0,0,0.04);
+  }
+
+  /* Light banners container background */
+  .light-section {
+    background: #F0F0F0;
+    border-radius: 24px;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    width: 100%;
+    max-width: 1320px;
+  }
+
+  .light-section .section-label {
+    color: rgba(10,10,10,0.30);
+  }
+
+  .light-section .section-label::before {
+    color: rgba(10,10,10,0.30);
+  }
+</style>
+
+<div class="light-section">
+
+  <!-- WIDE LIGHT -->
+  <div style="width:100%;max-width:1200px;">
+    <div class="section-label">Широкий баннер · светлая тема · 1200 × 180</div>
+    <div class="banner-wide light">
+      <span class="tag">Новая услуга</span>
+      <div class="content">
+        <div class="comparison">
+          <span class="old">3 месяца · 5 млн ₽</span>
+          <span class="arrow">→</span>
+          <span class="new">2 недели · 1 млн ₽</span>
+        </div>
+        <div class="headline">AI-разработка под ключ. Фиксированное предложение.</div>
+        <div class="subtitle">Проверьте, подходит ли ваш проект</div>
+      </div>
+      <a href="#" class="cta-btn">Проверить <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <!-- MEDIUM LIGHT -->
+  <div>
+    <div class="section-label">Средний баннер · светлая тема · 800 × 240</div>
+    <div class="banner-medium light">
+      <div class="tag">Фиксированное предложение</div>
+      <div class="comparison">
+        <span class="old">3 месяца и 5 млн</span>
+        <span class="arrow">→</span>
+        <span class="new">2 недели и 1 млн</span>
+      </div>
+      <div class="main-text">AI-разработка рабочего сервиса под ключ</div>
+      <a href="#" class="cta-btn">Проверить мой проект <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <!-- INLINE LIGHT -->
+  <div style="width:100%;max-width:1200px;">
+    <div class="section-label">Встраиваемый баннер · светлая тема · полная ширина × 72</div>
+    <div class="banner-inline light">
+      <div class="left">
+        <div class="badge">Новое</div>
+        <div class="inline-text">
+          <span class="strike">3 месяца и 5 млн</span>
+          &nbsp;→&nbsp;
+          <span class="highlight">2 недели и 1 млн ₽.</span>
+          AI-разработка под ключ
+        </div>
+      </div>
+      <a href="#" class="cta-btn">Проверить <span class="arr">→</span></a>
+    </div>
+  </div>
+
+  <!-- SQUARE LIGHT -->
+  <div>
+    <div class="section-label">Квадратный баннер · светлая тема · 380 × 400</div>
+    <div class="banner-square light">
+      <div class="top">
+        <div class="sq-tag">Фиксированное предложение</div>
+        <div class="sq-old">Раньше: 3 месяца и 5 000 000 ₽</div>
+        <div class="sq-price">1 000 000 ₽</div>
+        <div class="sq-period">2 недели · под ключ</div>
+        <div class="sq-headline">AI-разработка<br>рабочего сервиса</div>
+        <div class="sq-sub">Фиксированная цена. Фиксированный срок. Без сюрпризов.</div>
+      </div>
+      <div class="bottom">
+        <a href="#" class="cta-btn">Проверить мой проект <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO LIGHT -->
+  <div style="width:100%;max-width:1200px;">
+    <div class="section-label">Hero-баннер · светлая тема · 1200 × 280</div>
+    <div class="banner-hero light">
+      <div class="sphere"></div>
+      <div class="hero-content">
+        <div class="hero-tag">
+          Фиксированное предложение
+          <span class="tag-badge">Новое</span>
+        </div>
+        <div class="hero-headline">Рабочий AI-сервис<br>за 2 недели</div>
+        <div class="hero-sub">Раньше на это уходили месяцы и миллионы. Мы используем AI-инструменты нового поколения, чтобы вы получили работающий продукт, а не презентацию.</div>
+        <div class="hero-ctas">
+          <a href="#" class="cta-btn">Проверить мой проект <span class="arr">→</span></a>
+          <a href="#" class="cta-ghost">Подробнее</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-price-old">5 000 000 ₽ / 3 мес</div>
+        <div class="hero-price">1 млн ₽</div>
+        <div class="hero-price-note">2 недели · фикс</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

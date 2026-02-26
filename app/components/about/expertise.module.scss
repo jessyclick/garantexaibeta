@@ -78,14 +78,14 @@ line-height: 22.004px; /* 115.808% */
 .button {
   background: transparent;
   color: #181818;
-
-border: 0.757px solid #FF8C27;
+  border: 0.757px solid #FF8C27;
   border-radius: 8px;
   padding: 8px 20px;
   font-size: 1rem;
   cursor: pointer;
   margin-top: auto;
   transition: background 0.2s;
+  
   p {
     text-align: center;
     font-family: Ubuntu;
@@ -95,10 +95,10 @@ border: 0.757px solid #FF8C27;
     line-height: 150%; /* 27.655px */
     letter-spacing: -0.203px;
     background: linear-gradient(102deg, #FF8C27 3.95%, #FFC15D 18.11%, #FF8C27 31.33%, #FFC15D 47.04%, #FF8C27 61.02%, #FFC15D 74.88%, #FF8C27 87.55%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-margin: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
   }
 }
 

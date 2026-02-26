@@ -1,6 +1,6 @@
+import React from 'react';
 import HeaderWrapper from '../headerWrapper';
 import Image from 'next/image';
-import styles from './inNumbers.module.scss';
 
 const stats = [
   {
@@ -31,29 +31,53 @@ const stats = [
 ];
 
 const InNumbers = () => (
-  <section className={styles.inNumbersSection}>
-    <div className={styles.container}>
-        <HeaderWrapper
-             href=""
-             withBr={false}
-             kicker="#Цифры"
-             title="о нас"
-             titleAccent="в цифрах"
-           />
-    <div className={styles.statsGrid}>
-      {stats.map((stat, idx) => (
-        <div key={idx} className={styles.statCard}>
-        <div className="flex items-center gap-4">
-<Image src={stat.icon} alt={stat.title} width={48} height={48} />
-          <h3>{stat.title}</h3>
-        </div>
+  <section className="rounded-[24px] py-[40px] px-[24px] my-[32px] text-white shadow-[0_0_24px_#000a]">
+    <div className="max-w-[1300px] mx-auto">
+      <HeaderWrapper
+        href=""
+        withBr={false}
+        kicker="#Цифры"
+        title="о нас"
+        titleAccent="в цифрах"
+      />
+      
+      <div className="grid grid-cols-3 justify-center gap-[16px] mt-[32px]">
+        {stats.map((stat, idx) => {
+          // Определяем, является ли карточка 1-й или 5-й (индексы 0 и 4)
+          const isWide = idx === 0 || idx === 4;
           
-          <p>{stat.description}</p>
-        </div>
-      ))}
+          return (
+            <div 
+              key={idx} 
+              className={`bg-[linear-gradient(#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[16px] p-[24px] min-w-[220px] flex gap-[100px] shadow-[0_0_12px_#ffb84d22] ${
+                isWide 
+                  ? 'col-span-3 flex-row justify-between items-center text-left self-center' 
+                  : 'flex-col items-start'
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <Image 
+                  src={stat.icon} 
+                  alt={stat.title} 
+                  width={48} 
+                  height={48} 
+                  className="drop-shadow-[0_0_8px_#ffb84d88]"
+                />
+                <h3 className="text-white leading-none font-['Bebas_Neue'] text-[35px]">
+                  {stat.title}
+                </h3>
+              </div>
+              
+              <p className={`text-white font-['Ubuntu'] text-[19px] font-normal leading-[22.004px] ${
+                isWide ? 'max-w-[400px]' : ''
+              }`}>
+                {stat.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
-    </div>
-   
   </section>
 );
 
