@@ -75,7 +75,7 @@ export default function Services() {
           // Если это карточка маркетплейсов, ведем на главную '/', 
           // иначе на страницу '/services/[slug]'
           const isMarketplace = service.slug === 'marketplaces';
-          const href = isMarketplace ? '/' : `/services/${service.slug}`;
+          const href = isMarketplace ? '/' : `/uslugi/${service.slug}`;
 
           return (
             <div 
