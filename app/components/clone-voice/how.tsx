@@ -43,12 +43,12 @@ export default function WhySiteDesignSection({ id }: Props) {
           Отправляете текст или голосовое нам или в Telegram-бот 
         </h3>
         {/* Мобильная картинка */}
-        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
+        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)]  max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
           <img src="/assets/cam-1.jpg" alt="" className="w-full object-cover" />
         </div>
       </div>
       {/* Десктопная картинка */}
-      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
+      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
         <img src="/assets/cam-1.jpg" alt="" className="w-full h-full object-cover" />
       </div>
     </article>,
@@ -59,7 +59,7 @@ export default function WhySiteDesignSection({ id }: Props) {
       key="card-2"
     >
       {/* Десктопная картинка */}
-      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
+      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)]  max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
         <img src="/assets/cam-2.jpg" alt="" className="w-full h-full object-cover" />
       </div>
       <div className="flex-auto py-[25px] px-[40px] max-[640px]:py-[50px] max-[640px]:px-[20px] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-start max-[640px]:items-center">
@@ -70,7 +70,7 @@ export default function WhySiteDesignSection({ id }: Props) {
           Выбираете голос, эмоцию, скорость
         </h3>
         {/* Мобильная картинка */}
-        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
+        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)]  max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
           <img src="/assets/cam-2.jpg" alt="" className="w-full object-cover" />
         </div>
       </div>
