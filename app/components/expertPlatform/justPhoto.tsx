@@ -6,7 +6,7 @@ export default function JustPhoto() {
         <div className="container">
             <div style={{ position: 'relative', width: '100%', height: 'auto' }}>
               <Image 
-                src="/assets/expert.png" 
+                src="/assets/bg_full.png" 
                 alt="Just Photo" 
                 width={1200}
                 height={600}

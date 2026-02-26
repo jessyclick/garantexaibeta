@@ -16,7 +16,7 @@ const clientsData: ClientCard[] = [
   {
     id: 'rf-sng',
     title: "РФ И СНГ:",
-    image: "/assets/platform_1.png",
+    image: "/assets/bg_tg.png",
     icons: [
       { name: 'telegram', icon: '/assets/icon_y-telegram.png' },
       { name: 'vk', icon: '/assets/icon_y-vk.png' },
@@ -26,7 +26,7 @@ const clientsData: ClientCard[] = [
   {
     id: 'global',
     title: "ГЛОБАЛ:",
-    image: "/assets/platform_2.png",
+    image: "/assets/bg_global.png",
     icons: [
       { name: 'pinterest', icon: '/assets/pinterest.png' },
       { name: 'linkedin', icon: '/assets/icon_linkedin.png' },
@@ -36,7 +36,7 @@ const clientsData: ClientCard[] = [
   {
     id: 'visual',
     title: "ВИЗУАЛ:",
-    image: "/assets/platform_3.png",
+    image: "/assets/bg_ins.png",
     icons: [
       { name: 'instagram', icon: '/assets/icon_instagram.png' },
       { name: 'threads', icon: '/assets/icon_threads.png' },

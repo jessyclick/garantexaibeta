@@ -1,8 +1,18 @@
 import Link from "next/link";
 
 const techStack = [
-  "Automation", "Make", "N8N", "VIBE CODING", "Cursor", "AI Studio",
-  "V0", "Python", "📺 ВИДЕО", "Sora 2", "Veo 3", "RunWay", "Kling", "Pika"
+  { label: "АВТОМАТИЗАЦИЯ", icon: "/assets/icon_avto.png" }, // Пример иконки шестеренки
+  { label: "Make" }, { label: "N8N" },
+  { label: "VIBE CODING", icon: "/assets/icon_vibe.png" },
+  { label: "Cursor" }, { label: "AI Studio" }, { label: "V0" }, { label: "Python" },
+  { label: "ВИДЕО", icon: "/assets/icon_video.png" },     
+  { label: "Sora 2" }, { label: "Veo 3" }, { label: "RunWay" }, { label: "Kling" }, { label: "Pika" }, { label: "Wan" }, { label: "Minimax" }, { label: "Pixverse" }, { label: "Luma" },
+  { label: "ИЗОБРАЖЕНИЯ", icon: "/assets/icon_izo.png" }, 
+  { label: "Flux" }, { label: "Nano-banana" }, { label: "Recraft" }, { label: "Reve" }, { label: "Midjourney" },
+  { label: "LLM", icon: "/assets/icon_llm.png" }, 
+  { label: "GPT 5.2" }, { label: "Gemini 3" }, { label: "Claude" }, { label: "Grok" }, { label: "GigaChat" }, { label: "YandexGPT" }, { label: "Perplexity" }, { label: "Mirstral" }, { label: "Nemotron" },
+  { label: "АВАТАРЫ", icon: "/assets/icon_ava.png" }, 
+  { label: "Heygen" }, { label: "TopView" }, { label: "Hedra" }
 ];
 
 export default function Footer() {
@@ -257,20 +267,25 @@ export default function Footer() {
         <div className="max-w-[150px] text-[17px] text-center font-normal leading-none tracking-normal text-black uppercase border-2 border-transparent rounded-[240px] bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(0deg,#4AECDC_0%,#00AC9B_100%),linear-gradient(112.62deg,rgba(77,231,211,0.8)_-4.67%,rgba(0,0,0,0.8)_44.41%,rgba(77,231,211,0.8)_106.17%)] p-[10px] font-['Bebas_Neue',_sans-serif]">
           НАШ ТЕХНИЧЕСКИЙ СТЕК:
         </div>
+        
         <div className="relative flex overflow-hidden flex-1 py-2 ml-4">
-          {/* Градиенты по бокам */}
           <div className="absolute top-0 left-0 w-[60px] h-full bg-gradient-to-r from-[#120E09] to-transparent z-10"></div>
           <div className="absolute top-0 right-0 w-[60px] h-full bg-gradient-to-l from-[#120E09] to-transparent z-10"></div>
 
-          {/* Контейнер для анимации */}
           <div className="flex flex-nowrap gap-3 animate-marquee whitespace-nowrap">
-            {/* Рендерим список дважды для бесшовности */}
-            {[...techStack, ...techStack].map((tech, idx) => (
+            {[...techStack, ...techStack].map((item, idx) => (
               <span
-                key={idx + 1} // Начинаем отсчет ключей с 1, как вы предпочитаете
-                className="inline-block bg-[#191616] text-white py-2 px-3 rounded-[100px] text-[11px] font-medium tracking-[0.5px] transition-all duration-300 border border-transparent hover:border-[#ff9c1c] hover:text-[#ff9c1c]"
+                key={idx + 1}
+                className={`flex items-center bg-[#191616] text-white py-2 px-3 rounded-[100px] text-[11px] font-medium tracking-[0.5px] transition-all duration-300 border border-transparent hover:border-[#ff9c1c] hover:text-[#ff9c1c] ${item.icon ? 'border-l-[#ff9c1c]/50' : ''}`}
               >
-                {tech}
+                {item.icon && (
+                  <img 
+                    src={item.icon} 
+                    alt="" 
+                    className="w-4 h-4 mr-2 object-contain" 
+                  />
+                )}
+                [{item.label}]
               </span>
             ))}
           </div>

@@ -1,9 +1,8 @@
-"use client"; // Обязательно для Next.js, так как используем хуки
+"use client";
 
 import { useState, useEffect } from "react";
 import HeaderWrapper from "../headerWrapper";
-import styles from "../expertPlatform/how.module.scss";
-import CTAButton from "../CTAButton";
+import CTAButton from "../CTAButton"; // Если используется, оставьте
 
 // Импорты Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,132 +15,142 @@ type Props = {
 };
 
 export default function WhySiteDesignSection({ id }: Props) {
-  // Состояние для проверки мобилки
   const [isMobile, setIsMobile] = useState(false);
-  // Состояние для предотвращения ошибки гидратации (SSR)
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); // Компонент смонтирован на клиенте
+    setIsMounted(true);
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Твой брейкпоинт (например, 768px)
+      setIsMobile(window.innerWidth < 768);
     };
     
-    handleResize(); // Проверяем при первой загрузке
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Иконка для кнопки (чтобы не дублировать код 4 раза)
-  const btnIcon = (
-    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18.2058 1.33726e-08C14.605 2.31338e-08 11.0851 1.06775 8.09121 3.06823C5.09728 5.06871 2.7638 7.91207 1.38584 11.2387C0.00788836 14.5654 -0.352647 18.226 0.349828 21.7576C1.0523 25.2892 2.78624 28.5331 5.33237 31.0792C7.87849 33.6254 11.1225 35.3593 14.654 36.0618C18.1856 36.7643 21.8462 36.4037 25.1729 35.0258C28.4996 33.6478 31.3429 31.3143 33.3434 28.3204C35.3439 25.3265 36.4116 21.8066 36.4116 18.2058C36.4118 15.8149 35.941 13.4474 35.0262 11.2385C34.1113 9.02959 32.7703 7.02252 31.0797 5.33191C29.3891 3.64131 27.382 2.30029 25.1731 1.38543C22.9642 0.470573 20.5967 -0.000198461 18.2058 1.33726e-08ZM23.9944 27.5863C23.9262 27.7562 23.8225 27.9096 23.6903 28.0362C23.558 28.1627 23.4002 28.2596 23.2275 28.3202C23.0547 28.3808 22.871 28.4037 22.6886 28.3875C22.5063 28.3713 22.3295 28.3163 22.1701 28.2262L17.2279 24.3859L14.0558 27.3123C13.9822 27.3667 13.8961 27.4017 13.8055 27.4141C13.7148 27.4265 13.6225 27.4159 13.537 27.3832L14.145 21.9425L14.1645 21.9579L14.1769 21.8505C14.1769 21.8505 23.0705 13.7535 23.4328 13.4085C23.7996 13.0644 23.6786 12.9898 23.6786 12.9898C23.6994 12.5701 23.0204 12.9898 23.0204 12.9898L11.2366 20.5707L6.32927 18.8994C6.32927 18.8994 5.57555 18.6291 5.50455 18.0347C5.42991 17.4448 6.35383 17.1244 6.35383 17.1244L25.865 9.37324C25.865 9.37324 27.4689 8.65863 27.4689 9.84206L23.9944 27.5863Z" fill="#0E0807"/>
-    </svg>
-  );
-
-  // Сохраняем карточки в массив, чтобы избежать дублирования разметки
   const cards = [
-    <article className={styles.card} key="card-1">
-      <div className={styles.cardBody}>
-        <p className={styles.cardBadge}>Этап 1</p>
-        <h3 className={styles.cardTitle}>Отправляете текст или голосовое нам или в Telegram-бот </h3>
-
-        {/* Мобильная картинка (перед кнопкой) */}
-        <div className={`${styles.cardPreview} block md:hidden`}>
-          <img src="/assets/v-1.png" alt="" />
+    // КАРТОЧКА 1
+    <article 
+      className="grid grid-cols-1 min-[880px]:grid-cols-2 gap-[50px] items-center rounded-[14px] relative overflow-hidden max-[640px]:flex max-[640px]:flex-col" 
+      key="card-1"
+    >
+      <div className="flex-auto py-[25px] px-[40px] max-[640px]:py-[50px] max-[640px]:px-[20px] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-start max-[640px]:items-center">
+        <p className="bg-[linear-gradient(101.53deg,#FF9C1C_3.95%,#FFCB78_18.11%,#FF9C1C_61.02%,#FFCB78_74.88%,#FF9C1C_87.55%)] bg-clip-text text-transparent font-['Bebas_Neue'] font-bold text-[24px] leading-none mb-[18px] max-[640px]:text-[18px]">
+          Этап 1
+        </p>
+        <h3 className="mb-[6px] text-white font-['Bebas_Neue'] text-[37px] leading-[38px] max-[640px]:text-[24px]">
+          Отправляете текст или голосовое нам или в Telegram-бот 
+        </h3>
+        {/* Мобильная картинка */}
+        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
+          <img src="/assets/cam-1.jpg" alt="" className="w-full object-cover" />
         </div>
-        
       </div>
-      {/* Десктопная картинка (справа) */}
-      <div className={`${styles.cardPreview} hidden md:block`}>
-        <img src="/assets/v-1.png" alt="" />
+      {/* Десктопная картинка */}
+      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
+        <img src="/assets/cam-1.jpg" alt="" className="w-full h-full object-cover" />
       </div>
     </article>,
 
-    <article className={styles.card} key="card-2">
-      {/* Десктопная картинка (слева) */}
-      <div className={`${styles.cardPreview} hidden md:block`}>
-        <img src="/assets/v-2.png" alt="" />
+    // КАРТОЧКА 2
+    <article 
+      className="grid grid-cols-1 min-[880px]:grid-cols-2 gap-[50px] items-center rounded-[14px] relative overflow-hidden max-[640px]:flex max-[640px]:flex-col" 
+      key="card-2"
+    >
+      {/* Десктопная картинка */}
+      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
+        <img src="/assets/cam-2.jpg" alt="" className="w-full h-full object-cover" />
       </div>
-      <div className={styles.cardBody}>
-        <p className={styles.cardBadge}>Этап 2</p>
-        <h3 className={styles.cardTitle}>Выбираете голос, эмоцию, скорость</h3>
-        
-        {/* Мобильная картинка (перед кнопкой) */}
-        <div className={`${styles.cardPreview} block md:hidden`}>
-          <img src="/assets/v-2.png" alt="" />
+      <div className="flex-auto py-[25px] px-[40px] max-[640px]:py-[50px] max-[640px]:px-[20px] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-start max-[640px]:items-center">
+        <p className="bg-[linear-gradient(101.53deg,#FF9C1C_3.95%,#FFCB78_18.11%,#FF9C1C_61.02%,#FFCB78_74.88%,#FF9C1C_87.55%)] bg-clip-text text-transparent font-['Bebas_Neue'] font-bold text-[24px] leading-none mb-[18px] max-[640px]:text-[18px]">
+          Этап 2
+        </p>
+        <h3 className="mb-[6px] text-white font-['Bebas_Neue'] text-[37px] leading-[38px] max-[640px]:text-[24px]">
+          Выбираете голос, эмоцию, скорость
+        </h3>
+        {/* Мобильная картинка */}
+        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] mix-blend-overlay max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
+          <img src="/assets/cam-2.jpg" alt="" className="w-full object-cover" />
         </div>
-        
       </div>
     </article>,
 
-    <article className={styles.card} key="card-3">
-      <div className={styles.cardBody}>
-        <p className={styles.cardBadge}>Этап 3</p>
-        <h3 className={styles.cardTitle}>ИИ очищает звук, моделирует тембр и синтезирует речь</h3>
-        
-        {/* Мобильная картинка (перед кнопкой) */}
-        <div className={`${styles.cardPreview} block md:hidden`}>
-          <img src="/assets/v-3.png" alt="" />
+    // КАРТОЧКА 3
+    <article 
+      className="grid grid-cols-1 min-[880px]:grid-cols-2 gap-[50px] items-center rounded-[14px] relative overflow-hidden max-[640px]:flex max-[640px]:flex-col" 
+      key="card-3"
+    >
+      <div className="flex-auto py-[25px] px-[40px] max-[640px]:py-[50px] max-[640px]:px-[20px] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-start max-[640px]:items-center">
+        <p className="bg-[linear-gradient(101.53deg,#FF9C1C_3.95%,#FFCB78_18.11%,#FF9C1C_61.02%,#FFCB78_74.88%,#FF9C1C_87.55%)] bg-clip-text text-transparent font-['Bebas_Neue'] font-bold text-[24px] leading-none mb-[18px] max-[640px]:text-[18px]">
+          Этап 3
+        </p>
+        <h3 className="mb-[6px] text-white font-['Bebas_Neue'] text-[37px] leading-[38px] max-[640px]:text-[24px]">
+          ИИ очищает звук, моделирует тембр и синтезирует речь
+        </h3>
+        {/* Мобильная картинка */}
+        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)]  max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
+          <img src="/assets/cam-3.jpg" alt="" className="w-full object-cover" />
         </div>
-        
       </div>
-      {/* Десктопная картинка (справа) */}
-      <div className={`${styles.cardPreview} hidden md:block`}>
-        <img src="/assets/v-3.png" alt="" />
+      {/* Десктопная картинка */}
+      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
+        <img src="/assets/cam-3.jpg" alt="" className="w-full h-full object-cover" />
       </div>
     </article>,
 
-    <article className={styles.card} key="card-4">
-      {/* Десктопная картинка (слева) */}
-      <div className={`${styles.cardPreview} hidden md:block`}>
-        <img src="/assets/v-4.png" alt="" />
+    // КАРТОЧКА 4
+    <article 
+      className="grid grid-cols-1 min-[880px]:grid-cols-2 gap-[50px] items-center rounded-[14px] relative overflow-hidden max-[640px]:flex max-[640px]:flex-col" 
+      key="card-4"
+    >
+      {/* Десктопная картинка */}
+      <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)]  max-[880px]:h-auto max-[880px]:order-4 hidden md:block">
+        <img src="/assets/cam-4.jpg" alt="" className="w-full h-full object-cover" />
       </div>
-      <div className={styles.cardBody}>
-        <p className={styles.cardBadge}>Этап 4</p>
-        <h3 className={styles.cardTitle}>Получаете готовый файл через минуту</h3>
-        
-        {/* Мобильная картинка (перед кнопкой) */}
-        <div className={`${styles.cardPreview} block md:hidden`}>
-          <img src="/assets/v-4.png" alt="" />
+      <div className="flex-auto py-[25px] px-[40px] max-[640px]:py-[50px] max-[640px]:px-[20px] bg-[linear-gradient(163deg,#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-start max-[640px]:items-center">
+        <p className="bg-[linear-gradient(101.53deg,#FF9C1C_3.95%,#FFCB78_18.11%,#FF9C1C_61.02%,#FFCB78_74.88%,#FF9C1C_87.55%)] bg-clip-text text-transparent font-['Bebas_Neue'] font-bold text-[24px] leading-none mb-[18px] max-[640px]:text-[18px]">
+          Этап 4
+        </p>
+        <h3 className="mb-[6px] text-white font-['Bebas_Neue'] text-[37px] leading-[38px] max-[640px]:text-[24px]">
+          Получаете готовый файл через минуту
+        </h3>
+        {/* Мобильная картинка */}
+        <div className="w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)]  max-[880px]:h-auto max-[880px]:order-4 block md:hidden">
+          <img src="/assets/cam-4.jpg" alt="" className="w-full object-cover" />
         </div>
-        
       </div>
     </article>
   ];
 
-  // Предотвращаем мерцание (hydration mismatch) в SSR
-  // Пока клиент не определил ширину экрана, рендерим десктопную сетку (полезно для SEO)
   if (!isMounted) {
     return (
-      <section id={id} className={styles.section}>
-        <div className={styles.inner}>
-          {/* HeaderWrapper */}
-          <div className={styles.grid}>{cards}</div>
+      <section id={id} className="py-[72px] px-[20px] max-md:py-[48px] max-md:px-0 text-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="flex flex-col gap-[50px] mt-[36px]">{cards}</div>
         </div>
       </section>
     );
   }
 
   return (
-    <section id={id} className={styles.section}>
-      <div className={styles.inner}>
+    <section id={id} className="py-[72px] px-[20px] max-md:py-[48px] max-md:px-0 text-white">
+      <div className="max-w-[1200px] mx-auto">
         <HeaderWrapper
           kicker={<span>#Как это работает?</span>}
-          title={<span> От текста до MP3 — </span>}
-          titleAccent={<span className="color-white">всего за 60 секунд</span>}
+          title={<span> От текста до MP3 — </span>}
+          titleAccent={<span className="text-white">всего за 60 секунд</span>}
           align="center"
           withBr={false}
         />
 
-        {/* Условный рендеринг: Слайдер для мобилок, Grid для десктопа */}
         {isMobile ? (
           <Swiper
             modules={[Pagination]}
             spaceBetween={16}
-            slidesPerView={1.1} // 1 слайд + кусочек следующего
+            slidesPerView={1.1}
             pagination={{ clickable: true }}
-            className={styles.swiperContainer}
+            className="mt-[36px]"
           >
             {cards.map((card, index) => (
               <SwiperSlide key={`slide-${index}`}>
@@ -150,7 +159,7 @@ export default function WhySiteDesignSection({ id }: Props) {
             ))}
           </Swiper>
         ) : (
-          <div className={styles.grid}>
+          <div className="flex flex-col gap-[50px] mt-[36px]">
             {cards}
           </div>
         )}

@@ -50,7 +50,7 @@ export default function PunctureSection({
       <div className={styles.container}>
         {/* Левая часть - изображение */}
         <div className={styles.imageColumn}>
-          <img src="/assets/soc-bg.png" alt="" />
+          <img src="/assets/bg_soc.png" alt="" />
         </div>
 
         {/* Правая часть - контент */}
