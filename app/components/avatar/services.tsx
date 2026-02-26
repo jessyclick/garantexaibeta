@@ -67,7 +67,7 @@ export default function Services() {
   return (
     <section className="bg-[#000000] py-[148px] rounded-[24px] shadow-[0_4px_32px_rgba(0,0,0,0.15)]">
       <h2 className="text-center mb-[24px]">
-        <span className="text-white text-4xl font-bold">УСЛУГИ</span> 
+        <span className="">УСЛУГИ</span> 
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] justify-center max-w-[1300px] mx-auto px-4">
         {services.map((service, idx) => {
