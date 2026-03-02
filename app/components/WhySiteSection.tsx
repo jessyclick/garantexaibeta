@@ -37,6 +37,8 @@ export default function WhySiteSection() {
   return (
     <section className="py-[72px] px-5 text-white relative">
       <img className="mix-blend-lighten absolute w-full h-full l-0 top-0 object-cover" src="/assets/auto-sc.png" alt="" />
+      <img className="mix-blend-lighten absolute h-full l-0 top-0 left-0" src="/assets/bg-line-left.svg" alt="" />
+      <img className="mix-blend-lighten absolute h-full l-0 top-0 right-0" src="/assets/bg-line-right.svg" alt="" />
       <div className="max-w-[1040px] mx-auto">
         <HeaderWrapper
           href="#"

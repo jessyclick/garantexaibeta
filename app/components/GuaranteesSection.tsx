@@ -22,7 +22,7 @@ export default function GuaranteesSection() {
           <article className={cardClasses}>
             <img
               className="w-full h-[190px] rounded-[22px] mb-[18px] object-cover"
-              src="/assets/g_first.png"
+              src="/assets/nj-1.webp"
               alt=""
             />
             <h3 className="text-white text-center font-bebas text-[2rem] leading-[1] mt-2 mb-2.5 font-normal">
@@ -40,7 +40,7 @@ export default function GuaranteesSection() {
           <article className={cardClasses}>
             <img
               className="w-full h-[190px] rounded-[22px] mb-[18px] object-cover"
-              src="/assets/g_second.png"
+              src="/assets/nj-2.webp"
               alt=""
             />
             <h3 className="text-white text-center font-bebas text-[2rem] leading-[1] mt-2 mb-2.5 font-normal">
@@ -58,7 +58,7 @@ export default function GuaranteesSection() {
           <article className={cardClasses}>
             <img
               className="w-full h-[190px] rounded-[22px] mb-[18px] object-cover"
-              src="/assets/g_third.png"
+              src="/assets/nj-3.webp"
               alt=""
             />
             <h3 className="text-white text-center font-bebas text-[2rem] leading-[1] mt-2 mb-2.5 font-normal">

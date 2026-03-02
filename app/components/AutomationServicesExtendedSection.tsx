@@ -8,7 +8,7 @@ export default function AutomationServicesExtendedSection() {
       title: "Анализ ниши и семантики",
       description:
         "Погружаемся в специфику вашего бизнеса, анализируем конкурентов и целевую аудиторию.",
-      image: "/assets/services_0001.png",
+      image: "/assets/qq-1.webp",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ export default function AutomationServicesExtendedSection() {
       title: "Сбор данных о компании",
       description:
         "Фиксируем тон бренда, информацию о продуктах, боли ЦА, ограничения, слоганы и ценности — чтобы писать «вашим голосом».",
-      image: "/assets/services_0002.png",
+      image: "/assets/qq-2.webp",
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ export default function AutomationServicesExtendedSection() {
       title: "Разработка контент-плана",
       description:
         "Для каждого ключа мы формируем план из заголовка, описания, боли ЦА, доп. ключей, LSI-фраз, триггеров и CTA — так получаются максимально релевантные материалы.",
-      image: "/assets/services_0003.png",
+      image: "/assets/qq-3.webp",
     },
   ];
 

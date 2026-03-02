@@ -69,13 +69,13 @@ export default function WhyImportantSection({
           <div className="inline-block px-[12px] py-[6px] sm:px-[22px] sm:py-[8px_22px_4px_22px] text-white font-['Bebas_Neue',_sans-serif] text-[11px] sm:text-[30px] font-normal leading-normal uppercase tracking-[0.5px] rounded-[43px] sm:rounded-[20px] bg-[linear-gradient(90deg,#9B0300_0%,#750200_57.69%,#9B0300_100%)] shadow-[0_4.134px_25.218px_0_rgba(102,59,3,0.25)] mx-auto mb-[16px] sm:mb-[24px] w-fit">
             ЭТО ВАЖНО
           </div>
-          <h2 className="text-white text-[24px] md:text-[32px] lg:text-[44px] leading-[1.2] m-0 mb-[24px] text-center">
+          <div className="text-white font-bebas text-[24px] md:text-[32px] lg:text-[45px] leading-[1.2] m-0 mb-[24px] text-center">
             {mainTitle}
             <br />
             <span className="block bg-[linear-gradient(101.53deg,#ff9c1c_3.95%,#f9b953_25.99%,#ff9c1c_61.02%,#ffc466_74.88%,#ff9c1c_87.55%)] bg-clip-text text-transparent [-webkit-background-clip:text]">
               {mainTitleAccent}
             </span>
-          </h2>
+          </div>
           <p className="text-white text-center font-['Ubuntu',_sans-serif] text-[13px] md:text-[14px] lg:text-[20.402px] font-normal leading-[21.476px] m-0">
             {subtitle}
           </p>
@@ -90,7 +90,7 @@ export default function WhyImportantSection({
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="rounded-[16px] p-[20px_16px] sm:p-[28px_24px] border border-transparent bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden"
+                  className="rounded-[16px] p-[20px_16px] sm:p-[28px_24px] border border-transparent bg-origin-border [background-clip:padding-box,_border-box] bg-[linear-gradient(160deg,#000000,#212121,#000000),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden"
                 >
                   <div className="flex items-center gap-2 mb-[12px] sm:mb-[16px]">
                     <div className="w-[28px] sm:w-[32px] lg:w-[48px] shrink-0 transition-transform duration-300">
@@ -120,7 +120,7 @@ export default function WhyImportantSection({
                 alt="AI Technology"
                 className="w-full h-full object-cover block absolute inset-0"
               />
-              <div className="absolute bottom-[16px] left-[16px] right-[16px] sm:bottom-[24px] sm:left-[24px] sm:right-[24px] bg-[rgba(0,120,100,0.9)] border-[2px] border-[rgba(0,200,160,0.5)] rounded-[12px] p-[14px] sm:p-[16px] md:p-[20px] backdrop-blur-[10px]">
+              <div className="absolute bottom-[16px] left-[16px] right-[16px] sm:bottom-[24px] sm:left-[24px] sm:right-[24px] rounded-[19px] border border-[#007568] bg-[#003E37] p-[14px] sm:p-[16px] md:p-[20px] backdrop-blur-[10px]">
                 <p className="text-white text-[12px] sm:text-[13px] md:text-[14px] leading-[1.6] m-0">
                   {calloutText}
                 </p>

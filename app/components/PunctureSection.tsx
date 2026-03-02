@@ -48,12 +48,15 @@ export default function PunctureSection({
     "border border-transparent rounded-[12px] p-6 GradientBlack backdrop-blur-[10px] transition-all duration-300 flex flex-col hover:-translate-y-1";
 
   return (
-    <section className="py-[80px] px-5">
+    <section className="py-[80px] px-5 relative">
+      <img className="absolute left-0 bottom-0 w-[80px]" src="/assets/element-002.png" alt="" />
+      <img className="absolute right-0 top-0 w-[80px]" src="/assets/element-001.png" alt="" />
+      
       <div className="max-w-[1400px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start">
         {/* Левая часть - изображение */}
         <div className="flex items-center justify-center min-h-[300px] lg:min-h-[600px]">
           <img
-            src="/assets/right-side.png"
+            src="/assets/gg-2.webp"
             alt="Иллюстрация решения"
             className="w-full h-auto block rounded-[16px]"
           />

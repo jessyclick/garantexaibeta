@@ -8,24 +8,24 @@ interface ReasonCard {
 
 const reasonsData: ReasonCard[] = [
   {
-    icon: "/assets/pred-0001.png",
+    icon: "/assets/pred-1.png",
     title: "Системность:",
     description: "Контент выходит по графику, без сбоев и выходных.",
   },
   {
-    icon: "/assets/pred-0002.png",
+    icon: "/assets/pred-2.png",
     title: "Качество:",
     description:
       "Глубокие лонгриды с фактурой, кейсами и аналитикой, а не поверхностный рерайт.",
   },
   {
-    icon: "/assets/pred-0003.png",
+    icon: "/assets/pred-3.png",
     title: "Масштаб:",
     description:
       "Одна ваша идея превращается в 10 единиц контента для разных площадок.",
   },
   {
-    icon: "/assets/pred-0004.png",
+    icon: "/assets/pred-4.png",
     title: "Ваш Tone of Voice:",
     description:
       "Строго B2B, живо для соцсетей, SEO-стиль для сайта, провокационно для виральности — пишем так, как вам нужно.",

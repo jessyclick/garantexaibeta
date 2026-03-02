@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <p className="text-white font-['Ubuntu'] text-[0.875rem] font-normal leading-[1.34225rem]">
+          <p className="text-white font-['Ubuntu'] text-[0.875rem] font-normal leading-[1.3rem]">
             Все необходимое для работы и изучения нейросетей в 1 месте
           </p>
           <div
@@ -276,7 +276,7 @@ export default function Footer() {
             {[...techStack, ...techStack].map((item, idx) => (
               <span
                 key={idx + 1}
-                className={`flex items-center bg-[#191616] text-white py-2 px-3 rounded-[100px] text-[11px] font-medium tracking-[0.5px] transition-all duration-300 border border-transparent hover:border-[#ff9c1c] hover:text-[#ff9c1c] ${item.icon ? 'border-l-[#ff9c1c]/50' : ''}`}
+                className={`flex items-center bg-[#191616] text-white py-2 px-3 rounded-[100px] text-[11px] font-medium tracking-[0.5px] transition-all duration-300 border border-transparent hover:border-[#ff9c1c] hover:text-[#ff9c1c] ${item.icon ? 'border-l-[#ff9c1c]/50 pr-[24px]' : ''}`}
               >
                 {item.icon && (
                   <img 
@@ -284,6 +284,7 @@ export default function Footer() {
                     alt="" 
                     className="w-4 h-4 mr-2 object-contain" 
                   />
+                  
                 )}
                 [{item.label}]
               </span>
