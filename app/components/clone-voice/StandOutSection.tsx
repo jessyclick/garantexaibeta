@@ -32,7 +32,7 @@ export default function StandOutSection() {
         <div className={styles.right}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/assets/n-6.png"
+              src="/assets/bg-20.png"
               alt="AI Human Figure with Sound Waves"
               width={500}
               height={500}

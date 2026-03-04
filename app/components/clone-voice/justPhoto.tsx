@@ -15,7 +15,7 @@ export default function JustPhoto() {
             </div>
             <div className="flex flex-col items-center w-full justify-center mt-8 gap-2">
               <h2 className="fs-45">экономия: <span> 10–50 раз.</span> </h2>
-              <h2 className="fs-45">Результат: полная свобода вместо зависимости от дикторов.</h2>
+              <h2 className="fs-45">Результат: <span> полная свобода вместо зависимости от дикторов.</span></h2>
             </div>
           </div>
     </section>

@@ -13,27 +13,27 @@ type Props = {
 const defaultPlatforms: PlatformCard[] = [
   {
     name: "Блогер / YouTube-автор",
-    icon: "/assets/loc-0001.png",
+    icon: "/assets/loc-1.png",
     description: "Выходите на англоязычный рынок. Получайте валютную монетизацию.",
   },
   {
     name: "Онлайн-школа / Эксперт / Наставник",
-    icon: "/assets/loc-0002.png",
+    icon: "/assets/loc-2.png",
     description: "Один курс → продажи по всему миру. Расходы те же — прибыль кратно выше.",
   },
   {
     name: "E-commerce бренды",
-    icon: "/assets/loc-0003.png",
+    icon: "/assets/loc-3.png",
     description: "Видеообзоры для Amazon, AliExpress, Wildberries Global.",
   },
   {
     name: "IT / SaaS / стартапы",
-    icon: "/assets/loc-0004.png",
+    icon: "/assets/loc-4.png",
     description: "Онбординг, презентации, питчи — на любом языке.",
   },
   {
     name: "Арбитражники / креаторы",
-    icon: "/assets/loc-0005.png",
+    icon: "/assets/loc-5.png",
     description: "Перевод вирусных роликов → выход в новые регионы → рост охватов.",
   },
 ];
@@ -47,7 +47,7 @@ export default function WhoSection({ platforms = defaultPlatforms }: Props) {
             kicker="#Кому подходит?"
             title="Локализация — ваш следующий шаг,"
             titleAccent=" если вы:"
-            withBr={false}
+            withBr={true}
           />
         </div>
 
@@ -66,7 +66,9 @@ export default function WhoSection({ platforms = defaultPlatforms }: Props) {
                   />
                 </div>
               )}
-
+              <p className="font-bebas mt-4 mb-4 text-[42px] leading-[100%] tracking-normal text-center">
+  {platform.name}
+</p>
               <p className="text-white font-['Inter',_sans-serif] font-normal text-[13px] sm:text-[19px] leading-[22px] text-center m-0">
                 {platform.description}
               </p>

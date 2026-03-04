@@ -7,7 +7,7 @@ export default function StandOutSection() {
       <div className="max-w-[1305px] mx-auto relative z-10 flex flex-col lg:flex-row-reverse items-center gap-[24px] md:gap-[40px] lg:gap-[60px]">
         
         {/* Правая часть (по логике flex-row-reverse, но фактически текст) */}
-        <div className="w-full lg:flex-1 lg:min-w-[400px] lg:max-w-[450px] text-center lg:text-left flex flex-col items-center lg:items-start">
+        <div className="w-full lg:flex-1 lg:min-w-[600px] lg:max-w-[600px] text-center lg:text-left flex flex-col items-center lg:items-start">
           <h2 className="m-0 mb-6 font-['Bebas_Neue',_sans-serif] font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[1.1] tracking-[-1px] text-white">
             <span>
               Мир ждёт ваш контент.

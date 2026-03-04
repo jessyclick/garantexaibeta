@@ -69,7 +69,7 @@ const Tariffs = () => {
               className={`relative rounded-2xl p-[30px] ${plan.gradient}`}
             >
               <h4
-                className={`text-center font-['kurut'] text-[50.88px] font-normal leading-normal ${plan.titleColor}`}
+                className={`text-center font-['kurut'] text-[50.88px] font-normal whitespace-nowrap leading-normal ${plan.titleColor}`}
               >
                 {plan.title}
               </h4>
@@ -85,11 +85,7 @@ const Tariffs = () => {
                 {plan.features.map((feature, index) => (
                   <li
                     key={index}
-                    className={`mb-[15px] flex items-start gap-3 rounded-xl p-3 text-[13px] leading-[1.5] ${
-                      feature.checked
-                        ? 'bg-gradient-to-r from-[#344949] to-[#63909C] text-white'
-                        : 'bg-gradient-to-r from-[rgba(52,73,73,0.20)] to-[rgba(99,144,156,0.20)] text-[#999999]'
-                    }`}
+                    className={`mb-[15px] flex items-start gap-3 p-2 text-[13px] leading-[1.5] border-b border-[#373737]`}
                   >
                     <span
                       className={`mt-[2px] flex h-4 w-4 shrink-0 items-center justify-center rounded-[3px] ${
@@ -108,11 +104,7 @@ const Tariffs = () => {
               </div>
 
               {/* Вывод under (техподдержка) */}
-              {plan.under && (
-                <div className="mx-auto mb-[30px] mt-6 max-w-[670px] text-center font-['Inter'] text-[19px] font-normal text-white">
-                  {plan.under}
-                </div>
-              )}
+             
             </div>
           ))}
         </div>

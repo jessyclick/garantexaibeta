@@ -86,7 +86,7 @@ export default function WhySiteDesignSection({ id }: Props) {
       )}
 
       {/* Основной контент (карточка с градиентной обводкой) */}
-      <div className="flex-auto p-[50px_20px] sm:p-[25px_40px] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-center sm:items-start text-center sm:text-left GradientBlack">
+      <div className="flex-auto p-[50px_20px] sm:p-[25px_40px] border border-transparent rounded-[20px] h-full flex flex-col justify-center items-center sm:items-start text-center sm:text-left firstGradient">
         <p className="bg-[linear-gradient(101.53deg,#FF9C1C_3.95%,#FFCB78_18.11%,#FF9C1C_61.02%,#FFCB78_74.88%,#FF9C1C_87.55%)] bg-clip-text text-transparent font-['Bebas_Neue',_sans-serif] font-bold text-[18px] sm:text-[24px] leading-none mb-[18px] m-0">
           {card.badge}
         </p>
@@ -111,7 +111,7 @@ export default function WhySiteDesignSection({ id }: Props) {
 
       {/* Десктопная картинка (справа), если reverse = false */}
       {!card.reverse && (
-        <div className="hidden md:block w-full h-full rounded-[10px] bg-[linear-gradient(135deg,rgba(3,218,198,0.12),rgba(255,150,40,0.12))] shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.6)] bg-blend-overlay">
+        <div className="hidden md:block w-full h-full rounded-[10px]  bg-blend-overlay">
           <img
             src={card.img}
             alt=""
