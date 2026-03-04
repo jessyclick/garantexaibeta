@@ -20,6 +20,7 @@ export default function Home() {
       <Agency />
       <Partner />
       <ContactFooter />
+      <Footer />
     </main>
   );
 }
