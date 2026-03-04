@@ -78,37 +78,58 @@ export default function Services() {
           const href = isMarketplace ? '/' : `/uslugi/${service.slug}`;
 
           return (
-            <div 
-              className="bg-[#222] rounded-[16px] GradientBlack shadow-[0_2px_16px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col items-center pb-[24px] min-h-[420px]" 
-              key={idx}
-            >
-              <div className="flex justify-center items-center w-full mb-[48px]">
-                <Image 
-                  src={service.icon} 
-                  alt={service.title} 
-                  width={1000} 
-                  height={120} 
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex-1 flex flex-col items-left pb-[32px] px-[24px] w-full">
-                <h3 className="text-[32px] font-bebas gradientText mb-[16px] text-left uppercase">
-                  {service.title}
-                </h3>
-                <p className="text-[#D1D1D1] text-[16px] pl-[24px] border-l border-solid border-[#FF9C1C] mb-[32px] text-left">
-                  {service.description}
-                </p>
-                
-                {/* Ссылка обернута вокруг кнопки */}
-                <Link href={href} className="mt-auto w-full">
-                  <button
-                    className="w-full font-semibold border-none rounded-[32px] py-[12px] px-[32px] text-[1rem] cursor-pointer transition-all duration-200 bg-[#444] text-white hover:bg-[#555] active:scale-95"
-                  >
-                    Подробнее
-                  </button>
-                </Link>
-              </div>
-            </div>
+            <div
+                  className="group relative bg-black rounded-[16px] 
+                            shadow-[0_2px_16px_rgba(0,0,0,0.12)] 
+                            overflow-hidden flex flex-col items-center 
+                            pb-[24px] min-h-[420px]"
+                  key={idx}
+                >
+
+                  {/* Градиентная рамка */}
+                  <div
+                    className="absolute inset-0 rounded-[16px] 
+                              GradientBlack 
+                              opacity-0 group-hover:opacity-100
+                              transition-opacity duration-300 
+                              pointer-events-none"
+                  />
+
+                  {/* Контент */}
+                  <div className="relative z-10 flex flex-col items-center w-full h-full">
+
+                    <div className="flex justify-center items-center w-full mb-[48px] p-[1px]">
+                      <Image
+                        src={service.icon}
+                        alt={service.title}
+                        width={1000}
+                        height={120}
+                        className="object-contain"
+                      />
+                    </div>
+
+                    <div className="flex-1 flex flex-col items-start pb-[32px] px-[24px] w-full">
+                      <h3 className="text-[32px] font-bebas gradientText mb-[16px] text-left uppercase">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-[#D1D1D1] text-[16px] pl-[24px] border-l border-[#FF9C1C] mb-[32px] text-left">
+                        {service.description}
+                      </p>
+
+                      <Link href={href} className="mt-auto w-full">
+                        <button
+                          className="w-full font-semibold rounded-[32px] py-[12px] px-[32px] text-[1rem] text-white
+                                    transition-all duration-200
+                                    bg-[#444] hover:[background:linear-gradient(106deg,#FF9C1C_5.27%,#FFCB78_22.82%,#FF9C1C_75.97%,#FFCB78_93.14%,#FF9C1C_108.83%)]"
+                        >
+                          Подробнее
+                        </button>
+                      </Link>
+                    </div>
+
+                  </div>
+                </div>
           );
         })}
       </div>
