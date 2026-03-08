@@ -52,7 +52,7 @@ export default function Hero() {
           <div className={styles.right}>
                 <div className={styles.device}>
                   <Image
-                    src="/assets/clone-voice-hero.png"
+                    src="/assets/bg-new-1.webp"
                     alt="Hero"
                     width={800}
                     height={520}

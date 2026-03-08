@@ -1,3 +1,4 @@
+
 import Hero from "./components/Hero";
 import ReasonsSection from "./components/ReasonsSection";
 import ServicesSection from "./components/ServicesSection";
@@ -8,6 +9,7 @@ import GuaranteesSection from "./components/GuaranteesSection";
 import StandOutSection from "./components/StandOutSection";
 import ServicesExtendedSection from "./components/ServicesExtendedSection";
 import { Reveal } from "./components/reveal";
+import ComparisonSlider from "./components/ComparisonSlider";
 import Footer from "./components/Footer";
 import AvatarFeature from "./components/avatar/test";
 
@@ -21,6 +23,8 @@ export default function Home() {
     <ReasonsSection />
   </Reveal>
   
+    
+
   <Reveal>
     <ServicesSection />
   </Reveal>
@@ -39,7 +43,7 @@ export default function Home() {
     <GuaranteesSection />
   </Reveal>
   
-
+<ComparisonSlider />
 
   <Reveal>
     <AutomationSection />

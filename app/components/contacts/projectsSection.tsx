@@ -8,20 +8,20 @@ type Platform = {
 }
 
 const left: Platform[] = [
-  { id: 'vk', name: 'VK', img: '/assets/icon_c-vk.png', url: 'https://vk.com/garantexai' },
-  { id: 'ok', name: 'Одноклассники', img: '/assets/icon_c-odno.png', url: 'https://ok.ru/profile/910428320381' },
+  { id: 'vk', name: 'VK', img: '/assets/icon-vk-new.png', url: 'https://vk.com/garantexai' },
+  { id: 'ok', name: 'Одноклассники', img: '/assets/icon-odno-new.png', url: 'https://ok.ru/profile/910428320381' },
 ]
 
 const center: Platform[] = [
-  { id: 'dzen', name: 'Яндекс Дзен', img: '/assets/icon_c-dzen.png', url: 'https://dzen.ru' },
-  { id: 'tenchat', name: 'TenChat', img: '/assets/icon_c-habr.png', url: 'https://tenchat.ru/GarantexAi' },
-  { id: 'habr', name: 'Habr', img: '/assets/habr.png', url: 'https://habr.com/ru/users/GarantexAi/' },
+  { id: 'dzen', name: 'Яндекс Дзен', img: '/assets/icon-dzen-new.png', url: 'https://dzen.ru' },
+  { id: 'tenchat', name: 'TenChat', img: '/assets/icon-tenchat-new.png', url: 'https://tenchat.ru/GarantexAi' },
+  { id: 'habr', name: 'Habr', img: '/assets/icon-habr-new.png', url: 'https://habr.com/ru/users/GarantexAi/' },
 ]
 
 const right: Platform[] = [
-  { id: 'youtube', name: 'YouTube', img: '/assets/icon_c-youtube.png', url: 'https://youtube.com' },
-  { id: 'vkvideo', name: 'VK Video', img: '/assets/icon_c-vk-video.png', url: 'https://vk.com/video' },
-  { id: 'rutube', name: 'Rutube', img: '/assets/icon_c-rutube.png', url: 'https://rutube.ru' },
+  { id: 'youtube', name: 'YouTube', img: '/assets/icon-yt-new.png', url: 'https://youtube.com' },
+  { id: 'vkvideo', name: 'VK Video', img: '/assets/icon-vkvideo-new.png', url: 'https://vk.com/video' },
+  { id: 'rutube', name: 'Rutube', img: '/assets/icon-rutube-new.png', url: 'https://rutube.ru' },
 ]
 
 export default function ProjectsSection() {

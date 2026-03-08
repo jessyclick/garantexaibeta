@@ -26,7 +26,7 @@ export default function Footer() {
         {/* Left Column */}
         <div className="flex flex-col gap-5">
           <div className="flex items-center gap-2.5">
-            <img src="/assets/icon_shest.png" alt="" className="w-5 h-5" />
+            <img src="/assets/icon_logo.jpeg" alt="" className="w-10 h-10" />
             <h3 className="text-white font-['Bebas_Neue'] text-[1.5625rem] font-normal tracking-[1.2px] m-0 uppercase leading-normal">
               COMPLEX AI
             </h3>
