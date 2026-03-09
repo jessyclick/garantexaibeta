@@ -66,9 +66,9 @@ const ComparisonSlider: React.FC = () => {
         {/* Before Image (Bottom Layer) */}
         <div className="absolute inset-0 w-full h-full">
            <img 
-            src="https://picsum.photos/id/2/1920/1080?grayscale" 
+            src="/assets/bg-before.jpeg" 
             alt="Manual Process" 
-            className="w-full h-full object-cover filter brightness-75 grayscale"
+            className="w-full h-full object-cover"
             draggable={false}
           />
           <div className="absolute top-6 right-6 px-4 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-lg text-white font-montserrat font-bold text-sm md:text-lg tracking-wider pointer-events-none">
@@ -82,7 +82,7 @@ const ComparisonSlider: React.FC = () => {
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           <img 
-            src="https://picsum.photos/id/4/1920/1080" 
+            src="/assets/bg-after.jpeg" 
             alt="AI Automation" 
             className="w-full h-full object-cover filter brightness-110 contrast-110"
             draggable={false}
