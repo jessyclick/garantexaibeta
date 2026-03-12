@@ -43,7 +43,6 @@ export default function Home() {
     <GuaranteesSection />
   </Reveal>
   
-<ComparisonSlider />
 
   <Reveal>
     <AutomationSection />

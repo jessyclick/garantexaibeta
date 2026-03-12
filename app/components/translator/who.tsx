@@ -58,7 +58,7 @@ export default function WhoSection({ platforms = defaultPlatforms }: Props) {
               className="flex flex-col items-center text-center p-[24px_16px] sm:p-[32px_24px] rounded-[16px] transition-all duration-300 relative overflow-hidden"
             >
               {platform.icon && (
-                <div className="w-auto h-[42px] flex items-center justify-center mb-4">
+                <div className="w-auto h-[100px] flex items-center justify-center mb-4">
                   <img
                     src={platform.icon}
                     alt={platform.name}

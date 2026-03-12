@@ -58,56 +58,34 @@ export default function ConsultationSection({
           className="mt-12"
           kicker=""
           title={<span>Garantex AI -</span>}
-          titleAccent={<span className="text-white"> агентство ИИ полного цикла для бизнеса</span>}
+          titleAccent={<span className="color-white"> агентство ИИ полного цикла для бизнеса</span>}
         />
-        <p className="text-white text-center font-ubuntu text-[20.4px] font-normal leading-[21.476px] mb-[60px] max-w-[420px]">{subtitle}</p>
 
        <ComparisonSlider />
 
+       {/* Блок с текстом из изображения */}
+       <div className="GradientBlack rounded-[24px] p-[40px] max-w-[600px] mx-auto my-[48px] text-center relative">
+         <div className="text-white text-[24px] font-ubuntu font-medium mb-[16px]">
+           Превращаем рутинные задачи в работающие <span className="text-[#ff7a00]">ИИ-решения</span>.
+         </div>
+         <div className="text-[#bdbdbd] text-[18px] font-ubuntu font-normal mb-[24px]">
+           Объединяем креатив, разработку и автоматизацию в единую экосистему.
+         </div>
+         <div className="flex items-center justify-center mb-[24px]">
+           <span className="w-[60px] h-[2px] bg-[#ff7a00] mx-2"></span>
+           <span className="w-[8px] h-[8px] bg-[#ff7a00] rounded-full mx-2"></span>
+           <span className="w-[60px] h-[2px] bg-[#ff7a00] mx-2"></span>
+         </div>
+         <div className="text-white text-[20px] font-ubuntu font-bold mb-[8px]">
+           Не знаете, с чего начать?
+         </div>
+         <div className="text-[#ff7a00] text-[18px] font-ubuntu font-medium">
+           GARANTEX AI <span className="text-[#bdbdbd] font-normal">проведёт вас от идеи до готового продукта.</span>
+         </div>
+       </div>
+
         {/* Figma-inspired main cards */}
-        <div className="flex gap-[32px] my-[48px]">
-          <div className="relative bg-[#120f0b] border border-[#3c3c3c] rounded-[24px] w-[400px]  flex flex-col items-start p-6 justify-center">
-            <div className="mb-[24px] left-[24px] top-[32px] w-[30px] h-[30px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="32" viewBox="0 0 23 32" fill="none">
-  <path d="M9.98622 31.0607C10.572 31.6464 11.5218 31.6464 12.1075 31.0607L21.6535 21.5147C22.2393 20.9289 22.2393 19.9792 21.6535 19.3934C21.0677 18.8076 20.1179 18.8076 19.5322 19.3934L11.0469 27.8787L2.56159 19.3934C1.97581 18.8076 1.02606 18.8076 0.440274 19.3934C-0.145513 19.9792 -0.145513 20.9289 0.440274 21.5147L9.98622 31.0607ZM11.0469 0L9.54688 6.55671e-08L9.54688 30L11.0469 30L12.5469 30L12.5469 -6.55671e-08L11.0469 0Z" fill="#FF0400"/>
-</svg>
-            </div>
-            <div className=" text-white text-[29px] font-bebas font-bold">90%</div>
-            <div className="mt-[12px] text-white text-[20.4px] font-ubuntu font-medium">Снижение рутины</div>
-            <div className="mt-[8px] text-white text-[16px] font-ubuntu font-light">Автоматизация процессов</div>
-          </div>
-          <div className="relative bg-[#120f0b] border border-[#3c3c3c] rounded-[24px] w-[400px]  flex flex-col items-start p-6 justify-center">
-            <div className="mb-[24px] right-[24px] top-[32px] w-[30px] h-[30px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="32" viewBox="0 0 23 32" fill="none">
-  <path d="M9.98622 0.439341C10.572 -0.146446 11.5218 -0.146446 12.1075 0.439341L21.6535 9.98528C22.2393 10.5711 22.2393 11.5208 21.6535 12.1066C21.0677 12.6924 20.1179 12.6924 19.5322 12.1066L11.0469 3.62132L2.56159 12.1066C1.97581 12.6924 1.02606 12.6924 0.440274 12.1066C-0.145513 11.5208 -0.145513 10.5711 0.440274 9.98528L9.98622 0.439341ZM11.0469 31.5L9.54688 31.5L9.54688 1.5L11.0469 1.5L12.5469 1.5L12.5469 31.5L11.0469 31.5Z" fill="#00FF09"/>
-</svg>
-            </div>
-            <div className=" text-white text-[29px] font-bebas font-bold">100%</div>
-            <div className="mt-[12px] text-white text-[20.4px] font-ubuntu font-medium">Фокуса на прибыли</div>
-            <div className="mt-[8px] text-white text-[16px] font-ubuntu font-light">Рост эффективности</div>
-          </div>
-        </div>
-
-         {/* Figma-inspired statistics cards */}
-        <div className="flex gap-[32px] mb-[48px]">
-          <div className="relative bg-[#120f0b] border border-[#3c3c3c] rounded-[50px] w-[300px] h-[90px] flex items-center justify-center">
-            <div className="absolute left-[24px] top-1/2 -translate-y-1/2 w-[40px] h-[40px]">
-              <img src={imgFlashOn} alt="Flash On" className="w-full h-full object-contain" />
-            </div>
-            <div className="ml-[72px] text-white text-[16px] font-ubuntu">
-              <span className="font-bold text-[21px]">50+</span> реализованных проектов
-            </div>
-          </div>
-          <div className="relative bg-[#120f0b] border border-[#3c3c3c] rounded-[50px] w-[300px] h-[90px] flex items-center justify-center">
-            <div className="absolute left-[24px] top-1/2 -translate-y-1/2 w-[40px] h-[40px]">
-              <img src={imgRocket} alt="Rocket" className="w-full h-full object-contain" />
-            </div>
-            <div className="ml-[72px] text-white text-[16px] font-ubuntu">
-              Бесплатный аудит
-            </div>
-          </div>
-        </div>
-
+      
         <div className="flex gap-5 justify-center items-center">
           <CTAButton
             href="#"

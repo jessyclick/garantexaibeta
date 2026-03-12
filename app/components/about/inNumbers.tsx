@@ -49,7 +49,7 @@ const InNumbers = () => (
           return (
             <div 
               key={idx} 
-              className={`bg-[linear-gradient(#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[16px] p-[24px] min-w-[220px] flex gap-[100px] shadow-[0_0_12px_#ffb84d22] ${
+              className={`firstGradient border border-transparent rounded-[16px] p-[24px] min-w-[220px] flex gap-[100px] shadow-[0_0_12px_#ffb84d22] ${
                 isWide 
                   ? 'col-span-3 flex-row justify-between items-center text-left self-center' 
                   : 'flex-col items-start'
