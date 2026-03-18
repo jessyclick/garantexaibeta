@@ -155,6 +155,18 @@ h2.fs-45 {
   background-clip: padding-box, border-box;
   border: 1px solid #0000;
 }
+.mainGradient {
+   background-image: linear-gradient(163deg, #000 9.05%, #212121 52.54%, #000 88.01%), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+}
+.grayGradient {
+   background-image: linear-gradient(163deg, #0F0C09, #0F0C09), linear-gradient(124.35deg, #fe7905 3.69%, #2a0c00 45.84%, #a93301 98.89%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border: 1px solid #0000;
+}
 .GradientBlackGreen {
   background-image: linear-gradient(#000, #000), linear-gradient(124.35deg, #44c4a1 3.69%, #002017 45.84%, #44c4a1 98.89%);
 }

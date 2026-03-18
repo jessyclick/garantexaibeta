@@ -19,7 +19,6 @@ export default function Home() {
     <div>
       <Hero />
       <div className="bg-overlay">
-<VoiceComparisonSection />
         <ProblemSection />
         <WhySiteSection />
         <How />

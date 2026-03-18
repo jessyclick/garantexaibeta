@@ -42,7 +42,7 @@ export default function ProjectsSection() {
           height={36}
           className="relative z-10"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-[rgba(254,151,5,0.65)] blur-[16px] z-0" />
+        
       </div>
       <div className="text-white font-['Bebas_Neue',_sans-serif] text-[30px] font-normal leading-normal">
         {p.name}

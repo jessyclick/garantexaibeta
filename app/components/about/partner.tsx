@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './partner.module.scss';
 import HeaderWrapper from '../headerWrapper';
 
 // Icon paths (update with actual asset paths)
@@ -16,90 +15,70 @@ const icons = {
   transparency: '/assets/icons/transparency.svg',
 };
 
+// Выносим сложные двойные градиенты в константы для чистоты кода
+const cardBg = "mainGradient";
+const customCardBg = "bg-[linear-gradient(163deg,#001613_9.43%,#00302B_52.39%,#001613_87.36%),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent";
+
 const Partner = () => (
-  <section className={styles.partnerSection}>
+  <section className="pt-[64px] pb-[80px] text-white">
     <HeaderWrapper
-                 href=""
-                 withBr={false}
-                 kicker="#Цифры"
-                 title="о нас"
-                 titleAccent="в цифрах"
-               />
-    <div className={styles.cards}>
-      <div className={styles.card}>
-        <div className={styles.cardNumber}>01</div>
-        <div className={styles.cardContent + ' ' + styles.cardContentFirst}>
+      href=""
+      withBr={false}
+      kicker="#Философия нашей работы"
+      title="Как мы строим "
+      titleAccent="партнерство"
+    />
+    <div className="flex flex-col gap-[40px] max-w-[1200px] mx-auto max-[900px]:gap-[24px]">
+      
+      {/* Карточка 01 */}
+      <div className={`rounded-[18px] p-[32px] relative flex flex-row items-start gap-[32px] max-[900px]:flex-col max-[900px]:gap-[16px] max-[900px]:p-[20px_12px] ${cardBg}`}>
+        <div className={`text-[32px] font-bold text-[#ffb02e] mr-[32px] min-w-[60px] text-center w-[72px] h-[72px] flex items-center justify-center rounded-[8px] max-[900px]:mr-0 max-[900px]:mb-[8px] ${cardBg}`}>
+          01
+        </div>
+        <div className="flex-1 grid grid-cols-2 gap-[64px] max-[900px]:grid-cols-1 max-[900px]:gap-[32px]">
           <div>
-            <h3>КАЧЕСТВО ВАЖНЕЕ КОЛИЧЕСТВА</h3>
-            <p>Мы не работаем по принципу конвейера. Для нас важен каждый заказ, и мы подходим к нему с максимальной вовлечённостью и трепетом. Мы сознательно не набираем десятки проектов одновременно, чтобы сохранить фокус.</p>
+            <h3 className="text-white font-['Bebas_Neue'] text-[35px] mb-[8px]">КАЧЕСТВО ВАЖНЕЕ КОЛИЧЕСТВА</h3>
+            <p className="text-white font-['Ubuntu'] text-[20.402px] font-normal leading-[21.476px]">
+              Мы не работаем по принципу конвейера. Для нас важен каждый заказ, и мы подходим к нему с максимальной вовлечённостью и трепетом. Мы сознательно не набираем десятки проектов одновременно, чтобы сохранить фокус.
+            </p>
           </div>
           <div>
-            <h3>ГЛУБОКОЕ ПОГРУЖЕНИЕ</h3>
-            <p>Мы не используем шаблонные решения. Мы изучаем ваш бизнес изнутри, разбираем процессы на атомы и предлагаем архитектуру, которая нужна именно вам, как если бы строили её для себя.</p>
+            <h3 className="text-white font-['Bebas_Neue'] text-[35px] mb-[8px]">ГЛУБОКОЕ ПОГРУЖЕНИЕ</h3>
+            <p className="text-white font-['Ubuntu'] text-[20.402px] font-normal leading-[21.476px]">
+              Мы не используем шаблонные решения. Мы изучаем ваш бизнес изнутри, разбираем процессы на атомы и предлагаем архитектуру, которая нужна именно вам, как если бы строили её для себя.
+            </p>
           </div>
         </div>
       </div>
-      <div className={styles.card}>
-        <div className={styles.cardNumber}>02</div>
-        <div className={styles.cardContent}>
-          <h3>ЗАКРЫВАЕМ ЗАДАЧИ «ПОД КЛЮЧ»</h3>
-          <p className='max-w-[600px]'>Мы строим агентство, с которым вам больше не придётся искать других подрядчиков, дизайнеров или программистов. Обратившись в Garantex AI, вы получаете полноценный технический департамент на аутсорсе.</p>
-          
+
+      {/* Карточка 02 */}
+      <div className={`rounded-[18px] p-[32px] relative flex flex-row items-start gap-[32px] max-[900px]:flex-col max-[900px]:gap-[16px] max-[900px]:p-[20px_12px] ${cardBg}`}>
+        <div className={`text-[32px] font-bold text-[#ffb02e] mr-[32px] min-w-[60px] text-center w-[72px] h-[72px] flex items-center justify-center rounded-[8px] max-[900px]:mr-0 max-[900px]:mb-[8px] ${cardBg}`}>
+          02
+        </div>
+        <div className="flex-1 flex flex-col gap-[16px]">
+          <h3 className="text-white font-['Bebas_Neue'] text-[35px] mb-[8px]">ЗАКРЫВАЕМ ЗАДАЧИ «ПОД КЛЮЧ»</h3>
+          <p className="max-w-[600px] text-white font-['Ubuntu'] text-[20.402px] font-normal leading-[21.476px]">
+            Мы строим агентство, с которым вам больше не придётся искать других подрядчиков, дизайнеров или программистов. Обратившись в Garantex AI, вы получаете полноценный технический департамент на аутсорсе.
+          </p>
         </div>
       </div>
-      <div className={styles.competencies}>
-        <h4>НАШИ КОМПЕТЕНЦИИ ЗАКРЫВАЮТ ВЕСЬ СПЕКТР ЦИФРОВЫХ ЗАДАЧ:</h4>
-        <div className={styles.competencyGrid}>
-          <div className={styles.competencyCard}>
-            <div className="flex items-center gap-2">
-              <img src={icons.visual} alt="Визуал" />
-              <span>РАБОТА С ВИЗУАЛОМ</span>
-            </div>
-            <p>Создание изображений, айдентики и креативов любой сложности с помощью нейросетей.</p>
-          </div>
-          <div className={styles.competencyCard}>
-            <div className="flex items-center gap-2">
-              <img src={icons.automation} alt="Автоматизация" />
-              <span>СЛОЖНАЯ АВТОМАТИЗАЦИЯ</span>
-            </div>
-            <p>Внедрение автоматических сценариев любой глубины (Make, n8n, Python) для избавления от рутины.</p>
-          </div>
-          <div className={styles.competencyCard}>
-            <div className="flex items-center gap-2">
-              <img src={icons.dev} alt="Веб-разработка" />
-              <span>ВАЙБ-КОДИНГ И РАЗРАБОТКА</span>
-            </div>
-            <p>Быстро создадим сайт, Telegram Mini App или онлайн-магазин, используя современные инструменты генерации и ИИ.</p>
-          </div>
-          <div className={styles.competencyCard}>
-            <div className="flex items-center gap-2">
-              <img src={icons.video} alt="Видео" />
-              <span>ВИДЕО-ПРОДАКШН ПОЛНОГО ЦИКЛА</span>
-            </div>
-            <p>От рекламных роликов и видео под маркетплейсы, до мультфильмов и контента для YouTube/Reels.</p>
-          </div>
-          <div className={styles.competencyCard}>
-            <div className="flex items-center gap-2">
-              <img src={icons.chatbot} alt="Чат-боты" />
-              <span>ЧАТ-БОТЫ И ИИ-АССИСТЕНТЫ</span>
-            </div>
-            <p>Умные сотрудники поддержки, продвинутые и личные цифровые помощники.</p>
-          </div>
-          <div className={styles.competencyCard + ' ' + styles.competencyCardCustom}>
-            <div className="flex items-center gap-2">
-              <span>НЕ НАШЛИ НУЖНОГО В СПИСКЕ?</span>
-            </div>
-            <p>Просто напишите нам, с чем вам требуется помощь. Если задача решаема цифровыми методами — мы её решим.</p>
-          </div>
+
+      
+
+      {/* Карточка 03 */}
+      <div className={`rounded-[18px] p-[32px] relative flex flex-row items-start gap-[32px] max-[900px]:flex-col max-[900px]:gap-[16px] max-[900px]:p-[20px_12px] ${cardBg}`}>
+        <div className={`text-[32px] font-bold text-[#ffb02e] mr-[32px] min-w-[60px] text-center w-[72px] h-[72px] flex items-center justify-center rounded-[8px] max-[900px]:mr-0 max-[900px]:mb-[8px] ${cardBg}`}>
+          03
+        </div>
+        <div className="flex-1 flex flex-col gap-[16px]">
+          <h3 className="text-white font-['Bebas_Neue'] text-[35px] mb-[8px]">АБСОЛЮТНАЯ ПРОЗРАЧНОСТЬ</h3>
+          <p className="text-white font-['Ubuntu'] text-[20.402px] font-normal leading-[21.476px]">
+            Вы всегда видите процесс работы. Никаких «чёрных ящиков» — вы понимаете, за что платите, на каком этапе находится проект и как именно алгоритмы приносят вам пользу.
+          </p>
         </div>
       </div>
-      <div className={styles.card}>
-        <div className={styles.cardNumber}>03</div>
-        <div className={styles.cardContent}>
-          <h3>АБСОЛЮТНАЯ ПРОЗРАЧНОСТЬ</h3>
-          <p>Вы всегда видите процесс работы. Никаких «чёрных ящиков» — вы понимаете, за что платите, на каком этапе находится проект и как именно алгоритмы приносят вам пользу.</p>
-        </div>
-      </div>
+
     </div>
   </section>
 );

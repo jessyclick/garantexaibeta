@@ -87,7 +87,7 @@ const ComparisonSlider: React.FC = () => {
             className="w-full h-full object-cover filter brightness-110 contrast-110"
             draggable={false}
           />
-          <div className="absolute hidden md:block top-12 left-6 px-4 py-2 bg-gradient-to-r from-accent-orange/90 to-accent-gold/90 backdrop-blur-md shadow-lg shadow-orange-500/20 rounded-lg text-green-400 font-montserrat font-bold text-sm md:text-lg tracking-wider pointer-events-none whitespace-nowrap">
+          <div className="absolute hidden md:block top-6 left-6 px-4 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-lg text-white font-montserrat font-bold text-sm md:text-lg tracking-wider pointer-events-none">
             Ваш бизнес с Garantex AI
           </div>
         </div>

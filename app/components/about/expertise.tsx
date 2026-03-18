@@ -61,6 +61,10 @@ const Expertise = () => (
               />
               <h3 className="pt-[3px] text-white font-['Bebas_Neue'] text-[35px]">{item.title}</h3>
             </div>
+
+            <div className="w-full h-[260px] bg-gray-800 rounded-[12px] mt-[16px] mb-[24px]">
+
+            </div>
           
             <p className="text-white font-['Ubuntu'] text-[19px] font-normal leading-[22.004px] mt-[32px] mb-[16px]">
               {item.description}

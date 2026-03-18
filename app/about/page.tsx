@@ -1,4 +1,5 @@
 import ConsultationSection from "../components/about/consultation";
+import Competition from "../components/about/competition";
 import InNumbers from "../components/about/inNumbers";
 import Expertise from "../components/about/expertise";
 import Clients from "../components/about/clients";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main>
       <ConsultationSection />
+      <Competition />
       <InNumbers />
       <Expertise />
       <Clients />

@@ -53,7 +53,7 @@ export default function Footer() {
             Все необходимое для работы и изучения нейросетей в 1 месте
           </p>
           <div
-            className={`${gradientBorderBoxClass} p-4 mt-2.5 rounded-[12px]`}
+            className={`grayGradient rounded-[12px] p-4 mt-2.5 rounded-[12px]`}
           >
             <p className="text-white font-['Inter'] text-[0.75rem] italic font-normal leading-[1.25rem] m-0">
               Регулярные онлайн-встречи, записи эфиров, шаблоны make и n8n,
@@ -128,7 +128,7 @@ export default function Footer() {
           </ul>
 
           <div
-            className={`${gradientBorderBoxClass} flex flex-wrap gap-3 p-4 mt-2.5 shadow-[0px_4px_24.4px_0px_#663B0340] rounded-[12px]`}
+            className={`grayGradient rounded-[12px] flex flex-wrap gap-3 p-4 mt-2.5 shadow-[0px_4px_24.4px_0px_#663B0340] rounded-[12px]`}
           >
             <span className="shrink-0 max-w-[14px] text-[24px]">
               <img src="/assets/icon_footer-star.png" alt="" />
@@ -213,7 +213,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-5 md:gap-[40px]">
           {/* Block 1: Highlight Left */}
           <div
-            className={`${gradientBorderBoxClass} w-full md:w-[300px] p-4 flex flex-row items-center gap-2`}
+            className={`grayGradient rounded-[12px] w-full md:w-[300px] p-4 flex flex-row items-center gap-2`}
           >
             <div className="min-w-[36px] max-w-[36px]">
               <img src="/assets/icon_add-footer.png" alt="" />
@@ -245,7 +245,7 @@ export default function Footer() {
 
           {/* Block 3: Highlight Right (Legal Data) */}
           <div
-            className={`${gradientBorderBoxClass} w-full md:w-[300px] p-4 flex flex-col items-start text-left gap-2`}
+            className={`grayGradient rounded-[12px] w-full md:w-[300px] p-4 flex flex-col items-start text-left gap-2`}
           >
             <div className="font-['Ubuntu'] text-[12px] opacity-50 color-white uppercase tracking-[1px] mb-2">
               ЮРИДИЧЕСКИЕ ДАННЫЕ

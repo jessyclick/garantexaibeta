@@ -43,23 +43,31 @@ const Education = () => (
       <div className="flex flex-col items-center min-[900px]:grid min-[900px]:grid-cols-2 justify-center gap-[32px] mt-[32px] w-full">
         {educationData.map((item, idx) => (
           <div
-            className="w-[90vw] min-[900px]:w-full bg-[linear-gradient(#0F0C09,#0F0C09),linear-gradient(124.35deg,#fe7905_3.69%,#2a0c00_45.84%,#a93301_98.89%)] [background-origin:border-box] [background-clip:padding-box,border-box] border border-transparent rounded-[18px] shadow-[0_0_24px_0_#ffa72633] py-[32px] px-[24px] min-h-[320px] flex flex-col items-start relative text-left"
+            className="w-[90vw] min-[900px]:w-full mainGradient rounded-[18px] shadow-[0_0_24px_0_#ffa72633] py-[32px] px-[24px] min-h-[320px] flex items-start relative justify-between text-left"
             key={idx}
           >
-            <div className="flex items-center gap-4 mb-[16px]">
-              <img 
-                src={item.icon} 
-                alt={item.title} 
-                className="w-[40px] h-[40px] mb-[18px] drop-shadow-[0_0_8px_#ffa72688]" 
-              />
-              <div className="text-white font-['Bebas_Neue'] text-[35px] flex items-center gap-[10px]">
-                {item.title}
+            <div className="flex flex-col w-[70%]">
+              <div className="flex items-center gap-4 mb-[16px]">
+                <img 
+                  src={item.icon} 
+                  alt={item.title} 
+                  className="w-[40px] h-[40px] mb-[18px] drop-shadow-[0_0_8px_#ffa72688]" 
+                />
+                <div className="text-white font-['Bebas_Neue'] text-[35px] flex items-center gap-[10px]">
+                  {item.title}
+                </div>
+              </div>
+          
+              <div className="mt-auto text-white font-['Ubuntu'] text-[19px] font-normal leading-[22.004px]">
+                {item.description}
               </div>
             </div>
-          
-            <div className="mt-auto text-white font-['Ubuntu'] text-[19px] font-normal leading-[22.004px]">
-              {item.description}
+
+            <div className="w-[20%] h-full min-h-[stretch] bg-gray-800 rounded-[12px]">
+
             </div>
+
+
           </div>
         ))}
       </div>
