@@ -19,7 +19,7 @@ export default function ReasonsSection() {
 
         
           <RevealStagger stagger={0.3} className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"> 
-          <article className="text-center flex flex-col items-center gap-4 h-full GradientBlack p-6 rounded-[24px]">
+          <article className="text-center flex flex-col items-center gap-4 h-full grayGradient p-6 rounded-[24px]">
             <div className="w-10">
               <img src="/assets/icon_cloose.png" alt="" />
             </div>
@@ -39,7 +39,7 @@ export default function ReasonsSection() {
             </p>
           </article>
 
-          <article className="text-center flex flex-col items-center gap-4 h-full GradientBlack p-6 rounded-[24px]">
+          <article className="text-center flex flex-col items-center gap-4 h-full grayGradient p-6 rounded-[24px]">
             <div className="w-10">
               <img src="/assets/icon_cloose.png" alt="" />
             </div>

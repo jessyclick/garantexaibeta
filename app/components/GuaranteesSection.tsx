@@ -1,6 +1,6 @@
 export default function GuaranteesSection() {
   const cardClasses =
-    "p-[22px] rounded-[18px] lg:min-h-[320px] flex flex-col items-center text-center relative border border-transparent shadow-[0_4.963px_30.277px_0_rgba(102,59,3,0.25)] bg-origin-border [background-clip:padding-box,_border-box] GradientBlack";
+    "p-[22px] rounded-[18px] lg:min-h-[320px] flex flex-col items-center text-center relative border border-transparent shadow-[0_4.963px_30.277px_0_rgba(102,59,3,0.25)] grayGradient";
 
   return (
     <section className="pt-[120px] pb-[84px] px-5 text-white">

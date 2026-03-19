@@ -118,7 +118,7 @@ const Clients = () => {
           >
             {clients.map((client, idx) => (
               <SwiperSlide key={idx}>
-                <div className="GradientBlack rounded-[20px] p-6 min-h-[420px] flex flex-col shadow-2xl h-full">
+                <div className="grayGradient rounded-[20px] p-6 min-h-[420px] flex flex-col shadow-2xl h-full">
                   <div className="w-full h-[220px] relative rounded-b-[20px] overflow-hidden">
                     <Image src={client.image} alt={client.title} fill className="object-cover" />
                   </div>
